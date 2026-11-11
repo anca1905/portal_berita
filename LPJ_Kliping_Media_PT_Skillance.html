@@ -1,0 +1,1157 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Laporan Pertanggungjawaban (LPJ) & Kliping Media - PT Skillance Digital Indonesia</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 15mm 18mm 15mm 18mm;
+    }
+    @media print {
+      body {
+        margin: 0;
+        background: #fff;
+        font-size: 11pt;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .no-print {
+        display: none !important;
+      }
+      .page-break {
+        page-break-before: always;
+      }
+      .paper {
+        box-shadow: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        min-height: auto !important;
+        max-width: 100% !important;
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 11pt;
+      line-height: 1.45;
+      color: #111;
+      background: #f1f4f8;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .paper {
+      background: #fff;
+      max-width: 210mm;
+      min-height: 297mm;
+      margin: 0 auto 30px auto;
+      padding: 22mm 20mm;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.12);
+      position: relative;
+    }
+
+    /* Floating Tool Bar */
+    .btn-print-bar {
+      position: fixed;
+      top: 15px;
+      right: 20px;
+      z-index: 99999;
+      background: #ffffff;
+      padding: 10px 18px;
+      border-radius: 8px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.22);
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      border: 1px solid #dcdcdc;
+    }
+    .btn-primary {
+      background: #0047CC;
+      color: #fff;
+      border: none;
+      padding: 9px 16px;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 13px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .btn-primary:hover {
+      background: #003399;
+    }
+    .btn-secondary {
+      background: #f1f5f9;
+      color: #334155;
+      border: 1px solid #cbd5e1;
+      padding: 8px 14px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .btn-secondary:hover {
+      background: #e2e8f0;
+    }
+
+    /* Kop Surat */
+    .kop-surat {
+      border-bottom: 3px double #000;
+      padding-bottom: 12px;
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+    .kop-logo {
+      width: 72px;
+      height: 72px;
+      object-fit: contain;
+    }
+    .kop-text {
+      text-align: center;
+      flex: 1;
+    }
+    .kop-text h3 {
+      margin: 0;
+      font-size: 13pt;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+    .kop-text h1 {
+      margin: 2px 0;
+      font-size: 16.5pt;
+      font-weight: 900;
+      color: #0047CC;
+      letter-spacing: 1px;
+    }
+    .kop-text p.sub {
+      margin: 1px 0;
+      font-size: 10pt;
+      font-weight: bold;
+      color: #222;
+    }
+    .kop-text p.meta {
+      margin: 2px 0 0 0;
+      font-size: 8.5pt;
+      font-family: Arial, sans-serif;
+      color: #444;
+      line-height: 1.3;
+    }
+
+    /* Sampul / Cover Styling */
+    .cover-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 250mm;
+      text-align: center;
+      border: 4px double #0047CC;
+      padding: 30px 24px;
+      background: linear-gradient(180deg, #ffffff 0%, #fafdff 100%);
+    }
+    .cover-header h2 {
+      margin: 0;
+      font-size: 14pt;
+      letter-spacing: 1px;
+      color: #333;
+      text-transform: uppercase;
+    }
+    .cover-header h1 {
+      margin: 6px 0;
+      font-size: 20pt;
+      font-weight: 900;
+      color: #0047CC;
+      letter-spacing: 1.5px;
+    }
+    .cover-header p {
+      margin: 0;
+      font-size: 10.5pt;
+      font-style: italic;
+      color: #555;
+    }
+    .cover-badge-box {
+      margin: 35px auto;
+      border: 2px solid #0047CC;
+      background: #f0f5ff;
+      padding: 22px 28px;
+      max-width: 520px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,71,204,0.08);
+    }
+    .cover-badge-box h2 {
+      margin: 0 0 8px 0;
+      font-size: 16pt;
+      font-weight: 900;
+      color: #0b2545;
+      text-transform: uppercase;
+    }
+    .cover-badge-box h3 {
+      margin: 0 0 10px 0;
+      font-size: 12.5pt;
+      font-weight: bold;
+      color: #0047CC;
+    }
+    .cover-badge-box p {
+      margin: 0;
+      font-size: 10pt;
+      font-family: Arial, sans-serif;
+      color: #333;
+    }
+    .cover-client-box {
+      margin: 20px auto;
+      text-align: center;
+    }
+    .cover-client-box p.label {
+      margin: 0;
+      font-size: 11pt;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #666;
+    }
+    .cover-client-box h2 {
+      margin: 8px 0 4px 0;
+      font-size: 17pt;
+      font-weight: bold;
+      color: #111;
+      text-decoration: underline;
+    }
+    .cover-client-box p.address {
+      margin: 0;
+      font-size: 11pt;
+      color: #333;
+    }
+    .cover-footer {
+      border-top: 2px solid #ccc;
+      padding-top: 15px;
+      margin-top: 25px;
+    }
+    .cover-footer p {
+      margin: 2px 0;
+      font-size: 10.5pt;
+      font-weight: bold;
+    }
+
+    /* Headings & Passages */
+    .doc-title {
+      text-align: center;
+      margin: 15px 0 20px 0;
+    }
+    .doc-title h3 {
+      margin: 0;
+      font-size: 13pt;
+      font-weight: bold;
+      text-decoration: underline;
+      text-transform: uppercase;
+    }
+    .doc-title p {
+      margin: 3px 0 0 0;
+      font-size: 10.5pt;
+    }
+    .pasal-title {
+      text-align: center;
+      font-weight: bold;
+      margin-top: 18px;
+      margin-bottom: 4px;
+      text-transform: uppercase;
+      font-size: 11.5pt;
+    }
+    .pasal-sub {
+      text-align: center;
+      font-weight: bold;
+      margin-bottom: 8px;
+      font-size: 10.5pt;
+    }
+
+    p, li {
+      text-align: justify;
+      margin-bottom: 8px;
+    }
+    ol, ul {
+      margin-top: 4px;
+      margin-bottom: 10px;
+      padding-left: 24px;
+    }
+
+    /* Tables */
+    .table-custom {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 12px 0 16px 0;
+      font-size: 10pt;
+    }
+    .table-custom th, .table-custom td {
+      border: 1px solid #111;
+      padding: 6px 8px;
+      vertical-align: top;
+    }
+    .table-custom th {
+      background: #f1f5f9;
+      text-align: center;
+      font-weight: bold;
+    }
+    .table-borderless {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 12px;
+    }
+    .table-borderless td {
+      padding: 3px 6px;
+      vertical-align: top;
+      border: none;
+    }
+
+    /* Signature Grid */
+    .ttd-grid {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 30px;
+      page-break-inside: avoid;
+    }
+    .ttd-col {
+      width: 46%;
+      text-align: center;
+    }
+    .ttd-space {
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .materai-box {
+      border: 1px dashed #777;
+      padding: 6px 12px;
+      font-size: 8pt;
+      color: #555;
+      display: inline-block;
+    }
+    .ttd-name {
+      font-weight: bold;
+      text-decoration: underline;
+      margin: 0;
+    }
+
+    /* Clipping Box (Kliping Berita Digital) */
+    .kliping-card {
+      border: 1.5px solid #0047CC;
+      border-radius: 6px;
+      padding: 14px 18px;
+      margin-bottom: 22px;
+      background: #fff;
+      page-break-inside: avoid;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    .kliping-header {
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 8px;
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: Arial, sans-serif;
+    }
+    .kliping-badge {
+      background: #0047CC;
+      color: #fff;
+      font-size: 8.5pt;
+      font-weight: bold;
+      padding: 3px 8px;
+      border-radius: 4px;
+      text-transform: uppercase;
+    }
+    .kliping-meta {
+      font-size: 9pt;
+      color: #555;
+    }
+    .kliping-title {
+      font-size: 13pt;
+      font-weight: bold;
+      line-height: 1.35;
+      margin: 6px 0 10px 0;
+      color: #0b2545;
+    }
+    .kliping-body {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 12px;
+    }
+    .kliping-preview-img {
+      width: 220px;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 4px;
+      border: 1px solid #cbd5e1;
+      background: #e2e8f0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: Arial, sans-serif;
+      font-size: 8.5pt;
+      color: #64748b;
+      text-align: center;
+    }
+    .kliping-text {
+      flex: 1;
+      font-size: 9.5pt;
+      line-height: 1.45;
+      color: #222;
+    }
+    .kliping-footer {
+      border-top: 1px dashed #cbd5e1;
+      padding-top: 8px;
+      font-family: Arial, sans-serif;
+      font-size: 8.5pt;
+      color: #475569;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #f8fafc;
+      padding: 8px 12px;
+      border-radius: 4px;
+    }
+    .kliping-footer a {
+      color: #0047CC;
+      text-decoration: underline;
+      font-weight: bold;
+      word-break: break-all;
+    }
+    .verifikasi-badge {
+      color: #059669;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    /* Kwitansi Box */
+    .kwitansi-border {
+      border: 2px solid #222;
+      padding: 18px 22px;
+      margin-top: 15px;
+      background: #fafcff;
+      page-break-inside: avoid;
+    }
+    .terbilang-box {
+      background: #eef2f7;
+      padding: 8px 12px;
+      font-style: italic;
+      font-weight: bold;
+      margin: 8px 0;
+      border-left: 4px solid #0047CC;
+      font-size: 10.5pt;
+    }
+    .nominal-display {
+      font-size: 16pt;
+      font-weight: bold;
+      font-family: Arial, sans-serif;
+      color: #0047CC;
+      border: 2px solid #0047CC;
+      padding: 6px 16px;
+      display: inline-block;
+      margin-top: 10px;
+      border-radius: 4px;
+      background: #fff;
+    }
+
+    /* Editable indicator styling */
+    [contenteditable="true"] {
+      outline: 1px dashed #b1c7ff;
+      padding: 1px 3px;
+      border-radius: 2px;
+    }
+    [contenteditable="true"]:focus {
+      outline: 2px solid #0047CC;
+      background-color: #fffde7;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Floating Print & Edit Bar -->
+  <div class="btn-print-bar no-print">
+    <span style="font-weight:bold;color:#1e293b;font-size:13px;">📑 Berkas LPJ & Kliping Resmi</span>
+    <button class="btn-secondary" onclick="toggleEditMode()" id="btnEdit">✏️ Mode Ketik: Aktif</button>
+    <button class="btn-primary" onclick="window.print()">🖨️ Cetak / Simpan PDF (Ctrl + P)</button>
+  </div>
+
+  <!-- ============================================================== -->
+  <!-- HALAMAN 1: COVER / SAMPUL RESMI LPJ & KLIPING PUBLIKASI         -->
+  <!-- ============================================================== -->
+  <div class="paper">
+    <div class="cover-container">
+      
+      <div class="cover-header">
+        <h2>DOKUMEN PERTANGGUNGJAWABAN RESMI</h2>
+        <h1>PT SKILLANCE DIGITAL INDONESIA</h1>
+        <p>Badan Hukum Perusahaan Pers Media Siber Resmi: Cerita Rakyat ID (www.xyronnews.com)</p>
+        <p style="font-size:9pt;font-family:Arial,sans-serif;margin-top:4px;">SK Kemenkumham RI: AHU-0000000.AH.01.01.TAHUN 2026 | NIB: 0000000000000 | NPWP: 00.000.000.0-000.000</p>
+      </div>
+
+      <div class="cover-badge-box">
+        <h2>LAPORAN PERTANGGUNGJAWABAN (LPJ)</h2>
+        <h3>DAN DOKUMENTASI BUKTI TAYANG KLIPING MEDIA SIBER</h3>
+        <p>Pelaksanaan Program Kemitraan Publikasi Kegiatan Kedinasan, Diseminasi Kebijakan Publik, dan Kerja Sama Media Siber</p>
+        <div style="margin-top:14px;border-top:1px dashed #0047CC;padding-top:10px;">
+          <p style="font-size:11pt;font-weight:bold;color:#0047CC;">
+            NOMOR BERKAS: <span contenteditable="true">018/LPJ-PUB/SDI-CRID/XI/2026</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="cover-client-box">
+        <p class="label">DIAJUKAN KEPADA MITRA KERJASAMA:</p>
+        <h2 contenteditable="true">DINAS KOMUNIKASI DAN INFORMATIKA / INSTANSI PEMERINTAH</h2>
+        <p class="address" contenteditable="true">Pemerintah Provinsi Sulawesi Tenggara / Kabupaten / Kota</p>
+        <p style="margin-top:6px;font-size:10pt;color:#555;" contenteditable="true">Tahun Anggaran 2026 / Periode: Bulan November 2026</p>
+      </div>
+
+      <div class="cover-footer">
+        <p>KANTOR REDAKSI & TATA USAHA IKLAN / KEMITRAAN:</p>
+        <p style="font-weight:normal;font-size:9.5pt;font-family:Arial,sans-serif;color:#333;">
+          Kendari, Sulawesi Tenggara, Indonesia | Email: <a href="mailto:redaksi@xyronnews.com">redaksi@xyronnews.com</a> / <a href="mailto:iklan@xyronnews.com">iklan@xyronnews.com</a><br>
+          Website Resmi Portal Berita: <strong>https://www.xyronnews.com</strong> | Telp/WA: 0822-9170-0778 / 0812-3456-7890
+        </p>
+        <p style="margin-top:8px;font-size:10pt;">KENDARI - TAHUN 2026</p>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="page-break"></div>
+
+  <!-- ============================================================== -->
+  <!-- HALAMAN 2: SURAT PENGANTAR PENYERAHAN LPJ & TAGIHAN RESMI       -->
+  <!-- ============================================================== -->
+  <div class="paper">
+    
+    <div class="kop-surat">
+      <div class="kop-text">
+        <h3>REDAKSI & TATA USAHA MEDIA SIBER</h3>
+        <h1>PT SKILLANCE DIGITAL INDONESIA</h1>
+        <p class="sub">Media Siber Resmi: Cerita Rakyat ID (www.xyronnews.com)</p>
+        <p class="meta">SK Kemenkumham RI: AHU-0000000.AH.01.01.TAHUN 2026 | NPWP: 00.000.000.0-000.000 | NIB: 0000000000000<br>
+        Alamat Redaksi: Kendari, Sulawesi Tenggara | Hotline/WhatsApp: 0822-9170-0778 | Email: redaksi@xyronnews.com</p>
+      </div>
+    </div>
+
+    <table class="table-borderless" style="margin-top:10px;">
+      <tr>
+        <td style="width:110px;">Nomor</td>
+        <td style="width:12px;">:</td>
+        <td contenteditable="true"><strong>021/EXT-PUB/SDI-CRID/XI/2026</strong></td>
+        <td style="text-align:right;" contenteditable="true">Kendari, 11 November 2026</td>
+      </tr>
+      <tr>
+        <td>Lampiran</td>
+        <td>:</td>
+        <td contenteditable="true">1 (Satu) Berkas Lengkap LPJ, BAST, BAPHP, Kliping & Kwitansi</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Perihal</td>
+        <td>:</td>
+        <td contenteditable="true"><strong>Penyerahan Laporan Pertanggungjawaban (LPJ) Publikasi Media Siber & Permohonan Pembayaran (Invoice)</strong></td>
+        <td></td>
+      </tr>
+    </table>
+
+    <div style="margin-top:16px;">
+      <p>Kepada Yang Terhormat,<br>
+      <strong contenteditable="true">Pengguna Anggaran (PA) / Kuasa Pengguna Anggaran (KPA) / Pejabat Pembuat Komitmen (PPK)</strong><br>
+      <span contenteditable="true">Dinas Komunikasi dan Informatika / Lembaga / Instansi Pemda</span><br>
+      di -<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span contenteditable="true"><strong>Tempat</strong></span></p>
+    </div>
+
+    <p style="margin-top:16px;">Dengan hormat,</p>
+    <p>Sehubungan dengan pelaksanaan Nota Kesepahaman (MoU) Nomor: <span contenteditable="true">014/MoU-PUB/SDI-CRID/XI/2026</span> dan Surat Perjanjian Kerja Sama (PKS) Nomor: <span contenteditable="true">015/PKS-PUB/SDI-CRID/XI/2026</span> mengenai Kemitraan Publikasi Kegiatan Kedinasan, Diseminasi Informasi Publik, serta Media Partner antara <strong>PT Skillance Digital Indonesia (Cerita Rakyat ID / xyronnews.com)</strong> dengan <span contenteditable="true"><strong>[Nama Instansi / Dinas]</strong></span>, bersama ini kami sampaikan:</p>
+
+    <ol>
+      <li>Bahwa seluruh agenda publikasi siaran pers (press release), liputan kegiatan dinas, serta pemasangan identitas logo resmi instansi pada widget <em>Mitra Resmi (Official Partner)</em> di portal siber <em>xyronnews.com</em> untuk periode <strong contenteditable="true">Bulan November 2026</strong> telah <strong>selesai dilaksanakan 100%</strong> dengan baik dan sesuai standar jurnalistik Dewan Pers.</li>
+      <li>Sebagai bentuk akuntabilitas publikasi dan pemenuhan syarat administrasi pencairan anggaran Surat Pertanggungjawaban (SPJ), terlampir kami serahkan berkas kelengkapan:
+        <ol type="a">
+          <li>Berita Acara Pemeriksaan Hasil Pekerjaan (BAPHP);</li>
+          <li>Berita Acara Serah Terima (BAST) Hasil Pekerjaan Publikasi;</li>
+          <li>Matriks Rekapitulasi Penayangan & Bukti Kliping Media Digital (Screenshot & Tautan Berita Aktif);</li>
+          <li>Bukti Penayangan Logo di Widget Mitra Resmi Web;</li>
+          <li>Surat Tagihan / Invoice Resmi Perusahaan Pers;</li>
+          <li>Kwitansi Pembayaran bermeterai Rp 10.000,- (sepuluh ribu rupiah).</li>
+        </ol>
+      </li>
+      <li>Sehubungan dengan hal tersebut, kami memohon kiranya Bapak/Ibu dapat memproses pembayaran atas paket kerja sama publikasi dimaksud ke Rekening Bank Perusahaan kami sesuai kesepakatan kontrak.</li>
+    </ol>
+
+    <p>Demikian surat pengantar penyerahan laporan pertanggungjawaban ini kami sampaikan. Atas perhatian, kepercayaan, dan kerja sama yang terjalin dengan sangat baik, kami haturkan terima kasih.</p>
+
+    <!-- Tanda Tangan Surat Pengantar -->
+    <div class="ttd-grid" style="margin-top:35px;">
+      <div class="ttd-col" style="margin-left:auto;width:50%;">
+        <p>Hormat kami,<br>
+        <strong>PT SKILLANCE DIGITAL INDONESIA</strong><br>
+        Pengelola Portal Siber <em>Cerita Rakyat ID</em></p>
+        <div class="ttd-space">
+          <p style="font-size:9pt;color:#777;">[Stempel Redaksi / Perusahaan]</p>
+        </div>
+        <p class="ttd-name" contenteditable="true">MUH. RAHWAN</p>
+        <p style="margin:0;font-size:10pt;">Pemimpin Umum / Direktur Utama</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="page-break"></div>
+
+  <!-- ============================================================== -->
+  <!-- HALAMAN 3: BAST & BAPHP RESMI PEKERJAAN PUBLIKASI               -->
+  <!-- ============================================================== -->
+  <div class="paper">
+    
+    <div class="kop-surat">
+      <div class="kop-text">
+        <h3>PEMERINTAH DAERAH / INSTANSI MITRA KERJASAMA</h3>
+        <h1 style="color:#111;" contenteditable="true">DINAS KOMUNIKASI DAN INFORMATIKA</h1>
+        <p class="sub" contenteditable="true">Bidang Pengelolaan Informasi dan Komunikasi Publik (IKP)</p>
+        <p class="meta" contenteditable="true">Jalan Protokol Kedinasan No. 1, Kendari, Sulawesi Tenggara - Kode Pos 93111</p>
+      </div>
+    </div>
+
+    <!-- DOKUMEN 1: BAPHP -->
+    <div class="doc-title" style="margin-top:10px;">
+      <h3>BERITA ACARA PEMERIKSAAN HASIL PEKERJAAN (BAPHP)</h3>
+      <p>Nomor: <span contenteditable="true">...../BAPHP-PUBLIKASI/KOMINFO/XI/2026</span></p>
+    </div>
+
+    <p>Pada hari ini, <strong contenteditable="true">Rabu</strong> tanggal <strong contenteditable="true">Sebelas</strong> bulan <strong contenteditable="true">November</strong> tahun <strong contenteditable="true">Dua Ribu Dua Puluh Enam (11-11-2026)</strong>, bertempat di Kendari, kami yang bertandatangan di bawah ini:</p>
+
+    <table class="table-borderless" style="margin-left:10px;">
+      <tr>
+        <td style="width:130px;">1. Nama</td>
+        <td style="width:10px;">:</td>
+        <td contenteditable="true"><strong>...........................................................................</strong></td>
+      </tr>
+      <tr>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;Jabatan</td>
+        <td>:</td>
+        <td contenteditable="true">Pejabat Pelaksana Teknis Kegiatan (PPTK) / Tim Pemeriksa</td>
+      </tr>
+      <tr>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;Instansi</td>
+        <td>:</td>
+        <td contenteditable="true">Dinas Komunikasi dan Informatika</td>
+      </tr>
+      <tr>
+        <td>2. Nama</td>
+        <td>:</td>
+        <td contenteditable="true"><strong>MUH ARSYAD RAMSI</strong></td>
+      </tr>
+      <tr>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;Jabatan</td>
+        <td>:</td>
+        <td>Redaktur Pelaksana / Pemasaran PT SKILLANCE DIGITAL INDONESIA</td>
+      </tr>
+    </table>
+
+    <p>Menyatakan bahwa telah bersama-sama melakukan pemeriksaan teknis terhadap pelaksanaan hasil publikasi media siber pada portal <em>xyronnews.com (Cerita Rakyat ID)</em> yang meliputi kuota penayangan rilis berita kegiatan kedinasan dan penayangan widget logo mitra resmi dengan hasil pemeriksaan:</p>
+    <div style="background:#f8fafc;border:1px solid #cbd5e1;padding:8px 14px;border-radius:4px;font-weight:bold;color:#0f5132;">
+      ✓ Seluruh materi siaran pers telah terbit secara permanen, terindeks mesin pencari Google, dan materi logo aktif terpasang dengan spesifikasi 100% SESUAI DENGAN SPK / KONTRAK KERJA SAMA.
+    </div>
+
+    <!-- DOKUMEN 2: BAST -->
+    <div class="doc-title" style="margin-top:25px;">
+      <h3>BERITA ACARA SERAH TERIMA (BAST) HASIL PEKERJAAN</h3>
+      <p>Nomor: <span contenteditable="true">...../BAST-PUBLIKASI/SDI-KOMINFO/XI/2026</span></p>
+    </div>
+
+    <p>Berdasarkan Berita Acara Pemeriksaan Hasil Pekerjaan di atas, maka PARA PIHAK bersepakat melaksanakan serah terima hasil pekerjaan:</p>
+    <ol>
+      <li><strong>PIHAK PERTAMA (PT Skillance Digital Indonesia)</strong> menyerahkan hasil pekerjaan publikasi media dan bukti tayang (kliping LPJ digital) kepada <strong>PIHAK KEDUA</strong>.</li>
+      <li><strong>PIHAK KEDUA</strong> menerima hasil pekerjaan tersebut dengan baik, lengkap, dan tanpa catatan keberatan.</li>
+    </ol>
+
+    <p>Demikian Berita Acara Pemeriksaan dan Serah Terima Hasil Pekerjaan ini dibuat untuk digunakan sebagai dasar pencairan dana Surat Perintah Membayar (SPM/SP2D) pada pos anggaran yang sah.</p>
+
+    <div class="ttd-grid" style="margin-top:25px;">
+      <div class="ttd-col">
+        <p>Yang Menyerahkan:<br>
+        <strong>PT SKILLANCE DIGITAL INDONESIA</strong><br>
+        Redaktur Pelaksana / Pemasaran</p>
+        <div class="ttd-space"></div>
+        <p class="ttd-name">MUH ARSYAD RAMSI</p>
+        <p style="margin:0;font-size:10pt;">Kemitraan Media Siber</p>
+      </div>
+
+      <div class="ttd-col">
+        <p>Yang Menerima:<br>
+        <strong contenteditable="true">DINAS KOMINFO / INSTANSI MITRA</strong><br>
+        <span contenteditable="true">Pejabat Pembuat Komitmen (PPK) / PPTK</span></p>
+        <div class="ttd-space"></div>
+        <p class="ttd-name" contenteditable="true">( ..................................................... )</p>
+        <p style="margin:0;font-size:10pt;" contenteditable="true">NIP. .....................................................</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="page-break"></div>
+
+  <!-- ============================================================== -->
+  <!-- HALAMAN 4: MATRIKS REKAPITULASI PENAYANGAN PUBLIKASI            -->
+  <!-- ============================================================== -->
+  <div class="paper">
+    
+    <div class="kop-surat">
+      <div class="kop-text">
+        <h3>REKAPITULASI DOKUMENTASI PUBLIKASI & BUKTI TAYANG</h3>
+        <h1>CERITA RAKYAT ID (XYRONNEWS.COM)</h1>
+        <p class="sub">Penerbit Resmi: PT SKILLANCE DIGITAL INDONESIA | Periode Kemitraan: <span contenteditable="true">November 2026</span></p>
+      </div>
+    </div>
+
+    <div class="doc-title" style="margin-top:10px;">
+      <h3>MATRIKS REKAPITULASI PUBLIKASI KEGIATAN KEDINASAN</h3>
+      <p>Mitra Kemitraan: <strong contenteditable="true">Dinas Komunikasi & Informatika / Pemda</strong></p>
+    </div>
+
+    <table class="table-custom">
+      <thead>
+        <tr>
+          <th style="width:30px;">NO</th>
+          <th style="width:90px;">TANGGAL TERBIT</th>
+          <th>JUDUL BERITA / AGENDA KEGIATAN KEDINASAN</th>
+          <th style="width:85px;">RUBRIK</th>
+          <th style="width:190px;">LINK / TAUTAN BERITA PERMANEN</th>
+          <th style="width:75px;">STATUS</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="text-align:center;">1</td>
+          <td style="text-align:center;" contenteditable="true">02/11/2026</td>
+          <td contenteditable="true"><strong>Sosialisasi Keterbukaan Informasi Publik dan Akselerasi Pelayanan Terpadu Satu Pintu bagi Masyarakat</strong></td>
+          <td style="text-align:center;" contenteditable="true">Sultra</td>
+          <td><a href="https://www.xyronnews.com/berita/sosialisasi-keterbukaan-informasi-publik" target="_blank" style="font-size:8pt;color:#0047CC;">xyronnews.com/berita/sosialisasi-keterbukaan-informasi-publik</a></td>
+          <td style="text-align:center;color:#059669;font-weight:bold;">TAYANG (Aktif)</td>
+        </tr>
+        <tr>
+          <td style="text-align:center;">2</td>
+          <td style="text-align:center;" contenteditable="true">05/11/2026</td>
+          <td contenteditable="true"><strong>Kunjungan Kerja dan Monitoring Evaluasi Penyaluran Program Bantuan Strategis Daerah di Wilayah Pelosok</strong></td>
+          <td style="text-align:center;" contenteditable="true">Nasional</td>
+          <td><a href="https://www.xyronnews.com/berita/kunjungan-kerja-monitoring-evaluasi" target="_blank" style="font-size:8pt;color:#0047CC;">xyronnews.com/berita/kunjungan-kerja-monitoring-evaluasi</a></td>
+          <td style="text-align:center;color:#059669;font-weight:bold;">TAYANG (Aktif)</td>
+        </tr>
+        <tr>
+          <td style="text-align:center;">3</td>
+          <td style="text-align:center;" contenteditable="true">08/11/2026</td>
+          <td contenteditable="true"><strong>Peringatan Hari Besar Kedinasan: Dorong Generasi Muda Cerdas Literasi Digital dan Penguatan Sosiologi Daerah</strong></td>
+          <td style="text-align:center;" contenteditable="true">Pendidikan</td>
+          <td><a href="https://www.xyronnews.com/berita/peringatan-hari-besar-literasi-digital" target="_blank" style="font-size:8pt;color:#0047CC;">xyronnews.com/berita/peringatan-hari-besar-literasi-digital</a></td>
+          <td style="text-align:center;color:#059669;font-weight:bold;">TAYANG (Aktif)</td>
+        </tr>
+        <tr>
+          <td style="text-align:center;">4</td>
+          <td style="text-align:center;" contenteditable="true">10/11/2026</td>
+          <td contenteditable="true"><strong>Press Release: Transparansi Penggunaan Anggaran Pembangunan Berkelanjutan Demi Kesejahteraan Rakyat</strong></td>
+          <td style="text-align:center;" contenteditable="true">Ekonomi</td>
+          <td><a href="https://www.xyronnews.com/berita/press-release-transparansi-anggaran" target="_blank" style="font-size:8pt;color:#0047CC;">xyronnews.com/berita/press-release-transparansi-anggaran</a></td>
+          <td style="text-align:center;color:#059669;font-weight:bold;">TAYANG (Aktif)</td>
+        </tr>
+        <tr>
+          <td style="text-align:center;">5</td>
+          <td style="text-align:center;" contenteditable="true">01 s/d 30 Nov 2026</td>
+          <td contenteditable="true"><strong>Penayangan Logo Resmi Instansi pada Widget "Mitra Resmi (Official Partners)" Portal xyronnews.com</strong></td>
+          <td style="text-align:center;" contenteditable="true">Widget Home</td>
+          <td><a href="https://www.xyronnews.com" target="_blank" style="font-size:8pt;color:#0047CC;">xyronnews.com (Widget Mitra)</a></td>
+          <td style="text-align:center;color:#059669;font-weight:bold;">TAYANG (Aktif 30 Hari)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div style="margin-top:20px;border:1px solid #e2e8f0;background:#f8fafc;padding:12px 16px;border-radius:6px;">
+      <h4 style="margin:0 0 6px 0;font-size:10.5pt;color:#0b2545;">RINGKASAN AKUNTABILITAS PUBLIKASI (METRICS):</h4>
+      <table style="width:100%;font-size:9.5pt;font-family:Arial,sans-serif;">
+        <tr>
+          <td style="width:250px;">• Total Rilis Kegiatan Ditayangkan</td>
+          <td style="width:10px;">:</td>
+          <td><strong contenteditable="true">4 (Empat) Berita Rilis Kedinasan</strong></td>
+        </tr>
+        <tr>
+          <td>• Penayangan Logo Widget Mitra</td>
+          <td>:</td>
+          <td><strong contenteditable="true">1 (Satu) Bulan Penuh (24 Jam Non-stop)</strong></td>
+        </tr>
+        <tr>
+          <td>• Indeks Mesin Pencari (Google SEO)</td>
+          <td>:</td>
+          <td><strong contenteditable="true">Terindeks Permanen (Google Search Engine)</strong></td>
+        </tr>
+        <tr>
+          <td>• Jangkauan Estimasi Pembaca</td>
+          <td>:</td>
+          <td><strong contenteditable="true">± 8.500 Pembaca / Pengunjung Aktif</strong></td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Tanda Tangan Rekap -->
+    <div class="ttd-grid" style="margin-top:35px;">
+      <div class="ttd-col" style="margin-left:auto;width:50%;">
+        <p>Kendari, <span contenteditable="true">11 November 2026</span><br>
+        Dibuat dan Diverifikasi Oleh:<br>
+        <strong>PT SKILLANCE DIGITAL INDONESIA</strong></p>
+        <div class="ttd-space">
+          <p style="font-size:8.5pt;color:#666;">[Stempel Redaksi]</p>
+        </div>
+        <p class="ttd-name">MUH ARSYAD RAMSI</p>
+        <p style="margin:0;font-size:10pt;">Redaktur Pelaksana / Pemasaran</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="page-break"></div>
+
+  <!-- ============================================================== -->
+  <!-- HALAMAN 5: LEMBAR BUKTI KLIPING BERITA DIGITAL (BERITA 1 & 2)  -->
+  <!-- ============================================================== -->
+  <div class="paper">
+    
+    <div class="kop-surat">
+      <div class="kop-text">
+        <h3>LAMPIRAN BUKTI TAYANG KLIPING MEDIA SIBER (HALAMAN 1)</h3>
+        <h1>CERITA RAKYAT ID (WWW.XYRONNEWS.COM)</h1>
+      </div>
+    </div>
+
+    <!-- KLIPING 1 -->
+    <div class="kliping-card">
+      <div class="kliping-header">
+        <span class="kliping-badge">BUKTI TAYANG #01</span>
+        <span class="kliping-meta">Rubrik: <strong contenteditable="true">SULTRA</strong> | Tanggal: <strong contenteditable="true">02 November 2026</strong></span>
+        <span class="verifikasi-badge">✓ Terverifikasi Redaksi</span>
+      </div>
+
+      <div class="kliping-title" contenteditable="true">
+        Sosialisasi Keterbukaan Informasi Publik dan Akselerasi Pelayanan Terpadu Satu Pintu bagi Masyarakat
+      </div>
+
+      <div class="kliping-body">
+        <div class="kliping-preview-img">
+          <div>
+            <p style="margin:0;font-size:24px;">📰</p>
+            <p style="margin:4px 0 0 0;font-weight:bold;">TANGKAPAN LAYAR</p>
+            <p style="margin:2px 0 0 0;font-size:7.5pt;color:#64748b;">(Screenshot Tayang Web xyronnews.com)</p>
+          </div>
+        </div>
+        <div class="kliping-text">
+          <p style="margin-top:0;" contenteditable="true">
+            <strong>KENDARI, CERITA RAKYAT ID</strong> — Dalam rangka meningkatkan akuntabilitas dan pelayanan publik kepada masyarakat, instansi dinas menggelar forum sosialisasi keterbukaan informasi publik yang dihadiri oleh seluruh pemangku kepentingan. Kegiatan ini bertujuan mempercepat transformasi digital tata kelola birokrasi yang transparan, mudah diakses, dan responsif terhadap kebutuhan masyarakat.
+          </p>
+          <p contenteditable="true">
+            Narasumber menegaskan pentingnya sinergi antara pers dan lembaga pemerintah agar setiap capaian program kerja kedinasan tersampaikan secara utuh, edukatif, serta menangkal persebaran kabar bohong (hoaks).
+          </p>
+        </div>
+      </div>
+
+      <div class="kliping-footer">
+        <div>
+          URL Berita: <a href="https://www.xyronnews.com/berita/sosialisasi-keterbukaan-informasi-publik" target="_blank" contenteditable="true">https://www.xyronnews.com/berita/sosialisasi-keterbukaan-informasi-publik</a>
+        </div>
+        <div>Wartawan / Editor: <strong contenteditable="true">Aril / Redaksi CRID</strong></div>
+      </div>
+    </div>
+
+    <!-- KLIPING 2 -->
+    <div class="kliping-card" style="margin-top:20px;">
+      <div class="kliping-header">
+        <span class="kliping-badge">BUKTI TAYANG #02</span>
+        <span class="kliping-meta">Rubrik: <strong contenteditable="true">NASIONAL</strong> | Tanggal: <strong contenteditable="true">05 November 2026</strong></span>
+        <span class="verifikasi-badge">✓ Terverifikasi Redaksi</span>
+      </div>
+
+      <div class="kliping-title" contenteditable="true">
+        Kunjungan Kerja dan Monitoring Evaluasi Penyaluran Program Bantuan Strategis Daerah di Wilayah Pelosok
+      </div>
+
+      <div class="kliping-body">
+        <div class="kliping-preview-img">
+          <div>
+            <p style="margin:0;font-size:24px;">📸</p>
+            <p style="margin:4px 0 0 0;font-weight:bold;">TANGKAPAN LAYAR</p>
+            <p style="margin:2px 0 0 0;font-size:7.5pt;color:#64748b;">(Dokumentasi Berita & Foto Lapangan)</p>
+          </div>
+        </div>
+        <div class="kliping-text">
+          <p style="margin-top:0;" contenteditable="true">
+            <strong>KOLAKA, CERITA RAKYAT ID</strong> — Tim gabungan dinas bersama pimpinan melakukan tinjauan lapangan langsung ke lokasi pembangunan infrastruktur penunjang perekonomian desa. Program bantuan ini dipastikan menyasar kelompok penerima manfaat secara tepat sasaran tanpa hambatan birokrasi.
+          </p>
+          <p contenteditable="true">
+            Pimpinan menyampaikan apresiasi kepada masyarakat yang telah aktif bergotong royong menyukseskan program kerja pemerintah daerah serta menegaskan komitmen pengawasan ketat anggaran daerah.
+          </p>
+        </div>
+      </div>
+
+      <div class="kliping-footer">
+        <div>
+          URL Berita: <a href="https://www.xyronnews.com/berita/kunjungan-kerja-monitoring-evaluasi" target="_blank" contenteditable="true">https://www.xyronnews.com/berita/kunjungan-kerja-monitoring-evaluasi</a>
+        </div>
+        <div>Wartawan / Editor: <strong contenteditable="true">Tim Liputan / Arsyad Ramsi</strong></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="page-break"></div>
+
+  <!-- ============================================================== -->
+  <!-- HALAMAN 6: BUKTI KLIPING BERITA (3 & 4) & LOGO WIDGET MITRA    -->
+  <!-- ============================================================== -->
+  <div class="paper">
+    
+    <div class="kop-surat">
+      <div class="kop-text">
+        <h3>LAMPIRAN BUKTI TAYANG KLIPING MEDIA SIBER (HALAMAN 2)</h3>
+        <h1>CERITA RAKYAT ID (WWW.XYRONNEWS.COM)</h1>
+      </div>
+    </div>
+
+    <!-- KLIPING 3 -->
+    <div class="kliping-card">
+      <div class="kliping-header">
+        <span class="kliping-badge">BUKTI TAYANG #03</span>
+        <span class="kliping-meta">Rubrik: <strong contenteditable="true">PENDIDIKAN</strong> | Tanggal: <strong contenteditable="true">08 November 2026</strong></span>
+        <span class="verifikasi-badge">✓ Terverifikasi Redaksi</span>
+      </div>
+
+      <div class="kliping-title" contenteditable="true">
+        Peringatan Hari Besar Kedinasan: Dorong Generasi Muda Cerdas Literasi Digital dan Penguatan Sosiologi Daerah
+      </div>
+
+      <div class="kliping-body">
+        <div class="kliping-preview-img">
+          <div>
+            <p style="margin:0;font-size:24px;">📚</p>
+            <p style="margin:4px 0 0 0;font-weight:bold;">TANGKAPAN LAYAR</p>
+            <p style="margin:2px 0 0 0;font-size:7.5pt;color:#64748b;">(Dokumentasi Acara & Banner Tayang)</p>
+          </div>
+        </div>
+        <div class="kliping-text">
+          <p style="margin-top:0;" contenteditable="true">
+            <strong>KENDARI, CERITA RAKYAT ID</strong> — Mengusung semangat pembangunan sumber daya manusia yang berkarakter, peringatan hari besar dinas diselenggarakan dengan berbagai agenda positif termasuk donasi buku bacaan ilmiah dan pembinaan literasi digital di lingkungan perguruan tinggi.
+          </p>
+          <p contenteditable="true">
+            Kegiatan ini mendapatkan sambutan antusias dari kalangan akademisi, mahasiswa, dan pemuda sebagai wujud nyata kepedulian bersama terhadap kemajuan pendidikan di kawasan Sulawesi Tenggara.
+          </p>
+        </div>
+      </div>
+
+      <div class="kliping-footer">
+        <div>
+          URL Berita: <a href="https://www.xyronnews.com/berita/peringatan-hari-besar-literasi-digital" target="_blank" contenteditable="true">https://www.xyronnews.com/berita/peringatan-hari-besar-literasi-digital</a>
+        </div>
+        <div>Wartawan / Editor: <strong contenteditable="true">Kontributor / Redaksi</strong></div>
+      </div>
+    </div>
+
+    <!-- BUKTI TAYANG WIDGET MITRA RESMI -->
+    <div class="kliping-card" style="border-color:#059669;margin-top:20px;">
+      <div class="kliping-header" style="background:#f0fdf4;margin:-14px -18px 12px -18px;padding:10px 18px;border-radius:5px 5px 0 0;">
+        <span class="kliping-badge" style="background:#059669;">BUKTI TAYANG WIDGET MITRA RESMI</span>
+        <span class="kliping-meta">Penempatan: <strong>Homepage & Seluruh Halaman Berita xyronnews.com</strong></span>
+        <span class="verifikasi-badge">✓ Status: Tayang 24 Jam Nonstop</span>
+      </div>
+
+      <div class="kliping-title" style="font-size:11.5pt;color:#065f46;" contenteditable="true">
+        Pencantuman Logo & Identitas Resmi Instansi pada Widget "Mitra Resmi / Official Partner"
+      </div>
+
+      <div style="border:1px dashed #cbd5e1;padding:15px;background:#f8fafc;border-radius:4px;display:flex;align-items:center;justify-content:center;gap:25px;margin-bottom:10px;">
+        <div style="text-align:center;">
+          <div style="width:130px;height:70px;border:1px solid #94a3b8;background:#fff;display:flex;align-items:center;justify-content:center;font-weight:bold;color:#475569;font-size:9pt;border-radius:4px;">
+            [ LOGO INSTANSI ]
+          </div>
+          <p style="margin:4px 0 0 0;font-size:8pt;color:#64748b;">Logo Mitra Resmi</p>
+        </div>
+        <div style="flex:1;font-size:9pt;font-family:Arial,sans-serif;color:#334155;">
+          <p style="margin:0 0 4px 0;"><strong>Spesifikasi Penayangan:</strong></p>
+          <ul style="margin:0;padding-left:18px;">
+            <li>Posisi: Widget Bar Bawah / Sidebar "Mitra Resmi & Rekanan Strategis".</li>
+            <li>Hyperlink: Mengarah langsung ke portal resmi website instansi pemerintah.</li>
+            <li>Durasi: Aktif 1 (Satu) Bulan Penuh selama periode kontrak kemitraan.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="kliping-footer">
+        <div>Domain Portal Berita: <a href="https://www.xyronnews.com" target="_blank">https://www.xyronnews.com</a></div>
+        <div>Verifikasi: <strong style="color:#059669;">Diverifikasi Bagian IT & Iklan PT Skillance</strong></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="page-break"></div>
+
+  <!-- ============================================================== -->
+  <!-- HALAMAN 7: INVOICE TAGIHAN RESMI & KWITANSI MATERAI 10.000     -->
+  <!-- ============================================================== -->
+  <div class="paper">
+    
+    <div class="kop-surat">
+      <div class="kop-text">
+        <h3>FAKTUR TAGIHAN RESMI (INVOICE)</h3>
+        <h1>PT SKILLANCE DIGITAL INDONESIA</h1>
+        <p class="sub">Portal Siber Resmi: Cerita Rakyat ID (www.xyronnews.com)</p>
+        <p class="meta">SK Kemenkumham RI: AHU-0000000.AH.01.01.TAHUN 2026 | NPWP: 00.000.000.0-000.000 | NIB: 0000000000000</p>
+      </div>
+    </div>
+
+    <!-- INVOICE SECTION -->
+    <table class="table-borderless">
+      <tr>
+        <td style="width:130px;"><strong>Nomor Invoice</strong></td>
+        <td style="width:10px;">:</td>
+        <td contenteditable="true"><strong>INV/SDI-PUB/2026/XI-0042</strong></td>
+        <td style="text-align:right;">Tanggal: <span contenteditable="true">11 November 2026</span></td>
+      </tr>
+      <tr>
+        <td><strong>Ditujukan Kepada</strong></td>
+        <td>:</td>
+        <td contenteditable="true"><strong>Bendahara Pengeluaran / Pejabat Pembuat Komitmen (PPK)</strong></td>
+        <td style="text-align:right;">Jatuh Tempo: <span contenteditable="true">Sesuai SP2D</span></td>
+      </tr>
+      <tr>
+        <td><strong>Instansi / Dinas</strong></td>
+        <td>:</td>
+        <td colspan="2" contenteditable="true">Dinas Komunikasi dan Informatika / Pemerintah Daerah</td>
+      </tr>
+    </table>
+
+    <table class="table-custom" style="margin-top:10px;">
+      <thead>
+        <tr>
+          <th style="width:35px;">NO</th>
+          <th>URAIAN PEKERJAAN PUBLIKASI</th>
+          <th style="width:80px;">VOLUME</th>
+          <th style="width:120px;">HARGA SATUAN</th>
+          <th style="width:130px;">TOTAL (RP)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="text-align:center;">1</td>
+          <td contenteditable="true">
+            <strong>Paket Publikasi Media & Kemitraan Kedinasan (Periode November 2026):</strong><br>
+            • Penayangan 4 Artikel Rilis Pers & Liputan Kegiatan Kedinasan secara permanen.<br>
+            • Penayangan Logo Instansi pada Widget "Mitra Resmi" di portal xyronnews.com selama 1 bulan.<br>
+            • Penyusunan Dokumen LPJ, BAST, BAPHP, dan Rekapitulasi Kliping Bukti Tayang Digital.
+          </td>
+          <td style="text-align:center;" contenteditable="true">1 Paket</td>
+          <td style="text-align:right;" contenteditable="true">Rp 2.000.000,-</td>
+          <td style="text-align:right;" contenteditable="true"><strong>Rp 2.000.000,-</strong></td>
+        </tr>
+        <tr>
+          <td colspan="4" style="text-align:right;font-weight:bold;">SUBTOTAL:</td>
+          <td style="text-align:right;font-weight:bold;" contenteditable="true">Rp 2.000.000,-</td>
+        </tr>
+        <tr>
+          <td colspan="4" style="text-align:right;">Potongan PPh Pasal 23 (2%) / Pajak Daerah [Bila Dikenakan]:</td>
+          <td style="text-align:right;" contenteditable="true">- Rp 40.000,-</td>
+        </tr>
+        <tr style="background:#f1f5f9;font-weight:bold;">
+          <td colspan="4" style="text-align:right;font-size:11pt;">JUMLAH DITERIMA BERSIH (NETTO):</td>
+          <td style="text-align:right;font-size:11.5pt;color:#0047CC;" contenteditable="true">Rp 1.960.000,-</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- KWITANSI RESMI MATERAI 10.000 -->
+    <div class="kwitansi-border">
+      <div style="display:flex;justify-content:space-between;border-bottom:2px solid #000;padding-bottom:6px;margin-bottom:10px;">
+        <span style="font-size:13pt;font-weight:900;letter-spacing:1px;text-transform:uppercase;">KWITANSI / BUKTI PEMBAYARAN RESMI</span>
+        <span style="font-weight:bold;font-size:11pt;" contenteditable="true">No. KW/SDI-PUB/2026/XI-0042</span>
+      </div>
+
+      <table class="table-borderless" style="font-size:10.5pt;">
+        <tr>
+          <td style="width:160px;">Telah Terima Dari</td>
+          <td style="width:10px;">:</td>
+          <td contenteditable="true"><strong>Kuasa Pengguna Anggaran / Bendahara Pengeluaran Dinas Kominfo</strong></td>
+        </tr>
+        <tr>
+          <td>Uang Sejumlah</td>
+          <td>:</td>
+          <td>
+            <div class="terbilang-box" contenteditable="true">
+              == Dua Juta Rupiah ==
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Untuk Pembayaran</td>
+          <td>:</td>
+          <td contenteditable="true">
+            Biaya Paket Kemitraan Publikasi Liputan Kegiatan Kedinasan, Media Partner, Penayangan Logo Mitra Resmi, dan Dukungan Kliping LPJ pada Portal Berita Siber Cerita Rakyat ID (xyronnews.com) Periode Bulan November 2026.
+          </td>
+        </tr>
+      </table>
+
+      <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-top:15px;">
+        <div>
+          <div class="nominal-display" contenteditable="true">
+            Rp 2.000.000,-
+          </div>
+          <p style="margin:8px 0 0 0;font-size:8.5pt;font-family:Arial,sans-serif;color:#555;">
+            Transfer ke Rekening Bank Perusahaan Pers:<br>
+            <strong>Bank: [BCA / BNI / Bank Sultra]</strong><br>
+            <strong>No. Rek: [Nomor Rekening PT Skillance]</strong><br>
+            <strong>A.N: PT SKILLANCE DIGITAL INDONESIA</strong>
+          </p>
+        </div>
+
+        <div style="text-align:center;width:240px;">
+          <p style="margin:0;font-size:10pt;">Kendari, <span contenteditable="true">11 November 2026</span></p>
+          <p style="margin:2px 0 0 0;font-weight:bold;font-size:10pt;">PT SKILLANCE DIGITAL INDONESIA</p>
+          <div class="ttd-space" style="height:60px;">
+            <div class="materai-box">Materai Rp 10.000</div>
+          </div>
+          <p class="ttd-name" contenteditable="true">MUH. RAHWAN</p>
+          <p style="margin:0;font-size:9.5pt;">Direktur Utama / Pemimpin Umum</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <script>
+    let editMode = true;
+    function toggleEditMode() {
+      editMode = !editMode;
+      const editables = document.querySelectorAll('[contenteditable]');
+      const btn = document.getElementById('btnEdit');
+      editables.forEach(el => {
+        el.setAttribute('contenteditable', editMode ? 'true' : 'false');
+      });
+      if (editMode) {
+        btn.innerText = '✏️ Mode Ketik: Aktif';
+        btn.style.background = '#f1f5f9';
+        btn.style.color = '#334155';
+      } else {
+        btn.innerText = '🔒 Mode Pratinjau (Kunci)';
+        btn.style.background = '#e2e8f0';
+        btn.style.color = '#64748b';
+      }
+    }
+  </script>
+
+</body>
+</html>
