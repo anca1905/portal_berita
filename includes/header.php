@@ -81,7 +81,7 @@ $breakingPosts = $db->query("SELECT title, slug FROM posts WHERE status='publish
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="<?= APP_URL ?>/style.css">
+  <link rel="stylesheet" href="<?= APP_URL ?>/style.css?v=<?= file_exists(__DIR__ . '/../style.css') ? filemtime(__DIR__ . '/../style.css') : '1.1' ?>">
   <?php if (!empty($__globalSettings['theme_primary']) || !empty($__globalSettings['theme_secondary'])): ?>
   <style>
     :root {
