@@ -15,23 +15,38 @@ if (file_exists($envFile)) {
             [$key, $val] = explode('=', $line, 2);
             $key = trim($key);
             $val = trim($val, " \t\n\r\0\x0B\"'");
-            putenv("{$key}={$val}");
+            if (function_exists('putenv')) {
+                @putenv("{$key}={$val}");
+            }
             $_ENV[$key] = $val;
             $_SERVER[$key] = $val;
         }
     }
 }
 
+// Helper untuk membaca env dengan aman meskipun putenv/getenv dinonaktifkan
+if (!function_exists('getAppEnv')) {
+    function getAppEnv(string $key, $default = null) {
+        if (isset($_ENV[$key]) && $_ENV[$key] !== '') return $_ENV[$key];
+        if (isset($_SERVER[$key]) && $_SERVER[$key] !== '') return $_SERVER[$key];
+        if (function_exists('getenv')) {
+            $val = @getenv($key);
+            if ($val !== false && $val !== '') return $val;
+        }
+        return $default;
+    }
+}
+
 // Database
-define('DB_HOST', getenv('DB_HOST') ?: 'localhost');
-define('DB_NAME', getenv('DB_NAME') ?: 'xnn');
-define('DB_USER', getenv('DB_USER') ?: 'root');
-define('DB_PASS', getenv('DB_PASS') !== false ? getenv('DB_PASS') : '');
+define('DB_HOST', getAppEnv('DB_HOST', 'localhost'));
+define('DB_NAME', getAppEnv('DB_NAME', 'xnn'));
+define('DB_USER', getAppEnv('DB_USER', 'root'));
+define('DB_PASS', getAppEnv('DB_PASS', ''));
 define('DB_CHARSET', 'utf8mb4');
 
 // App URL (Otomatis mendeteksi domain / subfolder atau membaca dari .env)
 if (!defined('APP_URL')) {
-    $envAppUrl = getenv('APP_URL');
+    $envAppUrl = getAppEnv('APP_URL');
     if (!empty($envAppUrl)) {
         define('APP_URL', rtrim($envAppUrl, '/'));
     } else {
@@ -46,7 +61,7 @@ if (!defined('APP_URL')) {
         define('APP_URL', $scheme . $host . $baseDir);
     }
 }
-define('MAINTENANCE_MODE', filter_var(getenv('MAINTENANCE_MODE') ?: false, FILTER_VALIDATE_BOOLEAN));
+define('MAINTENANCE_MODE', filter_var(getAppEnv('MAINTENANCE_MODE', false), FILTER_VALIDATE_BOOLEAN));
 define('UPLOADS_DIR', __DIR__ . '/../uploads/');
 define('UPLOADS_URL', APP_URL . '/uploads/');
 
