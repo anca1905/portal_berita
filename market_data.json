@@ -1,0 +1,65 @@
+{
+  "updated_at": "2026-06-21 00:49:51",
+  "data": [
+    {
+      "name": "IHSG",
+      "value": "6.177,14",
+      "change": "+0.08%",
+      "up": true
+    },
+    {
+      "name": "IDR/USD",
+      "value": "Rp 17.821",
+      "change": "-0.39%",
+      "up": false
+    },
+    {
+      "name": "IDR/EUR",
+      "value": "Rp 20.379",
+      "change": "-1.09%",
+      "up": false
+    },
+    {
+      "name": "Bitcoin",
+      "value": "$63.969,73",
+      "change": "+0.67%",
+      "up": true
+    },
+    {
+      "name": "Ethereum",
+      "value": "$1.732,69",
+      "change": "+1.27%",
+      "up": true
+    },
+    {
+      "name": "Emas",
+      "value": "$4.172,90",
+      "change": "-1.21%",
+      "up": false
+    },
+    {
+      "name": "Minyak WTI",
+      "value": "$76,54",
+      "change": "-0.08%",
+      "up": false
+    },
+    {
+      "name": "S&P 500",
+      "value": "7.500,58",
+      "change": "+1.08%",
+      "up": true
+    },
+    {
+      "name": "Nikkei",
+      "value": "71.250,06",
+      "change": "+0.28%",
+      "up": true
+    },
+    {
+      "name": "Hang Seng",
+      "value": "23.924,81",
+      "change": "-1.59%",
+      "up": false
+    }
+  ]
+}

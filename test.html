@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perjanjian Kerja Sama - Skillance</title>
+    <style>
+        /* Pengaturan Layout Kertas A4 */
+        body {
+            font-family: 'Times New Roman', Times, serif; /* Font standar dokumen legal */
+            line-height: 1.6;
+            color: #000;
+            background-color: #e0e0e0;
+            margin: 0;
+            padding: 20px;
+        }
+        .a4-page {
+            width: 210mm;
+            min-height: 297mm;
+            padding: 20mm;
+            margin: 0 auto;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            box-sizing: border-box;
+        }
+        
+        /* Tipografi Dokumen */
+        h1 {
+            font-size: 16pt;
+            text-align: center;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+        h2 {
+            font-size: 14pt;
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 30px;
+            text-decoration: underline;
+        }
+        h3 {
+            font-size: 12pt;
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        p, li {
+            font-size: 12pt;
+            text-align: justify;
+        }
+        
+        /* Utilitas Formating */
+        .bold { font-weight: bold; }
+        .center { text-align: center; }
+        .indent { padding-left: 30px; }
+        .mt-20 { margin-top: 20px; }
+        
+        /* Area Tanda Tangan */
+        .signature-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 50px;
+            page-break-inside: avoid;
+        }
+        .signature-box {
+            width: 45%;
+            text-align: center;
+        }
+        .materai {
+            margin: 30px auto;
+            width: 100px;
+            height: 60px;
+            border: 1px dashed #666;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 8pt;
+            color: #666;
+        }
+        .sign-name {
+            font-weight: bold;
+            text-decoration: underline;
+            margin-bottom: 0;
+        }
+
+        /* Pengaturan Cetak (Print) */
+        @media print {
+            body {
+                background-color: transparent;
+                padding: 0;
+            }
+            .a4-page {
+                box-shadow: none;
+                margin: 0;
+                width: 100%;
+                padding: 15mm; /* Penyesuaian margin printer */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="a4-page">
+        <h1>PERJANJIAN KERJA SAMA (PKS)</h1>
+        <h2>PENGELOLAAN WEBSITE DAN MEDIA PARTNERSHIP</h2>
+        
+        <p>Pada hari ini, <span class="bold">[Hari]</span> tanggal <span class="bold">[Tanggal]</span> bulan <span class="bold">[Bulan]</span> tahun <span class="bold">[Tahun]</span>, bertempat di Kolaka, yang bertanda tangan di bawah ini:</p>
+
+        <table style="width: 100%; margin-bottom: 15px;">
+            <tr>
+                <td style="width: 3%; vertical-align: top;">I.</td>
+                <td style="width: 25%; vertical-align: top;">Nama Lengkap</td>
+                <td style="width: 2%; vertical-align: top;">:</td>
+                <td><strong>Muh. Arsyad Ramsi</strong></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td style="vertical-align: top;">Jabatan</td>
+                <td style="vertical-align: top;">:</td>
+                <td>Chief Executive Officer (CEO) Skillance Digital Indonesia</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td style="vertical-align: top;">Alamat Kantor</td>
+                <td style="vertical-align: top;">:</td>
+                <td>[Alamat Lengkap Skillance, Kolaka]</td>
+            </tr>
+        </table>
+        <p class="indent">Dalam hal ini bertindak untuk dan atas nama <strong>Skillance Digital Indonesia (Vanguard Ramsi Group)</strong>, yang selanjutnya disebut sebagai <strong>PIHAK PERTAMA</strong>.</p>
+
+        <table style="width: 100%; margin-bottom: 15px; margin-top: 15px;">
+            <tr>
+                <td style="width: 3%; vertical-align: top;">II.</td>
+                <td style="width: 25%; vertical-align: top;">Nama Lengkap</td>
+                <td style="width: 2%; vertical-align: top;">:</td>
+                <td><strong>[Nama Penanggung Jawab Partner]</strong></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td style="vertical-align: top;">Jabatan</td>
+                <td style="vertical-align: top;">:</td>
+                <td>[Jabatan, misal: Pimpinan Redaksi / Direktur]</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td style="vertical-align: top;">Nama Instansi/Media</td>
+                <td style="vertical-align: top;">:</td>
+                <td><strong>[Nama Portal Berita / Media]</strong></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td style="vertical-align: top;">Alamat Kantor</td>
+                <td style="vertical-align: top;">:</td>
+                <td>[Alamat Lengkap Media Partner]</td>
+            </tr>
+        </table>
+        <p class="indent">Dalam hal ini bertindak untuk dan atas nama <strong>[Nama Portal Berita / Media]</strong>, yang selanjutnya disebut sebagai <strong>PIHAK KEDUA</strong>.</p>
+
+        <p class="mt-20">PIHAK PERTAMA dan PIHAK KEDUA secara bersama-sama selanjutnya disebut sebagai <strong>"PARA PIHAK"</strong>. PARA PIHAK sepakat untuk mengikatkan diri dalam Perjanjian Kerja Sama (*In-Kind Agreement*) dengan syarat dan ketentuan sebagai berikut:</p>
+
+        <h3>PASAL 1<br>OBJEK KERJA SAMA</h3>
+        <p>Objek dari perjanjian ini adalah penyediaan, pengelolaan, dan pemeliharaan (*maintenance*) sistem *website* portal berita milik PIHAK KEDUA oleh PIHAK PERTAMA, yang dikompensasikan dengan ruang promosi, iklan (*banner*), dan status *Sponsorship Media Partner* bagi PIHAK PERTAMA di platform milik PIHAK KEDUA.</p>
+
+        <h3>PASAL 2<br>HAK DAN KEWAJIBAN</h3>
+        <p><strong>1. Kewajiban PIHAK PERTAMA:</strong></p>
+        <ol type="a">
+            <li>Menyediakan *website* portal berita yang dapat beroperasi dengan baik.</li>
+            <li>Menyediakan infrastruktur *Hosting/Server (VPS)* selama masa perjanjian berlaku.</li>
+            <li>Melakukan pemeliharaan (*maintenance*) rutin dan memastikan *uptime server* berjalan optimal.</li>
+            <li>Memberikan dukungan teknis apabila terjadi kendala sistem pada *website*.</li>
+        </ol>
+        
+        <p><strong>2. Hak PIHAK PERTAMA:</strong></p>
+        <ol type="a">
+            <li>Mendapatkan penempatan logo/identitas "Skillance Digital Indonesia" sebagai pihak pengembang/sponsor di bagian bawah (*footer*) *website*.</li>
+            <li>Mendapatkan slot iklan/banner promosi Skillance secara gratis yang tampil minimum pada setiap halaman artikel berita PIHAK KEDUA.</li>
+            <li>Disebutkan secara resmi sebagai *Media Partner / IT Sponsor* dalam setiap acara (*event*) yang diselenggarakan oleh PIHAK KEDUA (minimal 3 *event* per tahun).</li>
+        </ol>
+
+        <p><strong>3. Kewajiban PIHAK KEDUA:</strong></p>
+        <ol type="a">
+            <li>Mematuhi dan melaksanakan pemberian hak iklan dan *sponsorship* kepada PIHAK PERTAMA sesuai poin 2.</li>
+            <li>Tidak memindahkan pengelolaan *server*, *source code*, atau akses tingkat tinggi (*Super Admin/Root*) kepada pihak ketiga tanpa persetujuan tertulis dari PIHAK PERTAMA.</li>
+            <li>Bertanggung jawab penuh atas segala isi/konten berita, opini, dan materi jurnalistik yang diterbitkan di dalam *website*.</li>
+        </ol>
+
+        <p><strong>4. Hak PIHAK KEDUA:</strong></p>
+        <ol type="a">
+            <li>Mendapatkan layanan *website*, *hosting*, dan pemeliharaan teknis secara gratis (barter jasa) dari PIHAK PERTAMA.</li>
+            <li>Mendapatkan akses *Dashboard Admin/Editor* untuk mempublikasikan berita dan mengelola konten.</li>
+        </ol>
+
+        <div style="page-break-after: always;"></div>
+
+        <h3>PASAL 3<br>KEPEMILIKAN ASET (INTELLECTUAL PROPERTY)</h3>
+        <ol>
+            <li><strong>Source Code & Infrastruktur:</strong> Seluruh *source code*, desain struktur *database*, dan *server/VPS* tetap menjadi hak milik penuh PIHAK PERTAMA.</li>
+            <li><strong>Domain:</strong> Nama domain ([nama-domain.com]) dikelola oleh PIHAK PERTAMA, namun hak guna nama domain tetap menjadi milik PIHAK KEDUA.</li>
+            <li><strong>Konten:</strong> Seluruh artikel, gambar jurnalistik, dan data pengguna (*user/reader data*) adalah hak milik penuh PIHAK KEDUA.</li>
+        </ol>
+
+        <h3>PASAL 4<br>JANGKA WAKTU DAN EVALUASI</h3>
+        <ol>
+            <li>Perjanjian ini berlaku selama <strong>1 (satu) tahun</strong> terhitung sejak tanggal ditandatanganinya perjanjian ini, dan dapat diperpanjang secara otomatis apabila tidak ada keberatan tertulis dari PARA PIHAK.</li>
+            <li>PARA PIHAK akan melakukan evaluasi kinerja sama setiap 6 (enam) bulan, termasuk evaluasi biaya tambahan (*Cost Escalation*) apabila lonjakan *traffic/pengunjung* menuntut peningkatan kapasitas *server* yang lebih besar.</li>
+        </ol>
+
+        <h3>PASAL 5<br>KLAUSUL PENGHENTIAN & FORCE MAJEURE</h3>
+        <ol>
+            <li>Salah satu pihak dapat mengakhiri perjanjian ini dengan memberikan pemberitahuan tertulis paling lambat 30 (tiga puluh) hari sebelumnya.</li>
+            <li>Apabila perjanjian berakhir, PIHAK PERTAMA berkewajiban menyerahkan *backup database* artikel kepada PIHAK KEDUA, namun PIHAK PERTAMA berhak menarik/menutup akses *source code* dan *server*.</li>
+            <li>PARA PIHAK dibebaskan dari tuntutan hukum atas keterlambatan atau kegagalan pemenuhan kewajiban yang disebabkan oleh kejadian di luar kendali (*Force Majeure*) seperti bencana alam, pemadaman listrik massal, atau kebijakan regulasi pemerintah.</li>
+        </ol>
+
+        <h3>PASAL 6<br>PENYELESAIAN SENGKETA</h3>
+        <p>Apabila terjadi perselisihan dalam pelaksanaan perjanjian ini, PARA PIHAK sepakat untuk menyelesaikannya secara musyawarah untuk mufakat. Apabila musyawarah gagal mencapai kesepakatan, maka akan diselesaikan melalui jalur hukum yang berlaku di wilayah domisili Pengadilan Negeri Kabupaten Kolaka.</p>
+
+        <p class="mt-20">Demikian Perjanjian Kerja Sama ini dibuat dalam rangkap 2 (dua), masing-masing bermaterai cukup dan mempunyai kekuatan hukum yang sama, ditandatangani oleh PARA PIHAK dalam keadaan sadar dan tanpa paksaan dari pihak mana pun.</p>
+
+        <div class="signature-container">
+            <div class="signature-box">
+                <p><strong>PIHAK PERTAMA</strong><br>Skillance Digital Indonesia</p>
+                <div class="materai">Materai<br>Rp 10.000</div>
+                <p class="sign-name">Muh. Arsyad Ramsi</p>
+                <p style="margin-top: 0; font-size: 10pt;">Chief Executive Officer</p>
+            </div>
+            
+            <div class="signature-box">
+                <p><strong>PIHAK KEDUA</strong><br>[Nama Portal Berita]</p>
+                <div class="materai">Materai<br>Rp 10.000</div>
+                <p class="sign-name">[Nama Penanggung Jawab]</p>
+                <p style="margin-top: 0; font-size: 10pt;">[Jabatan Partner]</p>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

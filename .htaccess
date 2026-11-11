@@ -1,0 +1,33 @@
+# ============================================================
+# Apache Configuration & SEO Rewrite for Portal Berita
+# ============================================================
+
+Options -Indexes
+ServerSignature Off
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /portal_berita/
+
+    # Rewrite sitemap.xml & rss.xml
+    RewriteRule ^sitemap\.xml$ sitemap.php [L]
+    RewriteRule ^(rss|feed)\.xml$ rss.php [L]
+
+    # Pretty Clean URLs untuk Berita & Kategori
+    RewriteRule ^berita/([a-zA-Z0-9_-]+)/?$ berita.php?slug=$1 [QSA,L]
+    RewriteRule ^kategori/([a-zA-Z0-9_-]+)/halaman-([0-9]+)/?$ kategori.php?slug=$1&page=$2 [QSA,L]
+    RewriteRule ^kategori/([a-zA-Z0-9_-]+)/?$ kategori.php?slug=$1 [QSA,L]
+
+    # Lindungi file konfigurasi dan skrip sensitif
+    RewriteRule ^(setup\.sql|tv_channels\.sql|\.git|\.env) - [F,L]
+    RewriteRule ^scripts/ - [F,L]
+</IfModule>
+
+# Keamanan HTTP Headers
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set X-XSS-Protection "1; mode=block"
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+    Header set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+</IfModule>
