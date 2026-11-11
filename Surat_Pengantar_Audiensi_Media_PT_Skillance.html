@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>Surat Pengantar & Permohonan Audiensi Kemitraan - PT Skillance Digital Indonesia</title>
+  <title>Surat Pengantar & Permohonan Audiensi Kemitraan (5 Dinas) - PT Skillance Digital Indonesia</title>
   <link rel="icon" type="image/png" href="assets/img/logo_skillance_icon.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@700;800&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
@@ -10,7 +10,7 @@
   <style>
     @page {
       size: A4;
-      margin: 15mm 20mm 15mm 20mm;
+      margin: 14mm 18mm 14mm 18mm;
     }
     @media print {
       body {
@@ -29,7 +29,11 @@
         min-height: auto !important;
       }
       .page-break {
-        page-break-before: always;
+        page-break-before: always !important;
+        break-before: page !important;
+        height: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
       }
     }
 
@@ -38,8 +42,8 @@
     }
     body {
       font-family: 'Times New Roman', Times, serif;
-      font-size: 11.5pt;
-      line-height: 1.5;
+      font-size: 11pt;
+      line-height: 1.45;
       color: #111827;
       background: #f1f4f8;
       margin: 0;
@@ -61,12 +65,27 @@
       box-shadow: 0 4px 15px rgba(0,0,0,0.25);
       z-index: 99999;
       font-family: 'Inter', Arial, sans-serif;
-      margin: -20px -20px 25px -20px;
+      margin: -20px -20px 20px -20px;
     }
     .toolbar-left, .toolbar-right {
       display: flex;
       align-items: center;
       gap: 12px;
+    }
+    .btn-back {
+      background: rgba(255,255,255,0.15);
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 6px 12px;
+      border-radius: 6px;
+      border: 1px solid rgba(255,255,255,0.25);
+      transition: all 0.2s;
+    }
+    .btn-back:hover {
+      background: rgba(255,255,255,0.3);
+      color: #ffffff;
     }
     .badge-org {
       background: #fe9800;
@@ -97,17 +116,97 @@
       background: #fe9800;
       color: #0d2e5c;
       border: none;
-      font-size: 13px;
+      font-size: 12.5px;
       font-weight: 800;
-      padding: 8px 18px;
+      padding: 7px 16px;
       border-radius: 6px;
       cursor: pointer;
       box-shadow: 0 2px 8px rgba(0,0,0,0.2);
       transition: all 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
     }
     .btn-print-main:hover {
       background: #ffa726;
       transform: translateY(-1px);
+    }
+
+    /* Target OPD Selector Bar */
+    .opd-selector-card {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 16px 20px;
+      max-width: 210mm;
+      margin: 0 auto 20px auto;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      border: 1px solid #e2e8f0;
+      font-family: 'Inter', Arial, sans-serif;
+    }
+    .opd-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+    .opd-pill {
+      background: #f8fafc;
+      border: 1px solid #cbd5e1;
+      color: #1e293b;
+      padding: 7px 13px;
+      border-radius: 8px;
+      font-size: 11.5px;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      transition: all 0.2s;
+    }
+    .opd-pill:hover {
+      background: #eef2f6;
+      border-color: #94a3b8;
+    }
+    .opd-pill.active {
+      background: #0d2e5c;
+      color: #ffffff;
+      border-color: #0d2e5c;
+      box-shadow: 0 2px 6px rgba(13,46,92,0.3);
+    }
+    .opd-pill.all-pill.active {
+      background: #fe9800;
+      color: #0d2e5c;
+      border-color: #fe9800;
+      font-weight: 800;
+    }
+
+    /* Parameter Controls */
+    .opd-controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px solid #f1f5f9;
+      font-size: 12px;
+    }
+    .opd-control-group {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .opd-control-group label {
+      font-weight: 600;
+      color: #475569;
+    }
+    .opd-control-group input {
+      padding: 5px 10px;
+      border-radius: 6px;
+      border: 1px solid #cbd5e1;
+      font-size: 12px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      color: #0d2e5c;
     }
 
     /* A4 Paper Styling */
@@ -116,7 +215,7 @@
       max-width: 210mm;
       min-height: 297mm;
       margin: 0 auto 30px auto;
-      padding: 22mm 22mm;
+      padding: 20mm 20mm;
       box-shadow: 0 4px 18px rgba(0,0,0,0.12);
       position: relative;
     }
@@ -125,14 +224,14 @@
     .kop-surat {
       border-bottom: 3px double #0d2e5c;
       padding-bottom: 12px;
-      margin-bottom: 22px;
+      margin-bottom: 20px;
       display: flex;
       align-items: center;
       gap: 16px;
     }
     .kop-logo {
-      width: 82px;
-      height: 82px;
+      width: 80px;
+      height: 80px;
       object-fit: contain;
       flex-shrink: 0;
     }
@@ -169,15 +268,15 @@
     /* Letter Meta Grid */
     .meta-table {
       width: 100%;
-      margin-bottom: 20px;
-      font-size: 11pt;
+      margin-bottom: 18px;
+      font-size: 10.5pt;
     }
     .meta-table td {
       vertical-align: top;
       padding: 2px 0;
     }
     .meta-table td.col-label {
-      width: 90px;
+      width: 85px;
     }
     .meta-table td.col-colon {
       width: 15px;
@@ -186,8 +285,8 @@
 
     /* Recipient Box */
     .recipient-box {
-      margin-bottom: 24px;
-      font-size: 11.5pt;
+      margin-bottom: 20px;
+      font-size: 11pt;
       line-height: 1.45;
     }
 
@@ -195,19 +294,21 @@
     p {
       text-align: justify;
       margin-top: 0;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
       text-indent: 32px;
+      font-size: 11pt;
     }
     p.no-indent {
       text-indent: 0;
     }
     ol, ul {
       margin-top: 4px;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
       padding-left: 36px;
+      font-size: 10.5pt;
     }
     li {
-      margin-bottom: 5px;
+      margin-bottom: 4px;
       text-align: justify;
     }
 
@@ -216,16 +317,16 @@
       background: #f8fafc;
       border: 1px solid #e2e8f0;
       border-left: 4px solid #0d2e5c;
-      padding: 12px 18px;
-      margin: 14px 0;
+      padding: 10px 16px;
+      margin: 12px 0;
       font-family: 'Inter', Arial, sans-serif;
-      font-size: 10.5pt;
+      font-size: 10pt;
       border-radius: 4px;
     }
 
     /* Signature Area */
     .signature-wrapper {
-      margin-top: 35px;
+      margin-top: 25px;
       display: flex;
       justify-content: flex-end;
       page-break-inside: avoid;
@@ -235,53 +336,53 @@
       text-align: center;
     }
     .ttd-space {
-      height: 85px;
-      min-height: 85px;
+      height: 80px;
+      min-height: 80px;
       position: relative;
     }
     .ttd-name {
       font-weight: bold;
       text-decoration: underline;
       margin-bottom: 2px;
-      font-size: 12pt;
+      font-size: 11.5pt;
     }
     .ttd-role {
-      font-size: 10.5pt;
+      font-size: 10pt;
       margin: 0;
       color: #374151;
     }
 
     /* Tanda Terima / Ekspedisi Slip */
     .receipt-slip-container {
-      margin-top: 40px;
+      margin-top: 30px;
       border-top: 2px dashed #94a3b8;
-      padding-top: 18px;
+      padding-top: 14px;
       font-family: 'Inter', Arial, sans-serif;
-      font-size: 9.5pt;
+      font-size: 9pt;
       page-break-inside: avoid;
     }
     .receipt-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
     .receipt-title {
       font-weight: bold;
       color: #0d2e5c;
       text-transform: uppercase;
-      font-size: 10pt;
+      font-size: 9.5pt;
       letter-spacing: 0.5px;
     }
     .receipt-table {
       width: 100%;
       border-collapse: collapse;
-      margin-bottom: 10px;
+      margin-bottom: 6px;
     }
     .receipt-table td {
-      padding: 5px 8px;
+      padding: 4px 8px;
       border: 1px solid #cbd5e1;
-      font-size: 9pt;
+      font-size: 8.5pt;
     }
     .receipt-table td.header-col {
       background: #f8fafc;
@@ -289,7 +390,7 @@
       width: 130px;
     }
 
-    /* Editable Field Highlight for Browser Editing */
+    /* Editable Field Highlight */
     [contenteditable="true"] {
       outline: none;
       transition: background 0.2s;
@@ -309,8 +410,10 @@
   <!-- Master Top Navigation & Printing Toolbar (No Print) -->
   <div class="top-nav-bar no-print">
     <div class="toolbar-left">
+      
       <span class="badge-org">PT SKILLANCE DIGITAL INDONESIA</span>
       <span class="badge-doc">Surat Resmi Kedinasan</span>
+    
       <span style="font-size: 13px; font-weight: bold; color: #fff;">Surat Pengantar & Permohonan Audiensi Kemitraan</span>
     </div>
     <div class="toolbar-right">
@@ -318,165 +421,329 @@
         <i class="fa-solid fa-stamp"></i> <strong>Mode Cetak Fisik:</strong> Siap untuk Tanda Tangan & Cap Basah Perusahaan
       </span>
       <button class="btn-print-main" onclick="window.print()">
-        🖨️ Cetak Surat (A4)
+        <i class="fa-solid fa-print"></i> Cetak Dokumen (A4)
       </button>
     </div>
   </div>
 
-  <div class="paper">
-    
-    <!-- KOP SURAT RESMI PT SKILLANCE DIGITAL INDONESIA -->
-    <div class="kop-surat">
-      <img src="assets/img/logo_skillance_icon.png" class="kop-logo" alt="Logo PT Skillance Digital Indonesia">
-      <div class="kop-text">
-        <h2 class="kop-title-main">PT SKILLANCE DIGITAL INDONESIA</h2>
-        <div class="kop-sub">LEMBAGA PENERBIT MEDIA SIBER & KONSORSIUM TEKNOLOGI INFORMASI</div>
-        <p class="meta"><strong>Portal Berita Resmi:</strong> Cerita Rakyat ID (www.xyronnews.com) &bull; XyronNews Network</p>
-        <p class="meta"><strong>SK Kemenkumham RI:</strong> AHU-A138609.AH.01.30.Tahun 2026 &bull; <strong>NPWP Badan:</strong> 100000011940526 &bull; <strong>NIB OSS:</strong> Terdaftar Resmi BKPM RI</p>
-        <p class="meta"><strong>Alamat Kantor:</strong> Desa Pabiring Dusun Taruseng, Kec. Poleang Barat, Kab. Bombana, Sulawesi Tenggara 93772</p>
-        <p class="meta"><strong>Website:</strong> https://skillance.my.id &bull; <strong>Surel:</strong> official@skillance.my.id / redaksi@xyronnews.com &bull; <strong>Hotline/Redaksi:</strong> 0811-4030-800</p>
+  <!-- OPD SELECTOR CARD (NO PRINT) -->
+  <div class="opd-selector-card no-print">
+    <div class="d-flex justify-content-between align-items-center mb-1">
+      <div>
+        <strong style="color: #0d2e5c; font-size: 13.5px;"><i class="fa-solid fa-building-columns text-warning me-1.5"></i>Pilih Instansi Tujuan Surat (5 Dinas Sasaran):</strong>
+        <div style="font-size: 11.5px; color: #64748b;">Pilih dinas di bawah untuk memuat surat khusus, atau pilih "Cetak Semua Sekaligus" untuk mencetak 5 berkas berurutan.</div>
+      </div>
+      <div>
+        <span class="badge" id="activeOpdBadge" style="background:#0d2e5c;color:#fff;font-size:11px;padding:5px 10px;border-radius:6px;">Dinas Terpilih: Dinas Pendidikan</span>
       </div>
     </div>
 
-    <!-- TANGGAL & META SURAT -->
-    <table class="meta-table">
-      <tr>
-        <td class="col-label">Nomor</td>
-        <td class="col-colon">:</td>
-        <td><strong contenteditable="true">031/EXT-AUD/SDI-CRID/XI/2026</strong></td>
-        <td style="text-align: right;" contenteditable="true">Bombana, 12 November 2026</td>
-      </tr>
-      <tr>
-        <td class="col-label">Lampiran</td>
-        <td class="col-colon">:</td>
-        <td contenteditable="true">1 (Satu) Berkas Proposal Kemitraan & Draft Naskah MoU</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td class="col-label">Sifat</td>
-        <td class="col-colon">:</td>
-        <td><strong contenteditable="true">Penting / Resmi</strong></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td class="col-label">Hal</td>
-        <td class="col-colon">:</td>
-        <td><strong contenteditable="true">Permohonan Audiensi Silaturahmi & Penawaran Kemitraan Publikasi Media Kedinasan</strong></td>
-        <td></td>
-      </tr>
-    </table>
-
-    <!-- TUJUAN SURAT (KEPADA YTH) -->
-    <div class="recipient-box" contenteditable="true">
-      Kepada Yth.<br>
-      <strong>Bapak/Ibu Kepala Dinas Komunikasi dan Informatika</strong><br>
-      Pemerintah Kabupaten / Kota / Provinsi<br>
-      di &ndash;<br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<strong>Tempat</strong>
+    <div class="opd-pills">
+      <button type="button" class="opd-pill active" onclick="switchOpd('pendidikan')">
+        <i class="fa-solid fa-graduation-cap text-primary"></i> 1. Dinas Pendidikan
+      </button>
+      <button type="button" class="opd-pill" onclick="switchOpd('kehutanan')">
+        <i class="fa-solid fa-tree text-success"></i> 2. Dinas Kehutanan
+      </button>
+      <button type="button" class="opd-pill" onclick="switchOpd('dispora')">
+        <i class="fa-solid fa-trophy text-warning"></i> 3. Dinas Pemuda & Olahraga
+      </button>
+      <button type="button" class="opd-pill" onclick="switchOpd('inspektorat')">
+        <i class="fa-solid fa-scale-balanced text-danger"></i> 4. Inspektorat Daerah
+      </button>
+      <button type="button" class="opd-pill" onclick="switchOpd('dukcapil')">
+        <i class="fa-solid fa-id-card text-info"></i> 5. Dinas Capil (Dukcapil)
+      </button>
+      <button type="button" class="opd-pill all-pill" onclick="switchOpd('all')">
+        <i class="fa-solid fa-layer-group"></i> 📑 CETAK SEMUA SEKALIGUS (5 BERKAS A4)
+      </button>
     </div>
 
-    <!-- ISI SURAT -->
-    <p class="no-indent">Dengan hormat,</p>
-
-    <p>
-      Salam silaturahmi kami sampaikan, teriring doa semoga Bapak/Ibu beserta seluruh jajaran senantiasa berada dalam lindungan Tuhan Yang Maha Esa serta diberikan kelancaran dalam menjalankan tugas-tugas pengabdian kepada masyarakat, daerah, bangsa, dan negara.
-    </p>
-
-    <p>
-      Perkenankan kami dari <strong>PT SKILLANCE DIGITAL INDONESIA</strong>, sebuah badan hukum perseroan resmi yang bergerak di bidang penyelenggaraan portal media siber dan teknologi informasi, dengan menaungi media portal berita siber <strong>Cerita Rakyat ID (www.xyronnews.com)</strong>. Kami berkomitmen menyajikan jurnalisme yang berimbang, edukatif, dan berperan aktif mengawal keterbukaan informasi publik serta diseminasi program pembangunan daerah.
-    </p>
-
-    <p>
-      Sehubungan dengan agenda penguatan penyebarluasan informasi capaian pembangunan, publikasi kebijakan kedinasan, kegiatan pimpinan daerah, serta penayangan siaran pers resmi pemerintah kepada khalayak luas, bersama ini kami bermaksud mengajukan <strong>Penawaran Kerja Sama Kemitraan Media Siber & Publikasi Informasi Publik</strong> untuk Tahun Anggaran berjalan.
-    </p>
-
-    <p>
-      Guna memaparkan secara komprehensif mengenai skema kemitraan, portofolio jangkauan media, format Laporan Pertanggungjawaban (LPJ) bukti tayang berita, serta sinergi strategis yang dapat dibangun bersama instansi yang Bapak/Ibu pimpin, kami mengajukan permohonan kesediaan waktu Bapak/Ibu untuk menerima kami dalam agenda:
-    </p>
-
-    <div class="highlight-box" contenteditable="true">
-      <table style="width: 100%;">
-        <tr>
-          <td style="width: 130px; font-weight: bold; color: #0d2e5c;">Agenda Kegiatan</td>
-          <td style="width: 15px;">:</td>
-          <td><strong>Audiensi, Silaturahmi Formal, dan Pemaparan Kerja Sama Publikasi</strong></td>
-        </tr>
-        <tr>
-          <td style="font-weight: bold; color: #0d2e5c;">Hari / Tanggal</td>
-          <td>:</td>
-          <td><em>Menyesuaikan dengan keluangan waktu dan petunjuk Disposisi Bapak/Ibu</em></td>
-        </tr>
-        <tr>
-          <td style="font-weight: bold; color: #0d2e5c;">Tempat</td>
-          <td>:</td>
-          <td>Ruang Kerja Kepala Dinas / Ruang Rapat Instansi Bapak/Ibu</td>
-        </tr>
-        <tr>
-          <td style="font-weight: bold; color: #0d2e5c;">Narahubung</td>
-          <td>:</td>
-          <td><strong>Muh. Arsyad Ramsi</strong> (Hotline/WA: 0811-4030-800)</td>
-        </tr>
-      </table>
-    </div>
-
-    <p>
-      Sebagai bahan telaah dan pertimbangan awal Bapak/Ibu, turut kami lampirkan 1 (satu) bundel berkas kelengkapan administrasi yang terdiri dari:
-    </p>
-    <ol>
-      <li>Salinan Profil Perusahaan & Legalitas Badan Usaha PT Skillance Digital Indonesia (SK Kemenkumham, NIB OSS, NPWP Badan).</li>
-      <li>Draft Naskah Nota Kesepahaman (MoU) dan Surat Perjanjian Kerja Sama (PKS) Publikasi Kedinasan.</li>
-      <li>Rincian Paket Kemitraan Media (Pemberitaan Rilis, Advertorial Khusus, Liputan Dokumentasi, dan Banner Informasi).</li>
-      <li>Standar Format Laporan Pertanggungjawaban (LPJ) dan Kliping Media Siber Terverifikasi Redaksi.</li>
-    </ol>
-
-    <p>
-      Demikian surat permohonan audiensi dan penawaran kemitraan ini kami sampaikan dengan penuh harapan. Atas perhatian, perkenan, dan kesempatan silaturahmi yang Bapak/Ibu berikan, kami haturkan terima kasih yang sebesar-besarnya.
-    </p>
-
-    <!-- TANDA TANGAN -->
-    <div class="signature-wrapper">
-      <div class="signature-box">
-        <p style="margin: 0; font-size: 11pt;">Hormat kami,</p>
-        <p style="margin: 0; font-weight: bold; font-size: 11pt;">PT SKILLANCE DIGITAL INDONESIA</p>
-        <div class="ttd-space">
-          <!-- Bersih untuk tanda tangan pulpen & cap stempel basah fisik perusahaan -->
-        </div>
-        <p class="ttd-name" contenteditable="true">MUH. ARSYAD RAMSI</p>
-        <p class="ttd-role" contenteditable="true">Direktur Utama</p>
+    <div class="opd-controls">
+      <div class="opd-control-group">
+        <label><i class="fa-solid fa-map-location-dot me-1"></i>Wilayah Pemerintah:</label>
+        <input type="text" id="inputRegion" value="Kabupaten Bombana" oninput="applyGlobalParams()">
+      </div>
+      <div class="opd-control-group">
+        <label><i class="fa-solid fa-calendar-day me-1"></i>Tanggal Surat:</label>
+        <input type="text" id="inputDate" value="12 November 2026" oninput="applyGlobalParams()">
+      </div>
+      <div class="opd-control-group">
+        <label><i class="fa-solid fa-phone me-1"></i>Narahubung / WA:</label>
+        <input type="text" id="inputPhone" value="0811-4030-800" oninput="applyGlobalParams()">
       </div>
     </div>
-
-    <!-- LEMBAR TANDA TERIMA / EKSPEDISI SURAT (NO PRINT CUT / BUKTI SERAH TERIMA) -->
-    <div class="receipt-slip-container">
-      <div class="receipt-header">
-        <span class="receipt-title"><i class="fa-solid fa-receipt me-1"></i>Lembar Tanda Terima Penyerahan Surat (Ekspedisi)</span>
-        <small class="text-muted" style="font-size: 8pt;">Diisi oleh Bagian Umum / TU / Resepsionis Penerima Surat</small>
-      </div>
-      <table class="receipt-table">
-        <tr>
-          <td class="header-col">Instansi Penerima</td>
-          <td contenteditable="true">Dinas Komunikasi dan Informatika / Instansi: .....................................................</td>
-          <td class="header-col">No. Agenda Surat</td>
-          <td contenteditable="true">..........................................</td>
-        </tr>
-        <tr>
-          <td class="header-col">Nama Penerima</td>
-          <td contenteditable="true">....................................................................................</td>
-          <td class="header-col">Tanggal & Jam Terima</td>
-          <td contenteditable="true">...... / ...... / 2026 &bull; Jam: ............</td>
-        </tr>
-        <tr>
-          <td class="header-col">Jabatan / Bagian</td>
-          <td contenteditable="true">Bagian Umum / TU / Persuratan / Ajudan</td>
-          <td class="header-col">Paraf & Cap Stempel Instansi</td>
-          <td style="height: 45px; vertical-align: middle; text-align: center; color: #94a3b8;">
-            ( Paraf & Cap Stempel Basah TU Penerima )
-          </td>
-        </tr>
-      </table>
-    </div>
-
   </div>
+
+  <!-- CONTAINER PRINT AREA (DYNAMIC RENDERED) -->
+  <div id="printAreaContainer"></div>
+
+  <script>
+    const dinasData = [
+      {
+        id: 'pendidikan',
+        num: '031',
+        name: 'Dinas Pendidikan',
+        pillLabel: 'Dinas Pendidikan',
+        recipientTitle: 'Kepala Dinas Pendidikan',
+        hal: 'Permohonan Audiensi & Penawaran Kemitraan Publikasi Program Pendidikan, Prestasi Sekolah & Diseminasi Informasi Edukasi',
+        fokus: 'penguatan penyebarluasan informasi capaian program Merdeka Belajar, publikasi prestasi siswa dan tenaga pendidik berprestasi, agenda kedinasan sekolah, PPDB, serta rilis kegiatan pembinaan pendidikan daerah',
+        agendaPemaparan: 'Kemitraan Publikasi Media, Liputan Dokumentasi Prestasi Sekolah & Diseminasi Program Pendidikan'
+      },
+      {
+        id: 'kehutanan',
+        num: '032',
+        name: 'Dinas Kehutanan',
+        pillLabel: 'Dinas Kehutanan',
+        recipientTitle: 'Kepala Dinas Kehutanan',
+        hal: 'Permohonan Audiensi & Penawaran Kemitraan Publikasi Pelestarian Lingkungan, Program Kehutanan & Hutan Kemasyarakatan',
+        fokus: 'penyebarluasan informasi program pelestarian kawasan hutan, kampanye mitigasi kebakaran hutan dan lahan (Karhutla), pemberdayaan ekonomi masyarakat sekitar hutan (Hutan Kemasyarakatan), serta edukasi konservasi sumber daya alam hayati',
+        agendaPemaparan: 'Kemitraan Publikasi Kampanye Konservasi Hutan, Program Edukasi Lingkungan & Sosialisasi Kehutanan'
+      },
+      {
+        id: 'dispora',
+        num: '033',
+        name: 'Dinas Pemuda dan Olahraga',
+        pillLabel: 'Dinas Pemuda & Olahraga',
+        recipientTitle: 'Kepala Dinas Pemuda dan Olahraga',
+        hal: 'Permohonan Audiensi & Penawaran Kemitraan Media Publikasi Event Olahraga, Prestasi Atlet & Program Kepemudaan',
+        fokus: 'diseminasi pemberitaan pembinaan atlet daerah, peliputan turnamen olahraga dan kejuaraan daerah (Kejurda/Porda), pembinaan kewirausahaan pemuda, serta publikasi agenda kepemudaan daerah',
+        agendaPemaparan: 'Media Partner Resmi Kejuaraan Olahraga Daerah, Publikasi Prestasi Atlet & Program Kepemudaan'
+      },
+      {
+        id: 'inspektorat',
+        num: '034',
+        name: 'Inspektorat Daerah',
+        pillLabel: 'Inspektorat Daerah',
+        recipientTitle: 'Inspektur Daerah / Kepala Inspektorat',
+        hal: 'Permohonan Audiensi & Penawaran Kemitraan Edukasi Publikasi Pengawasan Daerah, Tata Kelola Pemerintahan & Pencegahan Korupsi',
+        fokus: 'edukasi keterbukaan informasi pengawasan fungsional, kampanye budaya integritas aparatur, sosialisasi Whistleblowing System (WBS), penguatan Sistem Pengendalian Intern Pemerintah (SPIP), serta diseminasi tata kelola pemerintahan yang bersih (Good Governance)',
+        agendaPemaparan: 'Kemitraan Publikasi Edukasi Anti Korupsi, Sosialisasi Pengawasan Aparatur & Kampanye Integritas'
+      },
+      {
+        id: 'dukcapil',
+        num: '035',
+        name: 'Dinas Kependudukan dan Pencatatan Sipil',
+        pillLabel: 'Dinas Capil (Dukcapil)',
+        recipientTitle: 'Kepala Dinas Kependudukan dan Pencatatan Sipil',
+        hal: 'Permohonan Audiensi & Penawaran Kemitraan Sosialisasi Tertib Administrasi Kependudukan, IKD & Pelayanan Publik',
+        fokus: 'penyebarluasan informasi sosialisasi aktivasi Identitas Kependudukan Digital (IKD), perekaman KTP Elektronik bagi pemilih pemula, kemudahan penerbitan Akta Kelahiran dan KIA, serta inovasi jemput bola pelayanan adminduk prima',
+        agendaPemaparan: 'Kemitraan Publikasi Sosialisasi IKD, Edukasi Tertib Dokumen Kependudukan & Inovasi Layanan Adminduk'
+      }
+    ];
+
+    let currentSelectedMode = 'pendidikan';
+
+    function renderSingleSheet(d, region, date, phone, showPageBreak = false) {
+      return `
+        <div class="paper ${showPageBreak ? 'page-break' : ''}">
+          <!-- KOP SURAT RESMI PT SKILLANCE DIGITAL INDONESIA -->
+          <div class="kop-surat">
+            <img src="assets/img/logo_skillance_icon.png" class="kop-logo" alt="Logo PT Skillance Digital Indonesia">
+            <div class="kop-text">
+              <h2 class="kop-title-main">PT SKILLANCE DIGITAL INDONESIA</h2>
+              <div class="kop-sub">LEMBAGA PENERBIT MEDIA SIBER & KONSORSIUM TEKNOLOGI INFORMASI</div>
+              <p class="meta"><strong>Portal Berita Resmi:</strong> Cerita Rakyat ID (www.xyronnews.com) &bull; XyronNews Network</p>
+              <p class="meta"><strong>SK Kemenkumham RI:</strong> AHU-A138609.AH.01.30.Tahun 2026 &bull; <strong>NPWP Badan:</strong> 100000011940526 &bull; <strong>NIB OSS:</strong> Terdaftar Resmi BKPM RI</p>
+              <p class="meta"><strong>Alamat Kantor:</strong> Desa Pabiring Dusun Taruseng, Kec. Poleang Barat, Kab. Bombana, Sulawesi Tenggara 93772</p>
+              <p class="meta"><strong>Website:</strong> https://skillance.my.id &bull; <strong>Surel:</strong> official@skillance.my.id / redaksi@xyronnews.com &bull; <strong>Hotline/Redaksi:</strong> ${phone}</p>
+            </div>
+          </div>
+
+          <!-- TANGGAL & META SURAT -->
+          <table class="meta-table">
+            <tr>
+              <td class="col-label">Nomor</td>
+              <td class="col-colon">:</td>
+              <td><strong contenteditable="true">${d.num}/EXT-AUD/SDI-CRID/XI/2026</strong></td>
+              <td style="text-align: right;" contenteditable="true">${region.replace('Kabupaten ', '').replace('Kota ', '')}, ${date}</td>
+            </tr>
+            <tr>
+              <td class="col-label">Lampiran</td>
+              <td class="col-colon">:</td>
+              <td contenteditable="true">1 (Satu) Berkas Proposal Kemitraan & Draft Naskah MoU</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td class="col-label">Sifat</td>
+              <td class="col-colon">:</td>
+              <td><strong contenteditable="true">Penting / Resmi</strong></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td class="col-label">Hal</td>
+              <td class="col-colon">:</td>
+              <td><strong contenteditable="true">${d.hal}</strong></td>
+              <td></td>
+            </tr>
+          </table>
+
+          <!-- TUJUAN SURAT (KEPADA YTH) -->
+          <div class="recipient-box" contenteditable="true">
+            Kepada Yth.<br>
+            <strong>Bapak/Ibu ${d.recipientTitle}</strong><br>
+            Pemerintah ${region}<br>
+            di &ndash;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<strong>Tempat</strong>
+          </div>
+
+          <!-- ISI SURAT -->
+          <p class="no-indent">Dengan hormat,</p>
+
+          <p>
+            Salam silaturahmi kami sampaikan, teriring doa semoga Bapak/Ibu beserta seluruh jajaran senantiasa berada dalam lindungan Tuhan Yang Maha Esa serta diberikan kelancaran dan kesuksesan dalam menjalankan tugas-tugas pengabdian kepada masyarakat, daerah, bangsa, dan negara.
+          </p>
+
+          <p>
+            Perkenankan kami dari <strong>PT SKILLANCE DIGITAL INDONESIA</strong>, sebuah badan hukum perseroan resmi yang menaungi portal media siber berita independen <strong>Cerita Rakyat ID (www.xyronnews.com)</strong>. Kami berkomitmen menyajikan jurnalisme yang terpercaya, edukatif, dan berperan aktif mengawal keterbukaan informasi publik serta menyebarluaskan program-program pembangunan daerah.
+          </p>
+
+          <p>
+            Sehubungan dengan agenda <strong>${d.fokus}</strong> agar dapat terpublikasi secara masif, tepat sasaran, dan terdokumentasi secara permanen pada mesin pencari digital, bersama ini kami bermaksud mengajukan <strong>Penawaran Kerja Sama Kemitraan Publikasi Media Kedinasan</strong> untuk Tahun Anggaran berjalan.
+          </p>
+
+          <p>
+            Guna memaparkan secara komprehensif mengenai skema kerja sama, portofolio jangkauan pembaca, format Laporan Pertanggungjawaban (LPJ) bukti tayang berita, serta sinergi strategis yang dapat dibangun bersama instansi yang Bapak/Ibu pimpin, kami mengajukan permohonan kesediaan waktu Bapak/Ibu untuk menerima kami dalam agenda:
+          </p>
+
+          <div class="highlight-box" contenteditable="true">
+            <table style="width: 100%;">
+              <tr>
+                <td style="width: 130px; font-weight: bold; color: #0d2e5c;">Agenda Kegiatan</td>
+                <td style="width: 15px;">:</td>
+                <td><strong>Audiensi, Silaturahmi Formal, dan Pemaparan Kemitraan:</strong><br><em>"${d.agendaPemaparan}"</em></td>
+              </tr>
+              <tr>
+                <td style="font-weight: bold; color: #0d2e5c;">Hari / Tanggal</td>
+                <td>:</td>
+                <td><em>Menyesuaikan dengan keluangan waktu dan petunjuk Disposisi Bapak/Ibu</em></td>
+              </tr>
+              <tr>
+                <td style="font-weight: bold; color: #0d2e5c;">Tempat</td>
+                <td>:</td>
+                <td>Ruang Kerja Kepala Dinas / Ruang Rapat Instansi Bapak/Ibu</td>
+              </tr>
+              <tr>
+                <td style="font-weight: bold; color: #0d2e5c;">Narahubung</td>
+                <td>:</td>
+                <td><strong>Muh. Arsyad Ramsi</strong> (Hotline/WhatsApp: ${phone})</td>
+              </tr>
+            </table>
+          </div>
+
+          <p>
+            Sebagai bahan telaah dan pertimbangan awal Bapak/Ibu, turut kami lampirkan 1 (satu) bundel berkas kelengkapan administrasi yang terdiri dari:
+          </p>
+          <ol>
+            <li>Salinan Profil Perusahaan & Legalitas Badan Usaha PT Skillance Digital Indonesia (SK Kemenkumham, NIB OSS, NPWP Badan).</li>
+            <li>Draft Naskah Nota Kesepahaman (MoU) dan Surat Perjanjian Kerja Sama (PKS) Publikasi Kedinasan.</li>
+            <li>Rincian Paket Kemitraan Media (Pemberitaan Rilis Resmi, Advertorial Khusus, dan Publikasi Program Unggulan).</li>
+            <li>Standar Format Laporan Pertanggungjawaban (LPJ) dan Kliping Media Siber Terverifikasi Redaksi.</li>
+          </ol>
+
+          <p>
+            Demikian surat permohonan audiensi dan penawaran kemitraan ini kami sampaikan dengan penuh harapan. Atas perhatian, perkenan, dan kesempatan silaturahmi yang Bapak/Ibu berikan, kami haturkan terima kasih yang sebesar-besarnya.
+          </p>
+
+          <!-- TANDA TANGAN (BERSIH UNTUK TTD PULPEN & CAP STEMPEL BASAH FISIK) -->
+          <div class="signature-wrapper">
+            <div class="signature-box">
+              <p style="margin: 0; font-size: 10.5pt;">Hormat kami,</p>
+              <p style="margin: 0; font-weight: bold; font-size: 10.5pt;">PT SKILLANCE DIGITAL INDONESIA</p>
+              <div class="ttd-space">
+                <!-- Area bersih khusus tanda tangan pulpen & cap stempel basah fisik perusahaan -->
+              </div>
+              <p class="ttd-name" contenteditable="true">MUH. ARSYAD RAMSI</p>
+              <p class="ttd-role" contenteditable="true">Direktur Utama</p>
+            </div>
+          </div>
+
+          <!-- LEMBAR TANDA TERIMA / EKSPEDISI SURAT -->
+          <div class="receipt-slip-container">
+            <div class="receipt-header">
+              <span class="receipt-title"><i class="fa-solid fa-receipt me-1"></i>Lembar Tanda Terima Penyerahan Surat (Ekspedisi)</span>
+              <small class="text-muted" style="font-size: 7.8pt;">Diisi oleh Bagian Umum / TU / Resepsionis Penerima Surat</small>
+            </div>
+            <table class="receipt-table">
+              <tr>
+                <td class="header-col">Instansi Penerima</td>
+                <td contenteditable="true"><strong>${d.name}</strong> &bull; Pemerintah ${region}</td>
+                <td class="header-col">No. Agenda Surat</td>
+                <td contenteditable="true">..........................................</td>
+              </tr>
+              <tr>
+                <td class="header-col">Nama Penerima</td>
+                <td contenteditable="true">....................................................................................</td>
+                <td class="header-col">Tanggal & Jam Terima</td>
+                <td contenteditable="true">...... / ...... / 2026 &bull; Jam: ............</td>
+              </tr>
+              <tr>
+                <td class="header-col">Jabatan / Bagian</td>
+                <td contenteditable="true">Bagian Umum / TU / Persuratan / Ajudan</td>
+                <td class="header-col">Paraf & Cap Stempel Dinas</td>
+                <td style="height: 40px; vertical-align: middle; text-align: center; color: #94a3b8;">
+                  ( Paraf & Cap Stempel Basah TU Penerima )
+                </td>
+              </tr>
+            </table>
+          </div>
+
+        </div>
+      `;
+    }
+
+    function switchOpd(mode) {
+      currentSelectedMode = mode;
+      
+      // Update pill classes
+      const pills = document.querySelectorAll('.opd-pill');
+      pills.forEach(p => p.classList.remove('active'));
+      
+      const badge = document.getElementById('activeOpdBadge');
+
+      if (mode === 'all') {
+        document.querySelector('.opd-pill.all-pill').classList.add('active');
+        badge.innerText = 'Mode: CETAK SEMUA SEKALIGUS (5 BERKAS)';
+        badge.style.background = '#fe9800';
+        badge.style.color = '#0d2e5c';
+      } else {
+        const matched = dinasData.find(d => d.id === mode);
+        badge.innerText = 'Dinas Terpilih: ' + (matched ? matched.name : mode);
+        badge.style.background = '#0d2e5c';
+        badge.style.color = '#fff';
+        
+        // Find index to set active pill
+        const idx = dinasData.findIndex(d => d.id === mode);
+        if (idx !== -1 && pills[idx]) {
+          pills[idx].classList.add('active');
+        }
+      }
+
+      applyGlobalParams();
+    }
+
+    function applyGlobalParams() {
+      const region = document.getElementById('inputRegion').value || 'Kabupaten Bombana';
+      const date = document.getElementById('inputDate').value || '12 November 2026';
+      const phone = document.getElementById('inputPhone').value || '0811-4030-800';
+      const container = document.getElementById('printAreaContainer');
+
+      if (currentSelectedMode === 'all') {
+        let html = '';
+        dinasData.forEach((d, i) => {
+          html += renderSingleSheet(d, region, date, phone, i > 0);
+        });
+        container.innerHTML = html;
+      } else {
+        const target = dinasData.find(d => d.id === currentSelectedMode) || dinasData[0];
+        container.innerHTML = renderSingleSheet(target, region, date, phone, false);
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      applyGlobalParams();
+    });
+  </script>
 
 </body>
 </html>
