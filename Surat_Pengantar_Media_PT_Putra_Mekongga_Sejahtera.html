@@ -148,46 +148,64 @@
     /* Kop Surat Resmi PT Skillance */
     .kop-surat {
       border-bottom: 3px double #0d2e5c;
-      padding-bottom: 12px;
-      margin-bottom: 20px;
+      padding-bottom: 14px;
+      margin-bottom: 22px;
       display: flex;
       align-items: center;
+      justify-content: space-between;
       gap: 16px;
     }
     .kop-logo {
-      width: 82px;
-      height: 82px;
+      width: 80px;
+      height: 80px;
       object-fit: contain;
       flex-shrink: 0;
     }
+    .kop-spacer {
+      width: 80px;
+      flex-shrink: 0;
+    }
     .kop-text {
-      text-align: left;
       flex: 1;
+      text-align: center !important;
     }
     .kop-title-main {
-      margin: 0 0 2px 0;
-      font-size: 15pt;
-      font-weight: 800;
-      color: #0d2e5c;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      font-family: 'Poppins', Arial, sans-serif;
+      margin: 0 0 3px 0 !important;
+      padding: 0 !important;
+      font-size: 16pt !important;
+      font-weight: 800 !important;
+      color: #0d2e5c !important;
+      text-transform: uppercase !important;
+      letter-spacing: 0.5px !important;
+      font-family: 'Poppins', Arial, sans-serif !important;
+      text-align: center !important;
+      text-indent: 0 !important;
+      line-height: 1.25 !important;
     }
     .kop-sub {
-      margin: 0 0 3px 0;
-      font-size: 8pt;
-      font-weight: 700;
-      color: #d97706;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      font-family: Arial, sans-serif;
+      margin: 0 0 5px 0 !important;
+      padding: 0 !important;
+      font-size: 8.8pt !important;
+      font-weight: 700 !important;
+      color: #d97706 !important;
+      text-transform: uppercase !important;
+      letter-spacing: 0.6px !important;
+      font-family: Arial, sans-serif !important;
+      text-align: center !important;
+      text-indent: 0 !important;
+      line-height: 1.3 !important;
     }
-    .kop-text p.meta {
-      margin: 1px 0;
-      font-size: 7.8pt;
-      font-family: 'Inter', Arial, sans-serif;
-      color: #374151;
-      line-height: 1.35;
+    .kop-text p, .kop-text p.meta {
+      margin: 2px 0 !important;
+      padding: 0 !important;
+      font-size: 8.2pt !important;
+      font-family: Arial, Helvetica, sans-serif !important;
+      color: #374151 !important;
+      line-height: 1.35 !important;
+      text-align: center !important;
+      text-indent: 0 !important;
+      letter-spacing: normal !important;
+      word-spacing: normal !important;
     }
 
     /* Letter Meta Grid */
@@ -370,13 +388,13 @@
     <div class="kop-surat">
       <img src="assets/img/logo_skillance_icon.png" class="kop-logo" alt="Logo PT Skillance Digital Indonesia">
       <div class="kop-text">
-        <h2 class="kop-title-main">PT SKILLANCE DIGITAL INDONESIA</h2>
-        <div class="kop-sub">KONSORSIUM MEDIA SIBER & KEMITRAAN DISEMINASI INFORMASI PUBLIK</div>
-        <p class="meta"><strong>Portal Berita Siber:</strong> Cerita Rakyat ID (www.xyronnews.com) &bull; XyronNews Network</p>
-        <p class="meta"><strong>SK Kemenkumham RI:</strong> AHU-A138609.AH.01.30.Tahun 2026 &bull; <strong>NPWP Badan:</strong> 100000011940526 &bull; <strong>NIB OSS:</strong> Terdaftar Resmi BKPM RI</p>
-        <p class="meta"><strong>Alamat Kantor:</strong> Desa Pabiring Dusun Taruseng, Kec. Poleang Barat, Kab. Bombana, Sulawesi Tenggara 93772</p>
-        <p class="meta"><strong>Website:</strong> https://skillance.cloud &bull; <strong>Surel:</strong> official@skillance.cloud / redaksi@xyronnews.com &bull; <strong>Hotline/Redaksi:</strong> 0811-4030-800</p>
+        <h1 class="kop-title-main">PT SKILLANCE DIGITAL INDONESIA</h1>
+        <div class="kop-sub">PENERBIT MEDIA SIBER &bull; CERITA RAKYAT ID (WWW.XYRONNEWS.COM)</div>
+        <p class="meta">SK Kemenkumham RI: AHU-A138609.AH.01.30.Tahun 2026 &bull; NPWP Badan: 100000011940526 &bull; NIB OSS Terdaftar</p>
+        <p class="meta">Alamat Kantor: Desa Pabiring Dusun Taruseng, Kec. Poleang Barat, Kab. Bombana, Sultra 93772</p>
+        <p class="meta">Website: https://skillance.cloud &bull; Surel: redaksi@xyronnews.com &bull; Hotline/Redaksi: 0811-4030-800</p>
       </div>
+      <div class="kop-spacer"></div>
     </div>
 
     <!-- META DATA SURAT -->
