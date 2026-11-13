@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Desain Amplop Resmi Surat Kemitraan - PT Putra Mekongga Sejahtera</title>
+  <link rel="icon" type="image/png" href="assets/img/logo_skillance_icon.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    /* Print Rules */
+    @page {
+      size: 230mm 110mm landscape;
+      margin: 0;
+    }
+    @media print {
+      body {
+        background: #fff !important;
+        padding: 0 !important;
+        margin: 0 !important;
+      }
+      .no-print {
+        display: none !important;
+      }
+      .envelope-canvas {
+        box-shadow: none !important;
+        margin: 0 !important;
+        border: none !important;
+        page-break-inside: avoid !important;
+        page-break-after: avoid !important;
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Times New Roman', Times, serif;
+      background: #e9eef5;
+      margin: 0;
+      padding: 20px;
+      color: #111827;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* Top Navigation Toolbar */
+    .top-nav-bar {
+      width: 100%;
+      position: sticky;
+      top: 0;
+      background: #0d2e5c;
+      color: #ffffff;
+      padding: 10px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+      z-index: 99999;
+      font-family: 'Inter', Arial, sans-serif;
+      margin-top: -20px;
+      margin-bottom: 20px;
+    }
+    .toolbar-left, .toolbar-right {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .btn-back {
+      background: rgba(255,255,255,0.15);
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 6px 12px;
+      border-radius: 6px;
+      border: 1px solid rgba(255,255,255,0.25);
+      transition: all 0.2s;
+    }
+    .btn-back:hover {
+      background: rgba(255,255,255,0.3);
+      color: #ffffff;
+    }
+    .badge-org {
+      background: #fe9800;
+      color: #0d2e5c;
+      font-size: 11px;
+      font-weight: 800;
+      padding: 4px 8px;
+      border-radius: 4px;
+      letter-spacing: 0.5px;
+    }
+    .btn-print-main {
+      background: #fe9800;
+      color: #0d2e5c;
+      border: none;
+      font-size: 12.5px;
+      font-weight: 800;
+      padding: 7px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      transition: all 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .btn-print-main:hover {
+      background: #ffa726;
+      transform: translateY(-1px);
+    }
+
+    /* Size Switcher Toolbar */
+    .controls-card {
+      background: #ffffff;
+      border-radius: 10px;
+      padding: 12px 20px;
+      max-width: 230mm;
+      width: 100%;
+      margin: 0 auto 18px auto;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+      border: 1px solid #cbd5e1;
+      font-family: 'Inter', Arial, sans-serif;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .btn-size-toggle {
+      background: #f8fafc;
+      border: 1px solid #cbd5e1;
+      color: #334155;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s;
+    }
+    .btn-size-toggle.active {
+      background: #0d2e5c;
+      color: #ffffff;
+      border-color: #0d2e5c;
+    }
+
+    /* Envelope Canvas - Mode DL / Standar Panjang */
+    .envelope-canvas {
+      background: #ffffff;
+      width: 230mm;
+      height: 110mm;
+      position: relative;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+      padding: 10mm 14mm;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border: 1px solid #d1d5db;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    /* Envelope Canvas - Mode C4 (Map Berkas A4) */
+    .envelope-canvas.mode-c4 {
+      width: 229mm;
+      height: 324mm;
+      padding: 16mm 18mm;
+    }
+
+    /* Kop Surat Amplop (Kiri Atas) */
+    .envelope-kop {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      max-width: 65%;
+    }
+    .envelope-logo {
+      width: 62px;
+      height: 62px;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+    .envelope-sender {
+      text-align: left;
+    }
+    .sender-title {
+      font-family: 'Poppins', Arial, sans-serif;
+      font-weight: 800;
+      font-size: 11.5pt;
+      color: #0d2e5c;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin: 0 0 1px 0;
+      line-height: 1.2;
+    }
+    .sender-sub {
+      font-family: Arial, sans-serif;
+      font-weight: 700;
+      font-size: 7.2pt;
+      color: #d97706;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin: 0 0 3px 0;
+      line-height: 1.2;
+    }
+    .sender-meta {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 6.8pt;
+      color: #374151;
+      line-height: 1.35;
+      margin: 1px 0;
+    }
+
+    /* Double Border Line */
+    .kop-divider {
+      border-bottom: 2.5px double #0d2e5c;
+      margin-top: 6px;
+      width: 100%;
+    }
+
+    /* Nomor & Sifat Dokumen */
+    .envelope-meta-strip {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      font-size: 7.5pt;
+      color: #475569;
+      margin-top: 4px;
+    }
+
+    /* Recipient Area (Kanan Bawah) */
+    .recipient-area-wrapper {
+      display: flex;
+      justify-content: flex-end;
+      width: 100%;
+      margin-top: auto;
+      margin-bottom: 4mm;
+    }
+    .recipient-box {
+      width: 95mm;
+      background: transparent;
+      padding: 8px 12px;
+      border-left: 3px solid #0d2e5c;
+      font-family: 'Times New Roman', Times, serif;
+      line-height: 1.35;
+    }
+    .to-prefix {
+      font-size: 10pt;
+      font-style: italic;
+      color: #334155;
+      margin-bottom: 2px;
+    }
+    .to-target-name {
+      font-size: 12pt;
+      font-weight: bold;
+      color: #0d2e5c;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      margin-bottom: 2px;
+    }
+    .to-target-sub {
+      font-size: 10pt;
+      color: #1f2937;
+      margin-bottom: 2px;
+    }
+    .to-target-city {
+      font-size: 10.5pt;
+      font-weight: bold;
+      color: #111827;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* Footer Note (Kiri Bawah) */
+    .envelope-footer-note {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      width: 100%;
+      border-top: 1px dashed #cbd5e1;
+      padding-top: 4px;
+      font-family: Arial, sans-serif;
+      font-size: 7pt;
+      color: #64748b;
+    }
+    .badge-confidential {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-weight: 700;
+      color: #0d2e5c;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      border: 1px solid #0d2e5c;
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-size: 6.8pt;
+    }
+
+    /* Contenteditable */
+    [contenteditable="true"] {
+      outline: none;
+      transition: background 0.2s;
+      border-radius: 2px;
+    }
+    [contenteditable="true"]:hover {
+      background: rgba(254, 152, 0, 0.1);
+    }
+    [contenteditable="true"]:focus {
+      background: rgba(254, 152, 0, 0.18);
+      box-shadow: 0 0 0 1.5px #fe9800;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navigation Toolbar (No Print) -->
+  <div class="top-nav-bar no-print">
+    <div class="toolbar-left">
+      <a href="Surat_Pengantar_Media_PT_Putra_Mekongga_Sejahtera.html" class="btn-back">
+        &larr; Lihat Surat Pengantar A4
+      </a>
+      <span class="badge-org">PT SKILLANCE DIGITAL INDONESIA</span>
+      <span style="font-size: 13px; font-weight: bold; color: #fff;">Desain Amplop Cetak Resmi &bull; PT Putra Mekongga Sejahtera</span>
+    </div>
+    <div class="toolbar-right">
+      <button class="btn-print-main" onclick="window.print()">
+        <i class="fa-solid fa-print"></i> Cetak Amplop
+      </button>
+    </div>
+  </div>
+
+  <!-- Format Switcher Bar (No Print) -->
+  <div class="controls-card no-print">
+    <div>
+      <strong style="color: #0d2e5c; font-size: 13px;"><i class="fa-solid fa-envelope me-1.5 text-warning"></i>Pilihan Format Amplop Cetak:</strong>
+      <span style="font-size: 11.5px; color: #64748b; margin-left: 8px;">Pilih ukuran sesuai jenis amplop fisik yang dimasukkan ke baki printer Anda:</span>
+    </div>
+    <div style="display: flex; gap: 8px;">
+      <button type="button" class="btn-size-toggle active" id="btnModeDL" onclick="switchEnvelopeMode('dl')">
+        <i class="fa-solid fa-envelope-open-text"></i> Amplop DL / Panjang (110 &times; 230 mm)
+      </button>
+      <button type="button" class="btn-size-toggle" id="btnModeC4" onclick="switchEnvelopeMode('c4')">
+        <i class="fa-solid fa-folder-open"></i> Amplop Map A4 / C4 (229 &times; 324 mm)
+      </button>
+    </div>
+  </div>
+
+  <!-- ============================================================== -->
+  <!-- CANVAS AMPLOP RESMI (CETAK FISIK)                               -->
+  <!-- ============================================================== -->
+  <div class="envelope-canvas" id="envelopeCanvas">
+
+    <!-- BAGIAN ATAS: KOP PENGIRIM RESMI -->
+    <div>
+      <div class="envelope-kop">
+        <img src="assets/img/logo_skillance_icon.png" class="envelope-logo" alt="Logo PT Skillance Digital Indonesia">
+        <div class="envelope-sender">
+          <div class="sender-title" contenteditable="true">PT SKILLANCE DIGITAL INDONESIA</div>
+          <div class="sender-sub" contenteditable="true">PENERBIT MEDIA SIBER &bull; CERITA RAKYAT ID (WWW.XYRONNEWS.COM)</div>
+          <div class="sender-meta" contenteditable="true">SK Kemenkumham RI: AHU-A138609.AH.01.30.Tahun 2026 &bull; NPWP: 100000011940526 &bull; NIB OSS Terdaftar</div>
+          <div class="sender-meta" contenteditable="true">Desa Pabiring Dusun Taruseng, Kec. Poleang Barat, Kab. Bombana, Sultra 93772 &bull; Telp/WA: 0811-4030-800</div>
+        </div>
+      </div>
+      
+      <!-- Garis Kop Ganda -->
+      <div class="kop-divider"></div>
+
+      <!-- Nomor Arsip & Catatan Sifat -->
+      <div class="envelope-meta-strip">
+        <span contenteditable="true"><strong>Nomor Surat:</strong> 028/EXT-MED/SDI-CRID/XI/2026</span>
+        <span contenteditable="true"><strong>Sifat:</strong> PENTING / RESMI</span>
+      </div>
+    </div>
+
+    <!-- BAGIAN TENGAH / KANAN BAWAH: TUJUAN SURAT (KEPADA YTH) -->
+    <div class="recipient-area-wrapper">
+      <div class="recipient-box">
+        <div class="to-prefix" contenteditable="true">Kepada Yang Terhormat:</div>
+        <div class="to-target-name" contenteditable="true">Pimpinan</div>
+        <div class="to-target-sub" contenteditable="true"><strong>PT PUTRA MEKONNGA SEJAHTERA</strong></div>
+        <div class="to-location" contenteditable="true">di &ndash;</div>
+        <div class="to-city" contenteditable="true">&nbsp;&nbsp;&nbsp;&nbsp;<strong>TEMPAT</strong></div>
+      </div>
+    </div>
+
+    <!-- BAGIAN KIRI BAWAH: LABEL KLASIFIKASI DOKUMEN -->
+    <div class="envelope-footer-note">
+      <div class="badge-confidential" contenteditable="true">
+        <i class="fa-solid fa-file-contract"></i> BERKAS RESMI: SURAT PENGANTAR & PROPOSAL KEMITRAAN MEDIA
+      </div>
+      <div contenteditable="true">
+        XyronNews Network &bull; https://skillance.cloud
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function switchEnvelopeMode(mode) {
+      const canvas = document.getElementById('envelopeCanvas');
+      const btnDL = document.getElementById('btnModeDL');
+      const btnC4 = document.getElementById('btnModeC4');
+
+      if (mode === 'c4') {
+        canvas.classList.add('mode-c4');
+        btnC4.classList.add('active');
+        btnDL.classList.remove('active');
+        
+        // Update dynamic page size for C4 print
+        updateStylePageSize('229mm 324mm portrait');
+      } else {
+        canvas.classList.remove('mode-c4');
+        btnDL.classList.add('active');
+        btnC4.classList.remove('active');
+        
+        // Update dynamic page size for DL print
+        updateStylePageSize('230mm 110mm landscape');
+      }
+    }
+
+    function updateStylePageSize(sizeRule) {
+      let printStyleTag = document.getElementById('dynamicPrintPageStyle');
+      if (!printStyleTag) {
+        printStyleTag = document.createElement('style');
+        printStyleTag.id = 'dynamicPrintPageStyle';
+        document.head.appendChild(printStyleTag);
+      }
+      printStyleTag.innerHTML = `@page { size: ${sizeRule}; margin: 0; }`;
+    }
+  </script>
+
+</body>
+</html>
