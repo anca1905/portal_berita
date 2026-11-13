@@ -10,7 +10,10 @@
   <style>
     @page {
       size: A4 portrait;
-      margin: 12mm 15mm 12mm 15mm;
+      margin: 10mm 14mm 10mm 14mm;
+    }
+    @page :first {
+      margin: 0;
     }
     @media print {
       body {
@@ -33,6 +36,21 @@
         min-height: auto !important;
         page-break-after: always !important;
         page-break-inside: avoid !important;
+      }
+      .paper.cover-page {
+        width: 210mm !important;
+        height: 297mm !important;
+        max-height: 297mm !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        overflow: hidden !important;
+        page-break-after: always !important;
+      }
+      .cover-graphic-img {
+        width: 210mm !important;
+        height: 297mm !important;
+        object-fit: fill !important;
+        display: block !important;
       }
       .paper:last-child {
         page-break-after: auto !important;
@@ -165,6 +183,24 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+    }
+
+    /* Cover Page Specific */
+    .paper.cover-page {
+      padding: 0 !important;
+      overflow: hidden;
+      background: #ffffff;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+      border: 1px solid #cbd5e1;
+      justify-content: center;
+      align-items: center;
+    }
+    .cover-graphic-img {
+      width: 100%;
+      height: 100%;
+      min-height: 297mm;
+      object-fit: fill;
+      display: block;
     }
 
     /* Page Content Body */
@@ -560,54 +596,10 @@
   </div>
 
   <!-- ============================================================== -->
-  <!-- HALAMAN 1: COVER SAMPUL PROPOSAL EKSKLUSIF                     -->
+  <!-- HALAMAN 1: COVER SAMPUL PROPOSAL RESMI                         -->
   <!-- ============================================================== -->
-  <div class="paper">
-    <div class="cover-container">
-
-      <!-- Header Cover: Logo & Identitas Penerbit -->
-      <div class="cover-top-ribbon">
-        <img src="assets/img/logo_skillance_icon.png" class="cover-logo-main" alt="Logo PT Skillance Digital Indonesia">
-        <div>
-          <div class="cover-org-title" contenteditable="true">PT SKILLANCE DIGITAL INDONESIA</div>
-          <div class="cover-org-sub" contenteditable="true">Penerbit Media Siber &bull; Cerita Rakyat Official (xyronnews.com)</div>
-        </div>
-      </div>
-
-      <!-- Center Block: Judul Utama Proposal -->
-      <div class="cover-center-block">
-        <div class="cover-badge-doc" contenteditable="true">PROPOSAL KEMITRAAN MEDIA & CSR</div>
-        <h1 class="cover-main-title" contenteditable="true">
-          PENAWARAN KERJA SAMA PUBLIKASI MEDIA SIBER, ADVERTORIAL PROGRAM CSR & DISEMINASI INFORMASI PUBLIK
-        </h1>
-        <div class="cover-subtitle" contenteditable="true">
-          Membangun Sinergi Publikasi Transparan, Penguatan Citra Positif Perusahaan, serta Akuntabilitas Program Pengembangan dan Pemberdayaan Masyarakat (PPM / CSR)
-        </div>
-        <div class="cover-divider-art"></div>
-
-        <!-- Kartu Target Penerima -->
-        <div class="cover-target-card">
-          <div class="target-label" contenteditable="true">Diajukan Kepada:</div>
-          <div class="target-company-name" contenteditable="true">PT. PUTRA MEKONNGA SEJAHTERA</div>
-          <div class="target-location" contenteditable="true">Kolaka &ndash; Sulawesi Tenggara</div>
-        </div>
-      </div>
-
-      <!-- Footer Cover: Pengusul & Tahun -->
-      <div class="cover-bottom-info">
-        <div contenteditable="true" style="font-weight: bold; color: #0d2e5c; font-size: 9.5pt;">
-          KONSORSIUM MEDIA SIBER CERITA RAKYAT OFFICIAL &bull; XYRONNEWS NETWORK
-        </div>
-        <div contenteditable="true">
-          Desa Pabiring Dusun Taruseng, Kec. Poleang Barat, Kab. Bombana, Sulawesi Tenggara 93772<br>
-          Website: https://skillance.cloud &bull; Portal: https://xyronnews.com &bull; Hotline: 0811-4030-800
-        </div>
-        <div style="margin-top: 6px; font-weight: bold; color: #d97706;">
-          TAHUN 2026
-        </div>
-      </div>
-
-    </div>
+  <div class="paper cover-page">
+    <img src="assets/img/sampul_proposal_mekongga.jpg" class="cover-graphic-img" alt="Sampul Proposal Kemitraan Media PT Putra Mekongga Sejahtera">
   </div>
 
 
