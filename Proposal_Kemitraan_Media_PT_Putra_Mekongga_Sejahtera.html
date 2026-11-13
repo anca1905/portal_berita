@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Proposal Penawaran Kemitraan Media Siber & Publikasi CSR - PT Putra Mekongga Sejahtera</title>
+  <link rel="icon" type="image/png" href="assets/img/logo_skillance_icon.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800;900&display=swap" rel="stylesheet">
+  
+  <style>
+    @page {
+      size: A4 portrait;
+      margin: 12mm 15mm 12mm 15mm;
+    }
+    @media print {
+      body {
+        background: #ffffff !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .no-print {
+        display: none !important;
+      }
+      .paper {
+        box-shadow: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        min-height: auto !important;
+        page-break-after: always !important;
+        page-break-inside: avoid !important;
+      }
+      .paper:last-child {
+        page-break-after: auto !important;
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 10.5pt;
+      line-height: 1.42;
+      color: #111827;
+      background: #eef2f6;
+      margin: 0;
+      padding: 16px;
+    }
+
+    /* Top Sticky Navigation Toolbar */
+    .top-nav-bar {
+      position: sticky;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: #0d2e5c;
+      color: #ffffff;
+      padding: 10px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+      z-index: 99999;
+      font-family: 'Inter', Arial, sans-serif;
+      margin: -16px -16px 16px -16px;
+    }
+    .toolbar-left, .toolbar-right {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .btn-nav-tool {
+      background: rgba(255,255,255,0.15);
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 6px 12px;
+      border-radius: 6px;
+      border: 1px solid rgba(255,255,255,0.25);
+      transition: all 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .btn-nav-tool:hover {
+      background: rgba(255,255,255,0.3);
+      color: #ffffff;
+    }
+    .badge-org {
+      background: #fe9800;
+      color: #0d2e5c;
+      font-size: 11px;
+      font-weight: 800;
+      padding: 4px 8px;
+      border-radius: 4px;
+      letter-spacing: 0.5px;
+    }
+    .badge-doc {
+      background: rgba(255,255,255,0.2);
+      color: #ffffff;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 4px 8px;
+      border-radius: 4px;
+    }
+    .btn-print-main {
+      background: #fe9800;
+      color: #0d2e5c;
+      border: none;
+      font-size: 12.5px;
+      font-weight: 800;
+      padding: 7px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      transition: all 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .btn-print-main:hover {
+      background: #ffa726;
+      transform: translateY(-1px);
+    }
+
+    /* Parameter Toolbar Card */
+    .param-card {
+      background: #ffffff;
+      border-radius: 10px;
+      padding: 10px 18px;
+      max-width: 210mm;
+      margin: 0 auto 16px auto;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      border: 1px solid #e2e8f0;
+      font-family: 'Inter', Arial, sans-serif;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .param-left {
+      font-size: 11.5px;
+      color: #475569;
+    }
+    .param-left strong {
+      color: #0d2e5c;
+    }
+
+    /* A4 Paper Sheets */
+    .paper {
+      background: #fff;
+      max-width: 210mm;
+      min-height: 297mm;
+      margin: 0 auto 26px auto;
+      padding: 12mm 18mm 12mm 18mm;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    /* Page Content Body */
+    .page-body {
+      flex: 1;
+    }
+
+    /* Standard Kop Surat */
+    .kop-surat {
+      border-bottom: 2.5px double #0d2e5c;
+      padding-bottom: 6px;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .kop-logo {
+      width: 66px;
+      height: 66px;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+    .kop-spacer {
+      width: 66px;
+      flex-shrink: 0;
+    }
+    .kop-text {
+      flex: 1;
+      text-align: center !important;
+    }
+    .kop-title-main {
+      margin: 0 0 1px 0 !important;
+      padding: 0 !important;
+      font-size: 14pt !important;
+      font-weight: 800 !important;
+      color: #0d2e5c !important;
+      text-transform: uppercase !important;
+      letter-spacing: 0.5px !important;
+      font-family: 'Poppins', Arial, sans-serif !important;
+      text-align: center !important;
+      text-indent: 0 !important;
+      line-height: 1.2 !important;
+    }
+    .kop-sub {
+      margin: 0 0 2px 0 !important;
+      padding: 0 !important;
+      font-size: 8pt !important;
+      font-weight: 700 !important;
+      color: #d97706 !important;
+      text-transform: uppercase !important;
+      letter-spacing: 0.5px !important;
+      font-family: Arial, sans-serif !important;
+      text-align: center !important;
+      text-indent: 0 !important;
+      line-height: 1.2 !important;
+    }
+    .kop-text p, .kop-text p.meta {
+      margin: 1px 0 !important;
+      padding: 0 !important;
+      font-size: 7.4pt !important;
+      font-family: Arial, Helvetica, sans-serif !important;
+      color: #374151 !important;
+      line-height: 1.3 !important;
+      text-align: center !important;
+      text-indent: 0 !important;
+    }
+
+    /* Typography & Section Styles */
+    h2.section-heading {
+      font-family: 'Poppins', Arial, sans-serif;
+      font-size: 11pt;
+      font-weight: 800;
+      color: #0d2e5c;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      border-left: 4px solid #fe9800;
+      padding-left: 8px;
+      margin: 14px 0 6px 0;
+      line-height: 1.25;
+    }
+    h3.sub-heading {
+      font-family: 'Poppins', Arial, sans-serif;
+      font-size: 10pt;
+      font-weight: 700;
+      color: #1e293b;
+      margin: 10px 0 4px 0;
+    }
+    p {
+      text-align: justify;
+      margin-top: 0;
+      margin-bottom: 7px;
+      text-indent: 26px;
+      font-size: 10pt;
+      line-height: 1.4;
+    }
+    p.no-indent {
+      text-indent: 0;
+    }
+    ol, ul {
+      margin-top: 3px;
+      margin-bottom: 7px;
+      padding-left: 24px;
+      font-size: 10pt;
+      line-height: 1.38;
+    }
+    li {
+      margin-bottom: 3px;
+      text-align: justify;
+    }
+
+    /* Footer Pagination */
+    .page-footer {
+      border-top: 1px solid #cbd5e1;
+      padding-top: 4px;
+      margin-top: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      font-size: 7.5pt;
+      color: #64748b;
+    }
+
+    /* ============================================================== */
+    /* HALAMAN 1: DESAIN COVER SAMPUL KHUSUS                          */
+    /* ============================================================== */
+    .cover-container {
+      border: 3px double #0d2e5c;
+      padding: 16mm 14mm;
+      height: 100%;
+      min-height: 270mm;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      text-align: center;
+      background: linear-gradient(180deg, #ffffff 0%, #fbfcfe 100%);
+      position: relative;
+    }
+    .cover-top-ribbon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 12mm;
+    }
+    .cover-logo-main {
+      width: 90px;
+      height: 90px;
+      object-fit: contain;
+    }
+    .cover-org-title {
+      font-family: 'Poppins', Arial, sans-serif;
+      font-size: 15pt;
+      font-weight: 900;
+      color: #0d2e5c;
+      letter-spacing: 1px;
+      margin-bottom: 2px;
+    }
+    .cover-org-sub {
+      font-family: Arial, sans-serif;
+      font-size: 9.5pt;
+      font-weight: 700;
+      color: #d97706;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+    }
+
+    .cover-center-block {
+      margin: auto 0;
+      padding: 10mm 4mm;
+    }
+    .cover-badge-doc {
+      display: inline-block;
+      background: #0d2e5c;
+      color: #fe9800;
+      font-family: 'Poppins', Arial, sans-serif;
+      font-size: 10.5pt;
+      font-weight: 800;
+      padding: 6px 18px;
+      border-radius: 20px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .cover-main-title {
+      font-family: 'Poppins', Arial, sans-serif;
+      font-size: 19pt;
+      font-weight: 900;
+      color: #0d2e5c;
+      text-transform: uppercase;
+      line-height: 1.25;
+      letter-spacing: 0.5px;
+      margin: 0 auto 12px auto;
+      max-width: 90%;
+    }
+    .cover-subtitle {
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 12pt;
+      font-style: italic;
+      color: #475569;
+      line-height: 1.4;
+      margin: 0 auto 20px auto;
+      max-width: 85%;
+    }
+    .cover-divider-art {
+      width: 120px;
+      height: 3px;
+      background: #fe9800;
+      margin: 0 auto 24px auto;
+      border-radius: 2px;
+    }
+
+    .cover-target-card {
+      background: #f8fafc;
+      border: 1.5px solid #cbd5e1;
+      border-radius: 8px;
+      padding: 14px 20px;
+      max-width: 480px;
+      margin: 0 auto;
+      font-family: 'Times New Roman', Times, serif;
+    }
+    .target-label {
+      font-size: 10.5pt;
+      font-style: italic;
+      color: #64748b;
+      margin-bottom: 4px;
+    }
+    .target-company-name {
+      font-family: 'Poppins', Arial, sans-serif;
+      font-size: 14pt;
+      font-weight: 800;
+      color: #0d2e5c;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 2px;
+    }
+    .target-location {
+      font-size: 10.5pt;
+      font-weight: bold;
+      color: #334155;
+    }
+
+    .cover-bottom-info {
+      margin-top: 10mm;
+      border-top: 1px dashed #cbd5e1;
+      padding-top: 8px;
+      font-family: Arial, sans-serif;
+      font-size: 8.5pt;
+      color: #64748b;
+      line-height: 1.4;
+    }
+
+    /* Table Styles */
+    .table-custom {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 8px 0 12px 0;
+      font-size: 9.5pt;
+    }
+    .table-custom th {
+      background: #0d2e5c;
+      color: #ffffff;
+      padding: 6px 8px;
+      text-align: left;
+      font-family: Arial, sans-serif;
+      font-weight: bold;
+      border: 1px solid #0d2e5c;
+      font-size: 9pt;
+      text-transform: uppercase;
+    }
+    .table-custom td {
+      padding: 6px 8px;
+      border: 1px solid #cbd5e1;
+      vertical-align: top;
+      line-height: 1.35;
+    }
+    .table-custom tr:nth-child(even) {
+      background: #f8fafc;
+    }
+    .badge-tier {
+      display: inline-block;
+      font-weight: 800;
+      font-family: Arial, sans-serif;
+      font-size: 8pt;
+      padding: 2px 7px;
+      border-radius: 4px;
+      text-transform: uppercase;
+    }
+    .badge-tier-silver { background: #e2e8f0; color: #334155; }
+    .badge-tier-gold { background: #fef3c7; color: #92400e; border: 1px solid #f59e0b; }
+    .badge-tier-plat { background: #0d2e5c; color: #fe9800; border: 1px solid #0d2e5c; }
+
+    /* Signature Grid */
+    .sig-grid {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 14px;
+      gap: 20px;
+      page-break-inside: avoid;
+    }
+    .sig-col {
+      width: 48%;
+      text-align: center;
+      font-family: 'Times New Roman', Times, serif;
+    }
+    .sig-space {
+      height: 52px;
+      min-height: 52px;
+      position: relative;
+    }
+    .sig-name {
+      font-weight: bold;
+      text-decoration: underline;
+      font-size: 10.5pt;
+      margin-bottom: 2px;
+    }
+    .sig-title {
+      font-size: 9.2pt;
+      color: #374151;
+      margin: 0;
+    }
+
+    /* Acceptance Box */
+    .acceptance-box {
+      border: 2px dashed #0d2e5c;
+      border-radius: 8px;
+      background: #fdfefe;
+      padding: 10px 14px;
+      margin-top: 12px;
+      page-break-inside: avoid;
+    }
+    .acceptance-title {
+      font-family: 'Poppins', Arial, sans-serif;
+      font-size: 9.8pt;
+      font-weight: 800;
+      color: #0d2e5c;
+      text-transform: uppercase;
+      text-align: center;
+      margin-bottom: 6px;
+      letter-spacing: 0.5px;
+    }
+
+    /* Editable Field Highlight */
+    [contenteditable="true"] {
+      outline: none;
+      transition: background 0.2s;
+      border-radius: 2px;
+    }
+    [contenteditable="true"]:hover {
+      background: rgba(254, 152, 0, 0.1);
+    }
+    [contenteditable="true"]:focus {
+      background: rgba(254, 152, 0, 0.18);
+      box-shadow: 0 0 0 1.5px #fe9800;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Sticky Navigation Toolbar (No Print) -->
+  <div class="top-nav-bar no-print">
+    <div class="toolbar-left">
+      <a href="Surat_Pengantar_Media_PT_Putra_Mekongga_Sejahtera.html" class="btn-nav-tool">
+        &larr; Surat Pengantar A4
+      </a>
+      <a href="Amplop_Surat_PT_Putra_Mekongga_Sejahtera.html" target="_blank" class="btn-nav-tool">
+        <i class="fa-solid fa-envelope"></i> Amplop Cetak
+      </a>
+      <span class="badge-org">PT SKILLANCE DIGITAL INDONESIA</span>
+      <span class="badge-doc">Cerita Rakyat Official (xyronnews.com)</span>
+    </div>
+    <div class="toolbar-right">
+      <span style="font-size: 12px; color: #cbd5e1;">
+        <i class="fa-solid fa-file-pdf text-warning me-1"></i>Dokumen Proposal Resmi (5 Halaman A4)
+      </span>
+      <button class="btn-print-main" onclick="window.print()">
+        <i class="fa-solid fa-print"></i> Cetak / Simpan PDF
+      </button>
+    </div>
+  </div>
+
+  <!-- Parameter Toolbar Card (No Print) -->
+  <div class="param-card no-print">
+    <div class="param-left">
+      <i class="fa-solid fa-circle-info text-primary me-1"></i>
+      <strong>Target Proposal:</strong> Pimpinan PT. Putra Mekongga Sejahtera &bull; 
+      <em>Dokumen ini dirancang khusus untuk kemitraan publikasi program CSR/PPM, advertorial, dan media monitoring. Seluruh teks dan angka dapat diedit langsung sebelum dicetak.</em>
+    </div>
+    <div>
+      <span style="font-size: 11px; color: #64748b; font-weight: 600;">Standar Format Tata Kelola Pers & CSR Korporasi</span>
+    </div>
+  </div>
+
+  <!-- ============================================================== -->
+  <!-- HALAMAN 1: COVER SAMPUL PROPOSAL EKSKLUSIF                     -->
+  <!-- ============================================================== -->
+  <div class="paper">
+    <div class="cover-container">
+
+      <!-- Header Cover: Logo & Identitas Penerbit -->
+      <div class="cover-top-ribbon">
+        <img src="assets/img/logo_skillance_icon.png" class="cover-logo-main" alt="Logo PT Skillance Digital Indonesia">
+        <div>
+          <div class="cover-org-title" contenteditable="true">PT SKILLANCE DIGITAL INDONESIA</div>
+          <div class="cover-org-sub" contenteditable="true">Penerbit Media Siber &bull; Cerita Rakyat Official (xyronnews.com)</div>
+        </div>
+      </div>
+
+      <!-- Center Block: Judul Utama Proposal -->
+      <div class="cover-center-block">
+        <div class="cover-badge-doc" contenteditable="true">PROPOSAL KEMITRAAN MEDIA & CSR</div>
+        <h1 class="cover-main-title" contenteditable="true">
+          PENAWARAN KERJA SAMA PUBLIKASI MEDIA SIBER, ADVERTORIAL PROGRAM CSR & DISEMINASI INFORMASI PUBLIK
+        </h1>
+        <div class="cover-subtitle" contenteditable="true">
+          Membangun Sinergi Publikasi Transparan, Penguatan Citra Positif Perusahaan, serta Akuntabilitas Program Pengembangan dan Pemberdayaan Masyarakat (PPM / CSR)
+        </div>
+        <div class="cover-divider-art"></div>
+
+        <!-- Kartu Target Penerima -->
+        <div class="cover-target-card">
+          <div class="target-label" contenteditable="true">Diajukan Kepada:</div>
+          <div class="target-company-name" contenteditable="true">PT. PUTRA MEKONNGA SEJAHTERA</div>
+          <div class="target-location" contenteditable="true">Kolaka &ndash; Sulawesi Tenggara</div>
+        </div>
+      </div>
+
+      <!-- Footer Cover: Pengusul & Tahun -->
+      <div class="cover-bottom-info">
+        <div contenteditable="true" style="font-weight: bold; color: #0d2e5c; font-size: 9.5pt;">
+          KONSORSIUM MEDIA SIBER CERITA RAKYAT OFFICIAL &bull; XYRONNEWS NETWORK
+        </div>
+        <div contenteditable="true">
+          Desa Pabiring Dusun Taruseng, Kec. Poleang Barat, Kab. Bombana, Sulawesi Tenggara 93772<br>
+          Website: https://skillance.cloud &bull; Portal: https://xyronnews.com &bull; Hotline: 0811-4030-800
+        </div>
+        <div style="margin-top: 6px; font-weight: bold; color: #d97706;">
+          TAHUN 2026
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- ============================================================== -->
+  <!-- HALAMAN 2: BAB I (LATAR BELAKANG & LANDASAN) & BAB II (PROFIL) -->
+  <!-- ============================================================== -->
+  <div class="paper">
+    <div class="page-body">
+
+      <!-- Kop Surat Resmi -->
+      <div class="kop-surat">
+        <img src="assets/img/logo_skillance_icon.png" class="kop-logo" alt="Logo PT Skillance Digital Indonesia">
+        <div class="kop-text">
+          <h1 class="kop-title-main">PT SKILLANCE DIGITAL INDONESIA</h1>
+          <div class="kop-sub">PENERBIT MEDIA SIBER &bull; CERITA RAKYAT OFFICIAL (WWW.XYRONNEWS.COM)</div>
+          <p class="meta">Alamat Kantor: Desa Pabiring Dusun Taruseng, Kec. Poleang Barat, Kab. Bombana, Sulawesi Tenggara 93772</p>
+          <p class="meta">Website: https://skillance.cloud &bull; Surel: redaksi@xyronnews.com &bull; Hotline/Redaksi: 0811-4030-800</p>
+        </div>
+        <div class="kop-spacer"></div>
+      </div>
+
+      <h2 class="section-heading" contenteditable="true">BAB I: PENDAHULUAN & LATAR BELAKANG</h2>
+      
+      <p>
+        Perkembangan industri dan pemanfaatan sumber daya alam di jazirah Sulawesi Tenggara, khususnya di wilayah Mekongga Raya (Kabupaten Kolaka dan sekitarnya), menempatkan <strong>PT. PUTRA MEKONNGA SEJAHTERA</strong> sebagai salah satu entitas korporasi strategis yang berkontribusi nyata terhadap pergerakan ekonomi daerah, penciptaan lapangan kerja, serta pendapatan daerah.
+      </p>
+
+      <p>
+        Di era transformasi digital dan keterbukaan informasi saat ini, keberhasilan operasional perusahaan tidak hanya diukur dari produktivitas teknis, namun juga sangat dipengaruhi oleh persepsi publik, transparansi komunikasi, serta hubungan keharmonisan dengan masyarakat lingkar operasional. Program Tanggung Jawab Sosial dan Lingkungan (<em>Corporate Social Responsibility / CSR</em>) dan Program Pengembangan dan Pemberdayaan Masyarakat (PPM) yang dilaksanakan perusahaan memerlukan kanal diseminasi informasi yang kredibel, berimbang, dan terverifikasi agar dampak positifnya dapat dipahami secara utuh oleh masyarakat, pemangku kepentingan (stakeholders), dan instansi pemerintah.
+      </p>
+
+      <p>
+        Berdasarkan hal tersebut, <strong>CERITA RAKYAT OFFICIAL</strong> sebagai media massa siber yang bernaung di bawah badan hukum pers <strong>PT SKILLANCE DIGITAL INDONESIA</strong> hadir menawarkan kemitraan strategis sebagai jembatan publikasi informasi resmi, sarana diseminasi program CSR, serta mitra media yang siap mengawal reputasi positif korporasi secara profesional dan berkesinambungan.
+      </p>
+
+      <h3 class="sub-heading" contenteditable="true">Landasan Hukum Kemitraan:</h3>
+      <ol contenteditable="true">
+        <li><strong>Undang-Undang No. 40 Tahun 1999 tentang Pers:</strong> Mengatur kemerdekaan pers, hak masyarakat memperoleh informasi yang benar, serta peran pers dalam pembangunan nasional;</li>
+        <li><strong>Undang-Undang No. 40 Tahun 2007 tentang Perseroan Terbatas:</strong> Pasal 74 yang mengatur kewajiban Tanggung Jawab Sosial dan Lingkungan (TJSL/CSR) bagi perseroan;</li>
+        <li><strong>Peraturan Menteri ESDM No. 25 Tahun 2018:</strong> Mengenai pedoman pelaksanaan Program Pengembangan dan Pemberdayaan Masyarakat (PPM) pada badan usaha pertambangan;</li>
+        <li><strong>Undang-Undang No. 14 Tahun 2008:</strong> Tentang Keterbukaan Informasi Publik (KIP).</li>
+      </ol>
+
+      <h2 class="section-heading" contenteditable="true">BAB II: PROFIL MEDIA SIBER & KEUNGGULAN</h2>
+      
+      <p>
+        <strong>Cerita Rakyat Official</strong> (dapat diakses melalui portal resmi <em>www.xyronnews.com</em>) merupakan media siber independen berbadan hukum resmi yang menyajikan berita aktual, kebijakan publik, ekonomi bisnis, potensi daerah, serta liputan investigasi pembangunan di Sulawesi Tenggara dan nasional.
+      </p>
+
+      <h3 class="sub-heading" contenteditable="true">Keunggulan Komparatif Media:</h3>
+      <ul contenteditable="true">
+        <li><strong>Jangkauan Pembaca Luas:</strong> Pembaca aktif harian di kawasan Mekongga (Kolaka, Kolaka Utara, Kolaka Timur), Bombana, Kendari, serta jaringan pembaca nasional;</li>
+        <li><strong>Terindeks Mesin Pencari (Google News & SEO):</strong> Setiap berita terbit secara permanen, teroptimasi SEO sehingga mudah ditemukan masyarakat saat mencari nama korporasi;</li>
+        <li><strong>Badan Hukum Pers Lengkap:</strong> Dikelola oleh PT Skillance Digital Indonesia dengan legalitas sah SK Kemenkumham RI, NIB OSS BKPM RI, dan NPWP Badan Usaha;</li>
+        <li><strong>Jurnalisme Konstruktif & Berimbang:</strong> Mengedepankan verifikasi fakta, kode etik jurnalistik, dan asas keberimbangan informasi demi iklim investasi daerah yang kondusif.</li>
+      </ul>
+
+    </div>
+
+    <div class="page-footer">
+      <span>Proposal Kemitraan Media Siber &bull; PT Putra Mekongga Sejahtera</span>
+      <span>Halaman 2 dari 5</span>
+    </div>
+  </div>
+
+
+  <!-- ============================================================== -->
+  <!-- HALAMAN 3: BAB III (RUANG LINGKUP & BENTUK LAYANAN KEMITRAAN)  -->
+  <!-- ============================================================== -->
+  <div class="paper">
+    <div class="page-body">
+
+      <!-- Kop Surat Resmi -->
+      <div class="kop-surat">
+        <img src="assets/img/logo_skillance_icon.png" class="kop-logo" alt="Logo PT Skillance Digital Indonesia">
+        <div class="kop-text">
+          <h1 class="kop-title-main">PT SKILLANCE DIGITAL INDONESIA</h1>
+          <div class="kop-sub">PENERBIT MEDIA SIBER &bull; CERITA RAKYAT OFFICIAL (WWW.XYRONNEWS.COM)</div>
+          <p class="meta">Alamat Kantor: Desa Pabiring Dusun Taruseng, Kec. Poleang Barat, Kab. Bombana, Sulawesi Tenggara 93772</p>
+          <p class="meta">Website: https://skillance.cloud &bull; Surel: redaksi@xyronnews.com &bull; Hotline/Redaksi: 0811-4030-800</p>
+        </div>
+        <div class="kop-spacer"></div>
+      </div>
+
+      <h2 class="section-heading" contenteditable="true">BAB III: RUANG LINGKUP & BENTUK LAYANAN KEMITRAAN</h2>
+      
+      <p>
+        Melalui kemitraan strategis ini, <strong>Cerita Rakyat Official</strong> menyediakan serangkaian kanal layanan publikasi terpadu yang dirancang untuk mendukung kelancaran operasional dan akuntabilitas sosial <strong>PT. PUTRA MEKONNGA SEJAHTERA</strong>:
+      </p>
+
+      <h3 class="sub-heading" contenteditable="true">1. Publikasi Siaran Pers & Agenda Resmi Perusahaan</h3>
+      <p>
+        Penerbitan rilis pers berkala mengenai kegiatan internal dan eksternal perusahaan, seperti perayaan hari besar, seremoni penyerapan tenaga kerja lokal, pencapaian target kinerja korporasi, serta penerapan standar Keselamatan dan Kesehatan Kerja (K3) di lingkungan operasional.
+      </p>
+
+      <h3 class="sub-heading" contenteditable="true">2. Liputan Khusus & Advertorial Program CSR / PPM</h3>
+      <p>
+        Penulisan feature mendalam (*in-depth reporting*) mengenai realisasi program pemberdayaan masyarakat oleh PT Putra Mekongga Sejahtera di desa-desa lingkar tambang/operasional, meliputi:
+      </p>
+      <ul contenteditable="true">
+        <li><strong>Bidang Pendidikan:</strong> Program beasiswa pelajar/mahasiswa lokal dan renovasi fasilitas belajar;</li>
+        <li><strong>Bidang Kesehatan & Sanitasi:</strong> Layanan pengobatan gratis, penanganan stunting, dan air bersih;</li>
+        <li><strong>Bidang Ekonomi Masyarakat:</strong> Pelatihan UMKM binaan dan bantuan alat produktif warga;</li>
+        <li><strong>Bidang Infrastruktur & Lingkungan:</strong> Perbaikan jalan desa, reboisasi lahan, dan konservasi alam.</li>
+      </ul>
+
+      <h3 class="sub-heading" contenteditable="true">3. Penempatan Logo Mitra Resmi (Official Corporate Partner)</h3>
+      <p>
+        Pemasangan badge dan logo resmi PT Putra Mekongga Sejahtera pada widget mitra korporasi di halaman utama (*homepage*) serta setiap artikel pada portal berita <em>xyronnews.com</em>, yang menegaskan komitmen keterbukaan informasi publik perusahaan kepada jutaan pembaca.
+      </p>
+
+      <h3 class="sub-heading" contenteditable="true">4. Media Monitoring, Kliping Digital & Laporan Pertanggungjawaban (LPJ)</h3>
+      <p>
+        Penyusunan berkas rekapitulasi laporan berkala yang memuat bukti tayang, arsip digital, dan analisis jangkauan berita (*clipping book & link repository*). Laporan ini diserahkan dalam bentuk fisik maupun digital sebagai lampiran resmi pertanggungjawaban program CSR perusahaan kepada manajemen direksi, pemegang saham, dan Dinas ESDM/Pemerintah Daerah.
+      </p>
+
+      <h3 class="sub-heading" contenteditable="true">5. Pendampingan Manajemen Isu & Hak Jawab Prioritas</h3>
+      <p>
+        Penyediaan ruang klarifikasi, hak jawab, dan hak koreksi prioritas secara berimbang dan profesional guna meluruskan informasi yang keliru atau disinformasi seputar operasional perusahaan yang berkembang di tengah publik.
+      </p>
+
+    </div>
+
+    <div class="page-footer">
+      <span>Proposal Kemitraan Media Siber &bull; PT Putra Mekongga Sejahtera</span>
+      <span>Halaman 3 dari 5</span>
+    </div>
+  </div>
+
+
+  <!-- ============================================================== -->
+  <!-- HALAMAN 4: BAB IV (PAKET KEMITRAAN & SKEMA INVESTASI)          -->
+  <!-- ============================================================== -->
+  <div class="paper">
+    <div class="page-body">
+
+      <!-- Kop Surat Resmi -->
+      <div class="kop-surat">
+        <img src="assets/img/logo_skillance_icon.png" class="kop-logo" alt="Logo PT Skillance Digital Indonesia">
+        <div class="kop-text">
+          <h1 class="kop-title-main">PT SKILLANCE DIGITAL INDONESIA</h1>
+          <div class="kop-sub">PENERBIT MEDIA SIBER &bull; CERITA RAKYAT OFFICIAL (WWW.XYRONNEWS.COM)</div>
+          <p class="meta">Alamat Kantor: Desa Pabiring Dusun Taruseng, Kec. Poleang Barat, Kab. Bombana, Sulawesi Tenggara 93772</p>
+          <p class="meta">Website: https://skillance.cloud &bull; Surel: redaksi@xyronnews.com &bull; Hotline/Redaksi: 0811-4030-800</p>
+        </div>
+        <div class="kop-spacer"></div>
+      </div>
+
+      <h2 class="section-heading" contenteditable="true">BAB IV: PILIHAN PAKET & SKEMA INVESTASI KEMITRAAN</h2>
+      
+      <p>
+        Untuk memberikan fleksibilitas sesuai agenda kerja dan anggaran korporasi, kami menyusun 3 (tiga) pilihan skema paket kemitraan publikasi resmi sebagai berikut:
+      </p>
+
+      <table class="table-custom">
+        <thead>
+          <tr>
+            <th style="width: 25%;">Komponen Layanan</th>
+            <th style="width: 25%;">Paket Triwulan<br><span class="badge-tier badge-tier-silver">Silver Partner</span></th>
+            <th style="width: 25%;">Paket Semester<br><span class="badge-tier badge-tier-gold">Gold Partner</span></th>
+            <th style="width: 25%;">Paket Tahunan (1 Thn)<br><span class="badge-tier badge-tier-plat">Platinum Partner (Utama)</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Durasi Kemitraan</strong></td>
+            <td contenteditable="true">3 Bulan Berjalan</td>
+            <td contenteditable="true">6 Bulan Berjalan</td>
+            <td contenteditable="true"><strong>12 Bulan (1 Tahun Penuh)</strong></td>
+          </tr>
+          <tr>
+            <td><strong>Siaran Pers & Rilis Kegiatan</strong></td>
+            <td contenteditable="true">Hingga 6 Berita Rilis</td>
+            <td contenteditable="true">Hingga 15 Berita Rilis</td>
+            <td contenteditable="true"><strong>Prioritas Tanpa Batas Kuota Wajar (Aktif)</strong></td>
+          </tr>
+          <tr>
+            <td><strong>Advertorial Khusus CSR/PPM</strong></td>
+            <td contenteditable="true">1 Liputan Mendalam</td>
+            <td contenteditable="true">3 Liputan Khusus Lapangan</td>
+            <td contenteditable="true"><strong>6 Liputan Tematik CSR & Dampak Warga</strong></td>
+          </tr>
+          <tr>
+            <td><strong>Pemasangan Logo Mitra</strong></td>
+            <td contenteditable="true">Widget Footer Mitra</td>
+            <td contenteditable="true">Widget Sidebar Utama</td>
+            <td contenteditable="true"><strong>Header & Sidebar Utama (Semua Halaman)</strong></td>
+          </tr>
+          <tr>
+            <td><strong>Laporan Kliping LPJ</strong></td>
+            <td contenteditable="true">1 Rekapitulasi Akhir</td>
+            <td contenteditable="true">Rekap Triwulan & Akhir</td>
+            <td contenteditable="true"><strong>Buku Kliping Resmi Berkala (Hard & Softcopy)</strong></td>
+          </tr>
+          <tr>
+            <td><strong>Hak Jawab & Klarifikasi</strong></td>
+            <td contenteditable="true">Standar Redaksi</td>
+            <td contenteditable="true">Prioritas 24 Jam</td>
+            <td contenteditable="true"><strong>Prioritas Tanggap Cepat 24/7 (Hotline Tim Khusus)</strong></td>
+          </tr>
+          <tr>
+            <td><strong>Nilai Investasi Kemitraan</strong></td>
+            <td contenteditable="true"><strong style="color: #0d2e5c;">Rp 15.000.000,-</strong><br><small class="text-muted">(Termin per Triwulan)</small></td>
+            <td contenteditable="true"><strong style="color: #d97706;">Rp 27.500.000,-</strong><br><small class="text-muted">(Hemat Rp 2,5 Juta)</small></td>
+            <td contenteditable="true"><strong style="color: #0f5132; font-size: 10.5pt;">Rp 48.000.000,-</strong><br><small class="text-muted">(Paket Sinergi Paling Efektif)</small></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3 class="sub-heading" contenteditable="true">Ketentuan & Tata Cara Pembayaran:</h3>
+      <ol contenteditable="true">
+        <li>Nilai investasi kemitraan bersifat fleksibel dan dapat dinegosiasikan sesuai kebutuhan program Humas dan CSR PT. Putra Mekongga Sejahtera;</li>
+        <li>Pembayaran dapat dilakukan secara bertahap (termin) sesuai kesepakatan dalam Perjanjian Kerja Sama (MoU);</li>
+        <li>Seluruh transaksi ditransfer langsung ke rekening resmi korporasi PT SKILLANCE DIGITAL INDONESIA lengkap dengan kuitansi resmi, faktur pajak / bukti potong PPh sesuai regulasi perpajakan yang berlaku;</li>
+        <li>Pelaksanaan kerja sama diikat secara sah melalui dokumen Nota Kesepahaman (MoU) dan Surat Perjanjian Kerja Sama (PKS).</li>
+      </ol>
+
+    </div>
+
+    <div class="page-footer">
+      <span>Proposal Kemitraan Media Siber &bull; PT Putra Mekongga Sejahtera</span>
+      <span>Halaman 4 dari 5</span>
+    </div>
+  </div>
+
+
+  <!-- ============================================================== -->
+  <!-- HALAMAN 5: BAB V (PENUTUP & PENGESAHAN) + FORM PERSETUJUAN     -->
+  <!-- ============================================================== -->
+  <div class="paper">
+    <div class="page-body">
+
+      <!-- Kop Surat Resmi -->
+      <div class="kop-surat">
+        <img src="assets/img/logo_skillance_icon.png" class="kop-logo" alt="Logo PT Skillance Digital Indonesia">
+        <div class="kop-text">
+          <h1 class="kop-title-main">PT SKILLANCE DIGITAL INDONESIA</h1>
+          <div class="kop-sub">PENERBIT MEDIA SIBER &bull; CERITA RAKYAT OFFICIAL (WWW.XYRONNEWS.COM)</div>
+          <p class="meta">Alamat Kantor: Desa Pabiring Dusun Taruseng, Kec. Poleang Barat, Kab. Bombana, Sulawesi Tenggara 93772</p>
+          <p class="meta">Website: https://skillance.cloud &bull; Surel: redaksi@xyronnews.com &bull; Hotline/Redaksi: 0811-4030-800</p>
+        </div>
+        <div class="kop-spacer"></div>
+      </div>
+
+      <h2 class="section-heading" contenteditable="true">BAB V: PENUTUP & LEMBAR PENGESAHAN</h2>
+      
+      <p>
+        Demikian proposal penawaran kemitraan strategis ini kami sampaikan dengan harapan dapat terbangun kerja sama yang sinergis, konstruktif, dan berkelanjutan bersama <strong>PT. PUTRA MEKONNGA SEJAHTERA</strong>. Kami percaya bahwa sinergi antara korporasi yang kredibel dan media pers yang profesional akan menjadi pilar utama dalam mewujudkan pembangunan daerah yang berkeadilan, transparan, dan sejahtera.
+      </p>
+
+      <p>
+        Atas perhatian, perkenan, dan kerja sama yang baik dari Bapak/Pimpinan PT. Putra Mekongga Sejahtera beserta jajaran direksi, kami menghaturkan terima kasih yang sebesar-besarnya.
+      </p>
+
+      <!-- Kolom Tanda Tangan Pengesahan -->
+      <div class="sig-grid">
+        <div class="sig-col">
+          <p style="margin: 0; font-size: 9.5pt;">Diajukan Oleh,</p>
+          <p style="margin: 0; font-weight: bold; font-size: 10pt; color: #0d2e5c;">CERITA RAKYAT OFFICIAL</p>
+          <p style="margin: 0; font-size: 8.5pt; color: #64748b;">Media Siber & Publikasi</p>
+          <div class="sig-space"></div>
+          <p class="sig-name" contenteditable="true">MUH. RAHWAN</p>
+          <p class="sig-title" contenteditable="true">Pemimpin Umum</p>
+        </div>
+
+        <div class="sig-col">
+          <p style="margin: 0; font-size: 9.5pt;">Mengetahui Badan Hukum Penerbit,</p>
+          <p style="margin: 0; font-weight: bold; font-size: 10pt; color: #0d2e5c;">PT SKILLANCE DIGITAL INDONESIA</p>
+          <p style="margin: 0; font-size: 8.5pt; color: #64748b;">Badan Usaha Penerbit Pers</p>
+          <div class="sig-space"></div>
+          <p class="sig-name" contenteditable="true">MUH ARSYAD RAMSI</p>
+          <p class="sig-title" contenteditable="true">Direktur Utama</p>
+        </div>
+      </div>
+
+      <!-- Formulir Lembar Konfirmasi Persetujuan (Letter of Acceptance) -->
+      <div class="acceptance-box">
+        <div class="acceptance-title">
+          <i class="fa-solid fa-file-signature me-1"></i> LEMBAR KONFIRMASI PERSETUJUAN KEMITRAAN (LETTER OF INTENT)
+        </div>
+        <p class="no-indent" style="font-size: 8.8pt; margin-bottom: 6px;">
+          Menyatakan bahwa <strong>PT. PUTRA MEKONNGA SEJAHTERA</strong> menyambut baik dan menyetujui kemitraan publikasi media bersama <strong>Cerita Rakyat Official (PT Skillance Digital Indonesia)</strong> dengan ketentuan:
+        </p>
+        <table style="width: 100%; font-size: 8.5pt; border-collapse: collapse; margin-bottom: 6px;">
+          <tr>
+            <td style="width: 140px; padding: 2px 0;"><strong>Paket yang Dipilih</strong></td>
+            <td style="width: 10px;">:</td>
+            <td contenteditable="true">[ &nbsp; ] Paket Silver (Triwulan) &nbsp;&nbsp;&bull;&nbsp;&nbsp; [ &nbsp; ] Paket Gold (Semester) &nbsp;&nbsp;&bull;&nbsp;&nbsp; [ &nbsp; ] Paket Platinum (Tahunan)</td>
+          </tr>
+          <tr>
+            <td style="padding: 2px 0;"><strong>Nama Pejabat / PIC</strong></td>
+            <td>:</td>
+            <td contenteditable="true">.................................................................................................................................</td>
+          </tr>
+          <tr>
+            <td style="padding: 2px 0;"><strong>Jabatan & Bagian</strong></td>
+            <td>:</td>
+            <td contenteditable="true">Humas / External Relations / CSR / Manajemen Direksi</td>
+          </tr>
+          <tr>
+            <td style="padding: 2px 0;"><strong>No. Telp / WhatsApp</strong></td>
+            <td>:</td>
+            <td contenteditable="true">.................................................................................................................................</td>
+          </tr>
+        </table>
+        <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-top: 4px;">
+          <div style="font-size: 8pt; color: #64748b;">
+            <em>*Lembar ini dapat diparaf/ditandatangani lalu difoto/diserahkan ke tim kemitraan kami.</em>
+          </div>
+          <div style="text-align: center; width: 200px;">
+            <p style="margin: 0; font-size: 8.5pt;">Kolaka, .................................... 2026</p>
+            <p style="margin: 0; font-size: 8.5pt; font-weight: bold;">PT PUTRA MEKONNGA SEJAHTERA</p>
+            <div style="height: 38px;"></div>
+            <p style="margin: 0; font-size: 8.5pt; text-decoration: underline;">( .................................................... )</p>
+            <p style="margin: 0; font-size: 7.5pt; color: #64748b;">Tanda Tangan & Cap Perusahaan</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="page-footer">
+      <span>Proposal Kemitraan Media Siber &bull; PT Putra Mekongga Sejahtera</span>
+      <span>Halaman 5 dari 5</span>
+    </div>
+  </div>
+
+</body>
+</html>
