@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Company Profile & Media Kit - Cerita Rakyat Official (xyronnews.com)</title>
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800;900&display=swap" rel="stylesheet">
+  
+  <style>
+    @page {
+      size: A4 portrait;
+      margin: 10mm 14mm 10mm 14mm;
+    }
+    @page :first {
+      margin: 0;
+    }
+    @media print {
+      body {
+        background: #ffffff !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .no-print {
+        display: none !important;
+      }
+      .paper {
+        box-shadow: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        min-height: auto !important;
+        page-break-after: always !important;
+        page-break-inside: avoid !important;
+      }
+      .paper.cover-page {
+        width: 210mm !important;
+        height: 297mm !important;
+        max-height: 297mm !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        overflow: hidden !important;
+        page-break-after: always !important;
+      }
+      .paper:last-child {
+        page-break-after: auto !important;
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 10.5pt;
+      line-height: 1.42;
+      color: #111827;
+      background: #eef2f6;
+      margin: 0;
+      padding: 16px;
+    }
+
+    /* Top Sticky Navigation Toolbar */
+    .top-nav-bar {
+      position: sticky;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: #0d2e5c;
+      color: #fff;
+      padding: 10px 20px;
+      z-index: 9999;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+      border-radius: 8px;
+      margin-bottom: 20px;
+      font-family: 'Inter', sans-serif;
+    }
+    .top-nav-bar .btn {
+      padding: 7px 15px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 13px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      transition: all 0.2s ease;
+      border: none;
+    }
+    .btn-print {
+      background: #fe9800;
+      color: #0d2e5c;
+    }
+    .btn-print:hover {
+      background: #ffa726;
+      transform: translateY(-1px);
+    }
+    .btn-back {
+      background: rgba(255,255,255,0.15);
+      color: #fff;
+    }
+    .btn-back:hover {
+      background: rgba(255,255,255,0.25);
+    }
+    .btn-edit {
+      background: #10b981;
+      color: #fff;
+    }
+    .btn-edit:hover {
+      background: #059669;
+    }
+
+    /* A4 Paper Container */
+    .paper-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+    }
+    .paper {
+      background: #ffffff;
+      width: 210mm;
+      min-height: 297mm;
+      padding: 14mm 18mm 14mm 18mm;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+      border-radius: 2px;
+      position: relative;
+    }
+
+    /* COVER PAGE DESIGN */
+    .paper.cover-page {
+      padding: 0;
+      background: linear-gradient(135deg, #091a36 0%, #0d2e5c 60%, #16427d 100%);
+      color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+      position: relative;
+    }
+    .cover-header {
+      padding: 40px 45px 20px 45px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(255,255,255,0.12);
+    }
+    .cover-body {
+      padding: 40px 45px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .cover-footer {
+      padding: 25px 45px;
+      background: rgba(0,0,0,0.25);
+      border-top: 1px solid rgba(255,255,255,0.12);
+    }
+    .cover-badge {
+      display: inline-block;
+      background: rgba(254, 152, 0, 0.18);
+      border: 1px solid #fe9800;
+      color: #fe9800;
+      padding: 6px 14px;
+      border-radius: 30px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .cover-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: 34pt;
+      font-weight: 900;
+      line-height: 1.15;
+      color: #ffffff;
+      margin: 0 0 15px 0;
+      letter-spacing: -0.5px;
+    }
+    .cover-subtitle {
+      font-family: 'Inter', sans-serif;
+      font-size: 15pt;
+      font-weight: 600;
+      color: #fe9800;
+      margin: 0 0 20px 0;
+    }
+    .cover-desc {
+      font-family: 'Inter', sans-serif;
+      font-size: 11pt;
+      line-height: 1.6;
+      color: #cbd5e1;
+      max-width: 580px;
+      margin-bottom: 30px;
+    }
+    .cover-meta-box {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-left: 4px solid #fe9800;
+      border-radius: 8px;
+      padding: 16px 20px;
+      font-family: 'Inter', sans-serif;
+      font-size: 9.5pt;
+      line-height: 1.55;
+    }
+
+    /* KOP SURAT */
+    .kop {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      border-bottom: 2.5px solid #0d2e5c;
+      padding-bottom: 8px;
+      margin-bottom: 12px;
+    }
+    .kop-logo {
+      width: 72px;
+      height: 72px;
+      object-fit: contain;
+    }
+    .kop-text {
+      flex: 1;
+      text-align: center;
+    }
+    .kop-text h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 14pt;
+      font-weight: 800;
+      color: #0d2e5c;
+      margin: 0 0 2px 0;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .kop-text h3 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 10.5pt;
+      font-weight: 700;
+      color: #fe9800;
+      margin: 0 0 3px 0;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .kop-text p {
+      font-family: 'Inter', sans-serif;
+      font-size: 7.5pt;
+      color: #4b5563;
+      margin: 0;
+      line-height: 1.35;
+    }
+
+    /* TYPOGRAPHY & SECTIONS */
+    h1, h2, h3, h4 {
+      font-family: 'Poppins', sans-serif;
+      color: #0d2e5c;
+    }
+    .section-title {
+      font-size: 12pt;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: #0d2e5c;
+      border-bottom: 1.5px solid #0d2e5c;
+      padding-bottom: 3px;
+      margin: 14px 0 8px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .section-title span.badge-num {
+      background: #0d2e5c;
+      color: #fff;
+      font-size: 8.5pt;
+      padding: 1px 7px;
+      border-radius: 4px;
+    }
+    p {
+      text-align: justify;
+      margin: 0 0 8px 0;
+    }
+
+    /* HIGHLIGHT CARDS & GRIDS */
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin: 12px 0;
+    }
+    .stat-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-top: 3px solid #0d2e5c;
+      border-radius: 6px;
+      padding: 10px;
+      text-align: center;
+    }
+    .stat-card .num {
+      font-family: 'Poppins', sans-serif;
+      font-size: 15pt;
+      font-weight: 800;
+      color: #0d2e5c;
+      margin-bottom: 2px;
+    }
+    .stat-card .label {
+      font-family: 'Inter', sans-serif;
+      font-size: 7.5pt;
+      font-weight: 600;
+      color: #64748b;
+      text-transform: uppercase;
+    }
+
+    .info-box {
+      background: #f0f7ff;
+      border-left: 3.5px solid #0d2e5c;
+      border-radius: 4px;
+      padding: 8px 12px;
+      margin: 8px 0;
+      font-size: 9.5pt;
+    }
+
+    /* TABLES */
+    table.custom-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 8px 0 12px 0;
+      font-size: 9pt;
+    }
+    table.custom-table th {
+      background: #0d2e5c;
+      color: #ffffff;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      text-align: left;
+      padding: 6px 8px;
+      border: 1px solid #0d2e5c;
+    }
+    table.custom-table td {
+      padding: 5px 8px;
+      border: 1px solid #cbd5e1;
+      vertical-align: top;
+    }
+    table.custom-table tr:nth-child(even) td {
+      background: #f8fafc;
+    }
+
+    /* FOOTER PAGE NUMBER */
+    .page-footer {
+      position: absolute;
+      bottom: 10mm;
+      left: 18mm;
+      right: 18mm;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid #e2e8f0;
+      padding-top: 5px;
+      font-family: 'Inter', sans-serif;
+      font-size: 7.5pt;
+      color: #64748b;
+    }
+
+    /* SIGNATURE BLOCK */
+    .signature-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      margin-top: 20px;
+      font-family: 'Inter', sans-serif;
+    }
+    .sig-col {
+      text-align: center;
+    }
+    .sig-role {
+      font-weight: 700;
+      color: #0d2e5c;
+      font-size: 9.5pt;
+      margin-bottom: 45px;
+    }
+    .sig-name {
+      font-weight: 800;
+      font-size: 10.5pt;
+      text-decoration: underline;
+      color: #111827;
+      margin-bottom: 2px;
+    }
+    .sig-sub {
+      font-size: 8.5pt;
+      color: #4b5563;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sticky Top Action Bar -->
+  <div class="top-nav-bar no-print">
+    <div style="display: flex; align-items: center; gap: 12px;">
+      <span style="font-weight: 700; font-size: 14px; letter-spacing: 0.3px;">
+        <i class="fa-solid fa-newspaper text-warning me-1"></i> COMPANY PROFILE & MEDIA KIT &bull; CERITA RAKYAT OFFICIAL
+      </span>
+      <span style="background: rgba(254,152,0,0.25); color: #fe9800; padding: 2px 8px; border-radius: 12px; font-size: 11px; font-weight: 700;">
+        5 Halaman A4 Presisi
+      </span>
+    </div>
+    <div style="display: flex; gap: 10px;">
+      <button class="btn btn-edit" onclick="toggleEditMode()" id="editBtn">
+        <i class="fa-solid fa-pen-to-square"></i> Mode Edit Teks
+      </button>
+      <button class="btn btn-print" onclick="window.print()">
+        <i class="fa-solid fa-print"></i> Cetak Dokumen / PDF
+      </button>
+      <a href="Proposal_Kemitraan_Media_PT_Putra_Mekongga_Sejahtera.html" class="btn btn-back">
+        <i class="fa-solid fa-file-contract"></i> Buka Proposal
+      </a>
+    </div>
+  </div>
+
+  <div class="paper-container">
+
+    <!-- HALAMAN 1: COVER SAMPUL EKSKLUSIF MEDIA -->
+    <div class="paper cover-page">
+      <div class="cover-header">
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <div style="font-family: 'Poppins', sans-serif; font-weight: 900; font-size: 24pt; color: #fe9800; line-height: 1;">&lt;/&gt;</div>
+          <div>
+            <div style="font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 11pt; color: #ffffff; letter-spacing: 0.5px;">PT SKILLANCE DIGITAL INDONESIA</div>
+            <div style="font-family: 'Inter', sans-serif; font-size: 8pt; color: #94a3b8;">Badan Hukum Penerbit Media Siber Resmi</div>
+          </div>
+        </div>
+        <div style="text-align: right;">
+          <div style="font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 10pt; color: #fe9800;">PORTAL RESMI:</div>
+          <div style="font-family: 'Inter', sans-serif; font-size: 9pt; color: #ffffff;">WWW.XYRONNEWS.COM</div>
+        </div>
+      </div>
+
+      <div class="cover-body">
+        <div class="cover-badge"><i class="fa-solid fa-shield-halved me-1"></i> DOKUMEN RESMI MEDIA SIBER &bull; TAHUN 2026</div>
+        <h1 class="cover-title">COMPANY PROFILE<br>& MEDIA KIT</h1>
+        <div class="cover-subtitle">CERITA RAKYAT OFFICIAL (XYRONNEWS.COM)</div>
+        <div class="cover-desc">
+          Profil resmi media siber, pedoman redaksional, metrik jangkauan publik, kepatuhan Undang-Undang Pers, serta solusi strategis kemitraan publikasi korporasi, advertorial CSR/PPM, dan diseminasi informasi publik di Sulawesi Tenggara dan Nasional.
+        </div>
+
+        <div class="cover-meta-box">
+          <div style="font-weight: 700; color: #fe9800; margin-bottom: 4px; font-size: 10pt;">LEGALITAS PENERBIT MEDIA:</div>
+          <div><strong>Badan Hukum Penerbit:</strong> PT SKILLANCE DIGITAL INDONESIA</div>
+          <div><strong>SK Kemenkumham RI:</strong> AHU-A138609.AH.01.30.Tahun 2026 &bull; <strong>NPWP:</strong> 100000011940526</div>
+          <div><strong>Regulasi Acuan:</strong> UU Pers No. 40 Tahun 1999 & Standar Pedoman Pemberitaan Media Siber (PPMS)</div>
+          <div><strong>Hotline Redaksi:</strong> 0822-9170-0778 &bull; <strong>Website:</strong> https://skillance.cloud</div>
+        </div>
+      </div>
+
+      <div class="cover-footer">
+        <div style="display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #94a3b8;">
+          <div><i class="fa-solid fa-location-dot text-warning me-1"></i> Desa Pabiring Dusun Taruseng, Kec. Poleang Barat, Kab. Bombana, Sultra 93772</div>
+          <div>KONSORSIUM CERITA RAKYAT OFFICIAL &bull; XYRONNEWS NETWORK</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- HALAMAN 2: TENTANG KAMI, VISI MISI & KEPATUHAN PERS -->
+    <div class="paper">
+      <div class="kop">
+        <div style="font-size: 32pt; font-family: 'Poppins', sans-serif; font-weight: 900; color: #fe9800; line-height: 1;">&lt;/&gt;</div>
+        <div class="kop-text">
+          <h2>PT SKILLANCE DIGITAL INDONESIA</h2>
+          <h3>PENERBIT MEDIA SIBER &bull; CERITA RAKYAT OFFICIAL (WWW.XYRONNEWS.COM)</h3>
+          <p>SK Kemenkumham RI: AHU-A138609.AH.01.30.Tahun 2026 &bull; NPWP Badan: 100000011940526 &bull; NIB OSS Terdaftar</p>
+          <p>Alamat Kantor: Desa Pabiring Dusun Taruseng, Kec. Poleang Barat, Kab. Bombana, Sulawesi Tenggara 93772</p>
+          <p>Website: https://skillance.cloud &bull; Surel: redaksi@xyronnews.com &bull; Hotline/Redaksi: 0822-9170-0778</p>
+        </div>
+      </div>
+
+      <div class="section-title">
+        <span>I. TENTANG CERITA RAKYAT OFFICIAL</span>
+        <span class="badge-num">BAB 01</span>
+      </div>
+
+      <p>
+        <strong>CERITA RAKYAT OFFICIAL</strong> (beroperasi melalui portal siber utama <strong><em>xyronnews.com</em></strong>) adalah media massa siber profesional yang didirikan dengan semangat mengangkat realitas sosial, dinamika pembangunan daerah, serta menyuarakan aspirasi masyarakat secara konstruktif dan berimbang. Berkedudukan di Provinsi Sulawesi Tenggara dengan cakupan jejaring informasi regional hingga nasional, Cerita Rakyat Official hadir sebagai pilar informasi independen yang menjunjung tinggi etika jurnalistik.
+      </p>
+      <p>
+        Diterbitkan secara sah oleh badan hukum perseroan <strong>PT SKILLANCE DIGITAL INDONESIA</strong>, media ini mengintegrasikan jurnalisme investigatif yang bertanggung jawab dengan teknologi digital terkini, memungkinkan setiap karya jurnalistik didistribusikan secara cepat, tepat sasaran, dan memiliki daya jangkau publik yang terukur secara analitik.
+      </p>
+
+      <div class="section-title">
+        <span>II. VISI, MISI & NILAI REDAKSIONAL</span>
+        <span class="badge-num">BAB 02</span>
+      </div>
+
+      <div class="info-box">
+        <strong style="color: #0d2e5c;">VISI MEDIA:</strong><br>
+        <em>"Menjadi institusi media siber terdepan dan terpercaya di Sulawesi Tenggara dan Nasional yang independen, berintegritas, edukatif, serta menjadi katalisator kemitraan strategis antara masyarakat, korporasi, dan pemerintah."</em>
+      </div>
+
+      <p style="margin-top: 8px;"><strong>MISI UTAMA:</strong></p>
+      <ol style="margin: 0 0 10px 0; padding-left: 20px;">
+        <li style="margin-bottom: 4px;"><strong>Menegakkan Jurnalisme Berimbang:</strong> Menghadirkan liputan komprehensif berbasis fakta, verifikasi yang ketat, dan menolak penyebaran hoaks serta sensasionalisme yang merugikan iklim investasi dan ketertiban umum.</li>
+        <li style="margin-bottom: 4px;"><strong>Menjembatani Komunikasi Korporasi & Publik:</strong> Menyediakan kanal diseminasi terpercaya bagi dunia usaha (sektor pertambangan, energi, perkebunan, dan infrastruktur) untuk mempublikasikan kontribusi riil, kepatuhan K3, serta tanggung jawab sosial lingkungan.</li>
+        <li style="margin-bottom: 4px;"><strong>Mengawal Program CSR / PPM Daerah:</strong> Melakukan peliputan mendalam (*in-depth reporting*) mengenai keberhasilan program Pengembangan dan Pemberdayaan Masyarakat (PPM) agar terpublikasi secara transparan dan membangun citra positif berkelanjutan.</li>
+        <li style="margin-bottom: 4px;"><strong>Mendorong Transformasi Digital Berkelanjutan:</strong> Mengoptimalkan integrasi media siber dengan multi-platform jejaring sosial untuk menjangkau generasi produktif dan pengambil kebijakan secara efektif.</li>
+      </ol>
+
+      <div class="section-title">
+        <span>III. KEPATUHAN STANDAR PERS & KODE ETIK</span>
+        <span class="badge-num">BAB 03</span>
+      </div>
+      <p>
+        Dalam setiap kegiatan jurnalistik dan operasional redaksi, Cerita Rakyat Official tunduk dan patuh pada:
+      </p>
+      <ul style="margin: 0 0 10px 0; padding-left: 20px;">
+        <li><strong>Undang-Undang Republik Indonesia Nomor 40 Tahun 1999 tentang Pers</strong> sebagai landasan utama kemerdekaan berserikat dan perlindungan hukum bagi karya pers.</li>
+        <li><strong>Kode Etik Jurnalistik (KEJ) Dewan Pers</strong>: Menghormati asas praduga tak bersalah, keberimbangan narasumber (*cover both sides*), dan hak jawab/koreksi.</li>
+        <li><strong>Pedoman Pemberitaan Media Siber (PPMS)</strong> yang ditetapkan oleh Dewan Pers, khususnya terkait verifikasi keberimbangan berita, koreksi ralat, serta pengelolaan konten buatan pengguna (*user-generated content*).</li>
+      </ul>
+
+      <div class="page-footer">
+        <div>Company Profile & Media Kit &bull; Cerita Rakyat Official (xyronnews.com)</div>
+        <div>Halaman 2 dari 5</div>
+      </div>
+    </div>
+
+    <!-- HALAMAN 3: LEGALITAS BADAN HUKUM & STRUKTUR REDAKSI -->
+    <div class="paper">
+      <div class="kop">
+        <div style="font-size: 32pt; font-family: 'Poppins', sans-serif; font-weight: 900; color: #fe9800; line-height: 1;">&lt;/&gt;</div>
+        <div class="kop-text">
+          <h2>PT SKILLANCE DIGITAL INDONESIA</h2>
+          <h3>PENERBIT MEDIA SIBER &bull; CERITA RAKYAT OFFICIAL (WWW.XYRONNEWS.COM)</h3>
+          <p>SK Kemenkumham RI: AHU-A138609.AH.01.30.Tahun 2026 &bull; NPWP Badan: 100000011940526 &bull; NIB OSS Terdaftar</p>
+          <p>Alamat Kantor: Desa Pabiring Dusun Taruseng, Kec. Poleang Barat, Kab. Bombana, Sulawesi Tenggara 93772</p>
+          <p>Website: https://skillance.cloud &bull; Surel: redaksi@xyronnews.com &bull; Hotline/Redaksi: 0822-9170-0778</p>
+        </div>
+      </div>
+
+      <div class="section-title">
+        <span>IV. LEGALITAS BADAN HUKUM PENERBIT</span>
+        <span class="badge-num">BAB 04</span>
+      </div>
+
+      <p>
+        Berdasarkan Pasal 9 ayat (2) UU Pers No. 40/1999 yang mewajibkan setiap perusahaan pers berbadan hukum Indonesia, seluruh aktivitas operasional, komersial, periklanan, dan kerja sama kemitraan <strong>Cerita Rakyat Official</strong> diselenggarakan di bawah badan hukum perseroan resmi:
+      </p>
+
+      <table class="custom-table">
+        <tbody>
+          <tr>
+            <td style="width: 32%; font-weight: 700; background: #f1f5f9;">Nama Badan Usaha</td>
+            <td style="width: 68%;"><strong>PT SKILLANCE DIGITAL INDONESIA</strong></td>
+          </tr>
+          <tr>
+            <td style="font-weight: 700; background: #f1f5f9;">Bentuk Badan Hukum</td>
+            <td>Perseroan Terbatas (PT) Swasta Nasional</td>
+          </tr>
+          <tr>
+            <td style="font-weight: 700; background: #f1f5f9;">Pengesahan Menkumham RI</td>
+            <td><strong>Nomor: AHU-A138609.AH.01.30.Tahun 2026</strong></td>
+          </tr>
+          <tr>
+            <td style="font-weight: 700; background: #f1f5f9;">NPWP Badan Usaha</td>
+            <td><strong>100000011940526</strong></td>
+          </tr>
+          <tr>
+            <td style="font-weight: 700; background: #f1f5f9;">Nomor Induk Berusaha (NIB)</td>
+            <td>Terdaftar Resmi Sistem Online Single Submission (OSS RBA)</td>
+          </tr>
+          <tr>
+            <td style="font-weight: 700; background: #f1f5f9;">Klasifikasi Baku Usaha (KBLI)</td>
+            <td>
+              &bull; <strong>58130</strong>: Penerbitan Surat Kabar, Jurnal, dan Buletin atau Majalah<br>
+              &bull; <strong>63122</strong>: Portal Web dan/atau Platform Digital dengan Tujuan Komersial
+            </td>
+          </tr>
+          <tr>
+            <td style="font-weight: 700; background: #f1f5f9;">Rekening Bank Resmi PT</td>
+            <td>Bank Mandiri / BSI Rekening Giro Korporat a.n. <strong>PT SKILLANCE DIGITAL INDONESIA</strong></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="section-title">
+        <span>V. SUSUNAN DEWAN REDAKSI & MANAJEMEN</span>
+        <span class="badge-num">BAB 05</span>
+      </div>
+
+      <p>
+        Manajemen Cerita Rakyat Official dikelola oleh tenaga jurnalis, analis media, dan praktisi IT yang berdedikasi menjaga kualitas dan keberlanjutan publikasi:
+      </p>
+
+      <table class="custom-table">
+        <thead>
+          <tr>
+            <th style="width: 35%;">Jabatan Organisasi</th>
+            <th style="width: 35%;">Nama Pejabat</th>
+            <th style="width: 30%;">Tanggung Jawab Utama</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Dewan Pembina / Penasihat</strong></td>
+            <td>Dr. Ir. H. Sudirman, M.Si</td>
+            <td>Pengarah kebijakan etika & relasi kelembagaan</td>
+          </tr>
+          <tr>
+            <td><strong>Pemimpin Umum</strong></td>
+            <td><strong>MUH. RAHWAN</strong></td>
+            <td>Penanggung jawab umum seluruh lini redaksional & korporasi</td>
+          </tr>
+          <tr>
+            <td><strong>Pemimpin Perusahaan</strong></td>
+            <td><strong>MUH ARSYAD RAMSI</strong></td>
+            <td>Pengelola kemitraan bisnis, legalitas, keuangan & operasional</td>
+          </tr>
+          <tr>
+            <td><strong>Pemimpin Redaksi</strong></td>
+            <td>Muh. Rahwan</td>
+            <td>Penanggung jawab produk berita & kepatuhan kode etik pers</td>
+          </tr>
+          <tr>
+            <td><strong>Redaktur Pelaksana</strong></td>
+            <td>Asdar Jaya</td>
+            <td>Koordinasi harian agenda liputan & kurasi naskah</td>
+          </tr>
+          <tr>
+            <td><strong>Redaktur Advertorial & CSR</strong></td>
+            <td>Andi Fajaruddin</td>
+            <td>Spesialisasi riset & peliputan program pemberdayaan korporasi</td>
+          </tr>
+          <tr>
+            <td><strong>Kepala Biro Kolaka & Kolut</strong></td>
+            <td>Tim Biro Wilayah (2 Wartawan)</td>
+            <td>Liputan langsung sektor tambang, pemerintahan, dan publik Kolaka</td>
+          </tr>
+          <tr>
+            <td><strong>Kepala Biro Bombana</strong></td>
+            <td>Tim Biro Wilayah (2 Wartawan)</td>
+            <td>Liputan wilayah Rumbia, Poleang, dan dinamika pesisir Bombana</td>
+          </tr>
+          <tr>
+            <td><strong>Teknologi & Infrastruktur Cloud</strong></td>
+            <td>Divisi IT PT Skillance</td>
+            <td>Pengelolaan server, uptime portal, optimasi SEO & keamanan siber</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="page-footer">
+        <div>Company Profile & Media Kit &bull; Cerita Rakyat Official (xyronnews.com)</div>
+        <div>Halaman 3 dari 5</div>
+      </div>
+    </div>
+
+    <!-- HALAMAN 4: JANGKAUAN AUDIENS, DEMOGRAFI & RUBRIKASI -->
+    <div class="paper">
+      <div class="kop">
+        <div style="font-size: 32pt; font-family: 'Poppins', sans-serif; font-weight: 900; color: #fe9800; line-height: 1;">&lt;/&gt;</div>
+        <div class="kop-text">
+          <h2>PT SKILLANCE DIGITAL INDONESIA</h2>
+          <h3>PENERBIT MEDIA SIBER &bull; CERITA RAKYAT OFFICIAL (WWW.XYRONNEWS.COM)</h3>
+          <p>SK Kemenkumham RI: AHU-A138609.AH.01.30.Tahun 2026 &bull; NPWP Badan: 100000011940526 &bull; NIB OSS Terdaftar</p>
+          <p>Alamat Kantor: Desa Pabiring Dusun Taruseng, Kec. Poleang Barat, Kab. Bombana, Sulawesi Tenggara 93772</p>
+          <p>Website: https://skillance.cloud &bull; Surel: redaksi@xyronnews.com &bull; Hotline/Redaksi: 0822-9170-0778</p>
+        </div>
+      </div>
+
+      <div class="section-title">
+        <span>VI. METRIK JANGKAUAN AUDIENS & TRAFFIC DIGITAL</span>
+        <span class="badge-num">BAB 06</span>
+      </div>
+
+      <p>
+        Dengan integrasi teknologi optimasi mesin pencari (SEO) dan jejaring distribusi multi-kanal, portal siber <em>xyronnews.com</em> mencatatkan pertumbuhan pembaca aktif yang signifikan:
+      </p>
+
+      <div class="stat-grid">
+        <div class="stat-card">
+          <div class="num">285.000+</div>
+          <div class="label">Monthly Pageviews</div>
+        </div>
+        <div class="stat-card">
+          <div class="num">92.000+</div>
+          <div class="label">Unique Visitors/Bln</div>
+        </div>
+        <div class="stat-card">
+          <div class="num">150.000+</div>
+          <div class="label">Social Media Reach</div>
+        </div>
+        <div class="stat-card">
+          <div class="num">99.8%</div>
+          <div class="label">Server Uptime Rate</div>
+        </div>
+      </div>
+
+      <div class="section-title">
+        <span>VII. SEBARAN GEOGRAFIS & DEMOGRAFI PEMBACA</span>
+        <span class="badge-num">BAB 07</span>
+      </div>
+
+      <div style="grid-template-columns: 1fr 1fr; display: grid; gap: 14px; margin: 8px 0 14px 0;">
+        <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 10px;">
+          <h4 style="font-size: 9.5pt; margin: 0 0 6px 0; color: #0d2e5c; font-weight: 700;">
+            <i class="fa-solid fa-map-location-dot text-warning me-1"></i> SEBARAN WILAYAH PEMBACA
+          </h4>
+          <ul style="margin: 0; padding-left: 18px; font-size: 8.5pt; line-height: 1.5;">
+            <li><strong>Kab. Kolaka & Kolaka Utara (35%):</strong> Sentra kawasan industri, pertambangan nikel, akademisi, dan wirausaha lokal.</li>
+            <li><strong>Kab. Bombana & Sekitarnya (27%):</strong> Wilayah lingkar industri emas, nikel, pertanian, dan instansi daerah.</li>
+            <li><strong>Kota Kendari & Provinsi Sultra (22%):</strong> Pengambil kebijakan Pemprov, DPRD, pimpinan BUMN, dan aktivis ormas.</li>
+            <li><strong>Kawasan Timur & Nasional (16%):</strong> Pemangku kepentingan pusat, kementerian terkait ESDM/KLHK, dan diaspora Sultra.</li>
+          </ul>
+        </div>
+        <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 10px;">
+          <h4 style="font-size: 9.5pt; margin: 0 0 6px 0; color: #0d2e5c; font-weight: 700;">
+            <i class="fa-solid fa-users-viewfinder text-primary me-1"></i> PROFIL & PROFESI AUDIENS
+          </h4>
+          <ul style="margin: 0; padding-left: 18px; font-size: 8.5pt; line-height: 1.5;">
+            <li><strong>38% Kalangan Industri & Korporasi:</strong> Manajemen tambang, kontraktor K3, pengusaha logistik, dan asosiasi pengusaha.</li>
+            <li><strong>32% Birokrasi & Tokoh Publik:</strong> Pejabat daerah, dinas teknis (ESDM, Kominfo, Lingkungan Hidup), aparat keamanan.</li>
+            <li><strong>30% Publik Produktif & Mahasiswa:</strong> Masyarakat lingkar tambang, pemuda pemerhati lingkungan, dan civitas akademika.</li>
+            <li><strong>Rentang Usia Utama:</strong> 22 – 55 tahun (Segmen pembuat keputusan dan tenaga kerja aktif).</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="section-title">
+        <span>VIII. RUBRIKASI & PROGRAM UNGGULAN MEDIA</span>
+        <span class="badge-num">BAB 08</span>
+      </div>
+
+      <table class="custom-table">
+        <thead>
+          <tr>
+            <th style="width: 25%;">Kanal Rubrik</th>
+            <th style="width: 75%;">Fokus Muatan & Nilai Strategis bagi Mitra</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Fokus CSR & PPM</strong></td>
+            <td>Ulasan mendalam mengenai implementasi program sosial korporasi bagi masyarakat lingkar industri (pendidikan, kesehatan, infrastruktur desa, pemberdayaan UMKM).</td>
+          </tr>
+          <tr>
+            <td><strong>Tambang, Energi & K3</strong></td>
+            <td>Publikasi kepatuhan tata kelola lingkungan (*Good Mining Practice*), sertifikasi K3, inovasi reklamasi lahan, serta keselamatan operasional industri.</td>
+          </tr>
+          <tr>
+            <td><strong>Daerah & Pembangunan</strong></td>
+            <td>Berita dinamika kebijakan pemerintah daerah, sinergi investasi, dan geliat ekonomi masyarakat Sulawesi Tenggara.</td>
+          </tr>
+          <tr>
+            <td><strong>Siaran Pers Mitra</strong></td>
+            <td>Kanal khusus penayangan rilis resmi mitra korporasi guna klarifikasi fakta, tangkal hoaks, dan diseminasi prestasi perusahaan.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="page-footer">
+        <div>Company Profile & Media Kit &bull; Cerita Rakyat Official (xyronnews.com)</div>
+        <div>Halaman 4 dari 5</div>
+      </div>
+    </div>
+
+    <!-- HALAMAN 5: PAKET LAYANAN, PORTOFOLIO & LEMBAR PENGESAHAN -->
+    <div class="paper">
+      <div class="kop">
+        <div style="font-size: 32pt; font-family: 'Poppins', sans-serif; font-weight: 900; color: #fe9800; line-height: 1;">&lt;/&gt;</div>
+        <div class="kop-text">
+          <h2>PT SKILLANCE DIGITAL INDONESIA</h2>
+          <h3>PENERBIT MEDIA SIBER &bull; CERITA RAKYAT OFFICIAL (WWW.XYRONNEWS.COM)</h3>
+          <p>SK Kemenkumham RI: AHU-A138609.AH.01.30.Tahun 2026 &bull; NPWP Badan: 100000011940526 &bull; NIB OSS Terdaftar</p>
+          <p>Alamat Kantor: Desa Pabiring Dusun Taruseng, Kec. Poleang Barat, Kab. Bombana, Sulawesi Tenggara 93772</p>
+          <p>Website: https://skillance.cloud &bull; Surel: redaksi@xyronnews.com &bull; Hotline/Redaksi: 0822-9170-0778</p>
+        </div>
+      </div>
+
+      <div class="section-title">
+        <span>IX. SKEMA LAYANAN KEMITRAAN PUBLIKASI</span>
+        <span class="badge-num">BAB 09</span>
+      </div>
+
+      <p>
+        Cerita Rakyat Official menyediakan opsi kemitraan publikasi yang dirancang khusus untuk memenuhi standar pertanggungjawaban korporasi dan keterbukaan informasi:
+      </p>
+
+      <table class="custom-table">
+        <thead>
+          <tr>
+            <th style="width: 25%;">Bentuk Layanan</th>
+            <th style="width: 50%;">Deskripsi & Output Pekerjaan</th>
+            <th style="width: 25%;">Dokumen Pendukung</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Publikasi Siaran Pers</strong></td>
+            <td>Penerbitan rilis pers resmi kegiatan korporasi di portal siber dan jaringan distribusi berita terverifikasi.</td>
+            <td>Link Berita + Kliping PDF</td>
+          </tr>
+          <tr>
+            <td><strong>Advertorial In-Depth CSR</strong></td>
+            <td>Liputan tematik terarah mengenai dampak positif program PPM/CSR di desa lingkar operasional lengkap dengan foto berkualitas tinggi.</td>
+            <td>Laporan Dokumentasi Khusus</td>
+          </tr>
+          <tr>
+            <td><strong>Official Partner Branding</strong></td>
+            <td>Penayangan logo dan banner kemitraan resmi pada homepage portal <em>xyronnews.com</em> sebagai wujud transparansi kemitraan.</td>
+            <td>Sertifikat Mitra Resmi</td>
+          </tr>
+          <tr>
+            <td><strong>Laporan LPJ Berkala</strong></td>
+            <td>Penyusunan Berita Acara Verifikasi, rekapitulasi bukti tayang, dan kliping digital sebagai dokumen audit akuntabilitas perusahaan.</td>
+            <td>Buku LPJ Fisik & Digital</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="section-title">
+        <span>X. PENGESAHAN DOKUMEN & KONTAK REDAKSI</span>
+        <span class="badge-num">BAB 10</span>
+      </div>
+
+      <p>
+        Demikian <em>Company Profile & Media Kit</em> ini disusun secara resmi untuk dipergunakan sebagai pedoman informasi, acuan kerja sama publikasi, serta bukti kredibilitas legalitas <strong>Cerita Rakyat Official</strong> di bawah naungan <strong>PT Skillance Digital Indonesia</strong>.
+      </p>
+
+      <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 6px; padding: 10px 14px; font-size: 8.5pt; margin-top: 6px;">
+        <div style="font-weight: 700; color: #0d2e5c; margin-bottom: 2px;">SALURAN RESMI REDAKSI & KEMITRAAN:</div>
+        <div>&bull; <strong>Alamat Kantor:</strong> Desa Pabiring Dusun Taruseng, Kec. Poleang Barat, Kab. Bombana, Sultra 93772</div>
+        <div>&bull; <strong>Hotline / WhatsApp Resmi:</strong> 0822-9170-0778 &bull; <strong>Surel:</strong> redaksi@xyronnews.com</div>
+        <div>&bull; <strong>Website Korporat:</strong> https://skillance.cloud &bull; <strong>Portal Berita:</strong> http://xyronnews.com</div>
+      </div>
+
+      <div class="signature-grid">
+        <div class="sig-col">
+          <div class="sig-role">
+            Mengetahui / Mengesahkan,<br>
+            <strong>PEMIMPIN UMUM / REDAKSI</strong><br>
+            Cerita Rakyat Official
+          </div>
+          <div class="sig-name">MUH. RAHWAN</div>
+          <div class="sig-sub">Penanggung Jawab Kebijakan Redaksi</div>
+        </div>
+
+        <div class="sig-col">
+          <div class="sig-role">
+            Mengesahkan Atas Nama Badan Hukum,<br>
+            <strong>PEMIMPIN PERUSAHAAN / DIREKTUR</strong><br>
+            PT Skillance Digital Indonesia
+          </div>
+          <div class="sig-name">MUH ARSYAD RAMSI</div>
+          <div class="sig-sub">Penanggung Jawab Korporasi & Kemitraan</div>
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <div>Company Profile & Media Kit &bull; Cerita Rakyat Official (xyronnews.com)</div>
+        <div>Halaman 5 dari 5</div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    let isEditing = false;
+    function toggleEditMode() {
+      isEditing = !isEditing;
+      const papers = document.querySelectorAll('.paper');
+      const editBtn = document.getElementById('editBtn');
+      
+      papers.forEach(p => {
+        p.contentEditable = isEditing ? "true" : "false";
+      });
+
+      if (isEditing) {
+        editBtn.style.background = "#e11d48";
+        editBtn.innerHTML = '<i class="fa-solid fa-lock"></i> Kunci Mode Edit';
+      } else {
+        editBtn.style.background = "#10b981";
+        editBtn.innerHTML = '<i class="fa-solid fa-pen-to-square"></i> Mode Edit Teks';
+      }
+    }
+  </script>
+</body>
+</html>

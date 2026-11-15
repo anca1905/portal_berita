@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Corporate Profile - PT Skillance Digital Indonesia</title>
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800;900&display=swap" rel="stylesheet">
+  
+  <style>
+    @page {
+      size: A4 portrait;
+      margin: 10mm 14mm 10mm 14mm;
+    }
+    @page :first {
+      margin: 0;
+    }
+    @media print {
+      body {
+        background: #ffffff !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .no-print {
+        display: none !important;
+      }
+      .paper {
+        box-shadow: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        min-height: auto !important;
+        page-break-after: always !important;
+        page-break-inside: avoid !important;
+      }
+      .paper.cover-page {
+        width: 210mm !important;
+        height: 297mm !important;
+        max-height: 297mm !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        overflow: hidden !important;
+        page-break-after: always !important;
+      }
+      .paper:last-child {
+        page-break-after: auto !important;
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 10.5pt;
+      line-height: 1.42;
+      color: #111827;
+      background: #eef2f6;
+      margin: 0;
+      padding: 16px;
+    }
+
+    /* Top Sticky Navigation Toolbar */
+    .top-nav-bar {
+      position: sticky;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: #0d2e5c;
+      color: #fff;
+      padding: 10px 20px;
+      z-index: 9999;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+      border-radius: 8px;
+      margin-bottom: 20px;
+      font-family: 'Inter', sans-serif;
+    }
+    .top-nav-bar .btn {
+      padding: 7px 15px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 13px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      transition: all 0.2s ease;
+      border: none;
+    }
+    .btn-print {
+      background: #fe9800;
+      color: #0d2e5c;
+    }
+    .btn-print:hover {
+      background: #ffa726;
+      transform: translateY(-1px);
+    }
+    .btn-back {
+      background: rgba(255,255,255,0.15);
+      color: #fff;
+    }
+    .btn-back:hover {
+      background: rgba(255,255,255,0.25);
+    }
+    .btn-edit {
+      background: #10b981;
+      color: #fff;
+    }
+    .btn-edit:hover {
+      background: #059669;
+    }
+
+    /* A4 Paper Container */
+    .paper-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+    }
+    .paper {
+      background: #ffffff;
+      width: 210mm;
+      min-height: 297mm;
+      padding: 14mm 18mm 14mm 18mm;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+      border-radius: 2px;
+      position: relative;
+    }
+
+    /* COVER PAGE DESIGN */
+    .paper.cover-page {
+      padding: 0;
+      background: linear-gradient(135deg, #06152d 0%, #0d2e5c 55%, #0284c7 100%);
+      color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+      position: relative;
+    }
+    .cover-header {
+      padding: 40px 45px 20px 45px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(255,255,255,0.15);
+    }
+    .cover-body {
+      padding: 40px 45px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .cover-footer {
+      padding: 25px 45px;
+      background: rgba(0,0,0,0.3);
+      border-top: 1px solid rgba(255,255,255,0.15);
+    }
+    .cover-badge {
+      display: inline-block;
+      background: rgba(254, 152, 0, 0.2);
+      border: 1px solid #fe9800;
+      color: #fe9800;
+      padding: 6px 14px;
+      border-radius: 30px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .cover-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: 34pt;
+      font-weight: 900;
+      line-height: 1.15;
+      color: #ffffff;
+      margin: 0 0 15px 0;
+      letter-spacing: -0.5px;
+    }
+    .cover-subtitle {
+      font-family: 'Inter', sans-serif;
+      font-size: 16pt;
+      font-weight: 700;
+      color: #fe9800;
+      margin: 0 0 20px 0;
+      letter-spacing: 0.5px;
+    }
+    .cover-desc {
+      font-family: 'Inter', sans-serif;
+      font-size: 11pt;
+      line-height: 1.6;
+      color: #cbd5e1;
+      max-width: 580px;
+      margin-bottom: 30px;
+    }
+    .cover-meta-box {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.18);
+      border-left: 4px solid #fe9800;
+      border-radius: 8px;
+      padding: 16px 20px;
+      font-family: 'Inter', sans-serif;
+      font-size: 9.5pt;
+      line-height: 1.55;
+    }
+
+    /* KOP SURAT */
+    .kop {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      border-bottom: 2.5px solid #0d2e5c;
+      padding-bottom: 8px;
+      margin-bottom: 12px;
+    }
+    .kop-text {
+      flex: 1;
+      text-align: center;
+    }
+    .kop-text h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 14pt;
+      font-weight: 800;
+      color: #0d2e5c;
+      margin: 0 0 2px 0;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .kop-text h3 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 10.5pt;
+      font-weight: 700;
+      color: #fe9800;
+      margin: 0 0 3px 0;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .kop-text p {
+      font-family: 'Inter', sans-serif;
+      font-size: 7.5pt;
+      color: #4b5563;
+      margin: 0;
+      line-height: 1.35;
+    }
+
+    /* TYPOGRAPHY & SECTIONS */
+    h1, h2, h3, h4 {
+      font-family: 'Poppins', sans-serif;
+      color: #0d2e5c;
+    }
+    .section-title {
+      font-size: 12pt;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: #0d2e5c;
+      border-bottom: 1.5px solid #0d2e5c;
+      padding-bottom: 3px;
+      margin: 14px 0 8px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .section-title span.badge-num {
+      background: #0d2e5c;
+      color: #fff;
+      font-size: 8.5pt;
+      padding: 1px 7px;
+      border-radius: 4px;
+    }
+    p {
+      text-align: justify;
+      margin: 0 0 8px 0;
+    }
+
+    /* PILLAR CARDS */
+    .pillar-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-left: 4px solid #0d2e5c;
+      border-radius: 6px;
+      padding: 12px 14px;
+      margin-bottom: 10px;
+    }
+    .pillar-card.pillar-media { border-left-color: #fe9800; }
+    .pillar-card.pillar-edu { border-left-color: #0d2e5c; }
+    .pillar-card.pillar-tech { border-left-color: #10b981; }
+
+    /* TABLES */
+    table.custom-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 8px 0 12px 0;
+      font-size: 9pt;
+    }
+    table.custom-table th {
+      background: #0d2e5c;
+      color: #ffffff;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      text-align: left;
+      padding: 6px 8px;
+      border: 1px solid #0d2e5c;
+    }
+    table.custom-table td {
+      padding: 5px 8px;
+      border: 1px solid #cbd5e1;
+      vertical-align: top;
+    }
+    table.custom-table tr:nth-child(even) td {
+      background: #f8fafc;
+    }
+
+    /* FOOTER PAGE NUMBER */
+    .page-footer {
+      position: absolute;
+      bottom: 10mm;
+      left: 18mm;
+      right: 18mm;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid #e2e8f0;
+      padding-top: 5px;
+      font-family: 'Inter', sans-serif;
+      font-size: 7.5pt;
+      color: #64748b;
+    }
+
+    /* SIGNATURE BLOCK */
+    .signature-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      margin-top: 20px;
+      font-family: 'Inter', sans-serif;
+    }
+    .sig-col {
+      text-align: center;
+    }
+    .sig-role {
+      font-weight: 700;
+      color: #0d2e5c;
+      font-size: 9.5pt;
+      margin-bottom: 45px;
+    }
+    .sig-name {
+      font-weight: 800;
+      font-size: 10.5pt;
+      text-decoration: underline;
+      color: #111827;
+      margin-bottom: 2px;
+    }
+    .sig-sub {
+      font-size: 8.5pt;
+      color: #4b5563;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sticky Top Action Bar -->
+  <div class="top-nav-bar no-print">
+    <div style="display: flex; align-items: center; gap: 12px;">
+      <span style="font-weight: 700; font-size: 14px; letter-spacing: 0.3px;">
+        <i class="fa-solid fa-building-columns text-warning me-1"></i> CORPORATE PROFILE &bull; PT SKILLANCE DIGITAL INDONESIA
+      </span>
+      <span style="background: rgba(254,152,0,0.25); color: #fe9800; padding: 2px 8px; border-radius: 12px; font-size: 11px; font-weight: 700;">
+        5 Halaman A4 Presisi
+      </span>
+    </div>
+    <div style="display: flex; gap: 10px;">
+      <button class="btn btn-edit" onclick="toggleEditMode()" id="editBtn">
+        <i class="fa-solid fa-pen-to-square"></i> Mode Edit Teks
+      </button>
+      <button class="btn btn-print" onclick="window.print()">
+        <i class="fa-solid fa-print"></i> Cetak Dokumen / PDF
+      </button>
+      <a href="Company_Profile_Media_Cerita_Rakyat_Official.html" class="btn btn-back">
+        <i class="fa-solid fa-newspaper"></i> Media Profile
+      </a>
+    </div>
+  </div>
+
+  <div class="paper-container">
+
+    <!-- HALAMAN 1: COVER SAMPUL EKSEKUTIF KORPORAT -->
+    <div class="paper cover-page">
+      <div class="cover-header">
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <div style="font-family: 'Poppins', sans-serif; font-weight: 900; font-size: 26pt; color: #fe9800; line-height: 1;">&lt;/&gt;</div>
+          <div>
+            <div style="font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 12pt; color: #ffffff; letter-spacing: 0.5px;">PT SKILLANCE DIGITAL INDONESIA</div>
+            <div style="font-family: 'Inter', sans-serif; font-size: 8pt; color: #cbd5e1;">Pusat Transformasi Digital, Edukasi & Media Komunikasi</div>
+          </div>
+        </div>
+        <div style="text-align: right;">
+          <div style="font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 10pt; color: #fe9800;">HOLDING PORTAL:</div>
+          <div style="font-family: 'Inter', sans-serif; font-size: 9pt; color: #ffffff;">WWW.SKILLANCE.CLOUD</div>
+        </div>
+      </div>
+
+      <div class="cover-body">
+        <div class="cover-badge"><i class="fa-solid fa-certificate me-1"></i> DOKUMEN RESMI HOLDING PERUSAHAAN &bull; TAHUN 2026</div>
+        <h1 class="cover-title">CORPORATE PROFILE</h1>
+        <div class="cover-subtitle">PT SKILLANCE DIGITAL INDONESIA</div>
+        <div class="cover-desc">
+          Profil resmi perseroan terbatas yang memadukan keunggulan Rekayasa Perangkat Lunak, Platform Edukasi Teknologi Vokasi, dan Penerbitan Media Siber Komunikasi Publik terpercaya guna mempercepat ekosistem digital di Indonesia.
+        </div>
+
+        <div class="cover-meta-box">
+          <div style="font-weight: 700; color: #fe9800; margin-bottom: 4px; font-size: 10pt;">LEGALITAS BADAN HUKUM RESMI:</div>
+          <div><strong>Akta Notaris & SK Kemenkumham RI:</strong> Nomor AHU-A138609.AH.01.30.Tahun 2026</div>
+          <div><strong>NPWP Badan Usaha:</strong> 100000011940526 &bull; <strong>NIB OSS:</strong> Terdaftar RBA Kementerian Investasi</div>
+          <div><strong>Tiga Pilar Bisnis:</strong> Edutech Academy &bull; Media Siber & Publikasi CSR &bull; IT Enterprise Solutions</div>
+          <div><strong>Kontor Pusat:</strong> Bombana, Sulawesi Tenggara &bull; <strong>Hotline:</strong> 0822-9170-0778</div>
+        </div>
+      </div>
+
+      <div class="cover-footer">
+        <div style="display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #cbd5e1;">
+          <div><i class="fa-solid fa-location-dot text-warning me-1"></i> Desa Pabiring Dusun Taruseng, Kec. Poleang Barat, Kab. Bombana, Sulawesi Tenggara 93772</div>
+          <div>EKOSISTEM DIGITAL SKILLANCE CLOUD &bull; 2026</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- HALAMAN 2: EXECUTIVE SUMMARY, SAMBUTAN & VISI MISI -->
+    <div class="paper">
+      <div class="kop">
+        <div style="font-size: 32pt; font-family: 'Poppins', sans-serif; font-weight: 900; color: #fe9800; line-height: 1;">&lt;/&gt;</div>
+        <div class="kop-text">
+          <h2>PT SKILLANCE DIGITAL INDONESIA</h2>
+          <h3>BADAN HUKUM PERSEROAN TERBATAS &bull; TEKNOLOGI INFORMASI, EDUKASI & MEDIA</h3>
+          <p>SK Kemenkumham RI: AHU-A138609.AH.01.30.Tahun 2026 &bull; NPWP Badan: 100000011940526 &bull; NIB OSS Terdaftar</p>
+          <p>Alamat Kantor: Desa Pabiring Dusun Taruseng, Kec. Poleang Barat, Kab. Bombana, Sulawesi Tenggara 93772</p>
+          <p>Website: https://skillance.cloud &bull; Surel: admin@skillance.cloud &bull; Hotline: 0822-9170-0778</p>
+        </div>
+      </div>
+
+      <div class="section-title">
+        <span>I. IKHTISAR EKSEKUTIF (EXECUTIVE SUMMARY)</span>
+        <span class="badge-num">BAB 01</span>
+      </div>
+
+      <p>
+        <strong>PT SKILLANCE DIGITAL INDONESIA</strong> didirikan sebagai perseroan terbatas berbadan hukum resmi yang berdedikasi menjadi motor penggerak transformasi digital regional dan nasional. Berawal dari inisiatif pengembangan talenta teknologi dan media independen di Sulawesi Tenggara, perseroan kini berkembang menjadi entitas holding yang mengintegrasikan tiga pilar strategis: <em>Pendidikan Teknologi Vokasi (Edutech)</em>, <em>Layanan Rekayasa Perangkat Lunak & Cloud</em>, serta <em>Penerbitan Media Siber Komunikasi Publik (Cerita Rakyat Official / xyronnews.com)</em>.
+      </p>
+      <p>
+        Dengan tata kelola korporat yang transparan, kepatuhan hukum yang menyeluruh, serta dukungan infrastruktur teknologi mandiri, PT Skillance Digital Indonesia siap bermitra dengan korporasi pertambangan, perbankan, BUMN, instansi pemerintah, dan lembaga pendidikan tinggi dalam mewujudkan kemandirian digital berkelanjutan.
+      </p>
+
+      <div class="section-title">
+        <span>II. SAMBUTAN DIREKTUR UTAMA</span>
+        <span class="badge-num">BAB 02</span>
+      </div>
+
+      <p style="font-style: italic; background: #f8fafc; border-left: 3px solid #fe9800; padding: 8px 12px; margin-bottom: 12px; font-size: 9.5pt;">
+        "Di era konvergensi kecerdasan buatan dan keterbukaan informasi publik, kemajuan sebuah institusi ditentukan oleh kemampuannya mengadopsi teknologi dan membangun komunikasi yang kredibel dengan masyarakat. PT Skillance Digital Indonesia hadir bukan sekadar penyedia layanan, melainkan mitra strategis jangka panjang yang memastikan setiap inovasi teknologi dan program kemitraan sosial korporasi memiliki resonansi nyata serta dampak positif terukur bagi masyarakat luas."
+        <br><strong style="font-style: normal; color: #0d2e5c; display: block; margin-top: 4px;">— MUH ARSYAD RAMSI, Direktur Utama PT Skillance Digital Indonesia</strong>
+      </p>
+
+      <div class="section-title">
+        <span>III. VISI, MISI & BUDAYA PERUSAHAAN</span>
+        <span class="badge-num">BAB 03</span>
+      </div>
+
+      <p><strong>VISI PERUSAHAAN:</strong><br>
+        <em>"Menjadi perseroan holding teknologi dan media digital terkemuka yang memimpin ekosistem vokasi digital, inovasi piranti lunak, dan jurnalisme publik akuntabel di Indonesia."</em>
+      </p>
+
+      <p><strong>MISI UTAMA:</strong></p>
+      <ol style="margin: 0 0 10px 0; padding-left: 20px;">
+        <li style="margin-bottom: 4px;"><strong>Pemberdayaan Talenta Digital:</strong> Mencetak talenta vokasi siap kerja melalui platform akademi digital interaktif dan berstandar industri.</li>
+        <li style="margin-bottom: 4px;"><strong>Solusi Perangkat Lunak Unggul:</strong> Menghadirkan sistem informasi, aplikasi terdistribusi, dan arsitektur server yang aman, andal, dan skalabel bagi korporasi dan UMKM.</li>
+        <li style="margin-bottom: 4px;"><strong>Diseminasi Informasi Transparan:</strong> Menyelenggarakan kegiatan jurnalistik berintegritas melalui portal pers resmi guna menjembatani dialog sehat antara korporasi, pemerintah, dan warga.</li>
+        <li style="margin-bottom: 4px;"><strong>Kemitraan Multipihak yang Akuntabel:</strong> Mengedepankan transparansi administrasi, ketepatan pertanggungjawaban legal, dan kepatuhan perpajakan.</li>
+      </ol>
+
+      <div class="page-footer">
+        <div>Corporate Profile &bull; PT Skillance Digital Indonesia (skillance.cloud)</div>
+        <div>Halaman 2 dari 5</div>
+      </div>
+    </div>
+
+    <!-- HALAMAN 3: LEGALITAS, TATA KELOLA & STRUKTUR ORGANISASI -->
+    <div class="paper">
+      <div class="kop">
+        <div style="font-size: 32pt; font-family: 'Poppins', sans-serif; font-weight: 900; color: #fe9800; line-height: 1;">&lt;/&gt;</div>
+        <div class="kop-text">
+          <h2>PT SKILLANCE DIGITAL INDONESIA</h2>
+          <h3>BADAN HUKUM PERSEROAN TERBATAS &bull; TEKNOLOGI INFORMASI, EDUKASI & MEDIA</h3>
+          <p>SK Kemenkumham RI: AHU-A138609.AH.01.30.Tahun 2026 &bull; NPWP Badan: 100000011940526 &bull; NIB OSS Terdaftar</p>
+          <p>Alamat Kantor: Desa Pabiring Dusun Taruseng, Kec. Poleang Barat, Kab. Bombana, Sulawesi Tenggara 93772</p>
+          <p>Website: https://skillance.cloud &bull; Surel: admin@skillance.cloud &bull; Hotline: 0822-9170-0778</p>
+        </div>
+      </div>
+
+      <div class="section-title">
+        <span>IV. LEGALITAS & IDENTITAS PERUSAHAAN</span>
+        <span class="badge-num">BAB 04</span>
+      </div>
+
+      <p>
+        PT Skillance Digital Indonesia beroperasi secara sah berdasarkan hukum perseroan Republik Indonesia dengan data yuridis sebagai berikut:
+      </p>
+
+      <table class="custom-table">
+        <tbody>
+          <tr>
+            <td style="width: 32%; font-weight: 700; background: #f1f5f9;">Nama Resmi Perusahaan</td>
+            <td style="width: 68%;"><strong>PT SKILLANCE DIGITAL INDONESIA</strong></td>
+          </tr>
+          <tr>
+            <td style="font-weight: 700; background: #f1f5f9;">Bentuk Entitas Hukum</td>
+            <td>Perseroan Terbatas (PT) Swasta Nasional Terdaftar</td>
+          </tr>
+          <tr>
+            <td style="font-weight: 700; background: #f1f5f9;">Pengesahan Kemenkumham RI</td>
+            <td><strong>Nomor: AHU-A138609.AH.01.30.Tahun 2026</strong></td>
+          </tr>
+          <tr>
+            <td style="font-weight: 700; background: #f1f5f9;">NPWP Badan Usaha</td>
+            <td><strong>100000011940526</strong> (KPP Pratama Terdaftar)</td>
+          </tr>
+          <tr>
+            <td style="font-weight: 700; background: #f1f5f9;">Nomor Induk Berusaha (NIB)</td>
+            <td>Terdaftar Resmi Sistem Online Single Submission Risk Based Approach (OSS RBA)</td>
+          </tr>
+          <tr>
+            <td style="font-weight: 700; background: #f1f5f9;">Klasifikasi Usaha Utama (KBLI)</td>
+            <td>
+              &bull; <strong>62019:</strong> Aktivitas Pemrograman Komputer Lainnya<br>
+              &bull; <strong>62029:</strong> Aktivitas Konsultasi Komputer & Fasilitas Komputer<br>
+              &bull; <strong>85499:</strong> Pendidikan Lainnya Swasta / Vokasi IT & Kursus<br>
+              &bull; <strong>58130:</strong> Penerbitan Surat Kabar, Jurnal, dan Majalah<br>
+              &bull; <strong>63122:</strong> Portal Web dan/atau Platform Digital Komersial
+            </td>
+          </tr>
+          <tr>
+            <td style="font-weight: 700; background: #f1f5f9;">Alamat Domisili Kantor</td>
+            <td>Desa Pabiring Dusun Taruseng, Kec. Poleang Barat, Kab. Bombana, Sulawesi Tenggara 93772</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="section-title">
+        <span>V. DEWAN DIREKSI & MANAJEMEN EKSEKUTIF</span>
+        <span class="badge-num">BAB 05</span>
+      </div>
+
+      <p>
+        Tata kelola perusahaan dijalankan oleh tim kepemimpinan profesional yang berpengalaman di bidang rekayasa teknologi, media komunikasi, dan kepatuhan regulasi:
+      </p>
+
+      <table class="custom-table">
+        <thead>
+          <tr>
+            <th style="width: 32%;">Jabatan Korporat</th>
+            <th style="width: 36%;">Nama Eksekutif</th>
+            <th style="width: 32%;">Bidang Tanggung Jawab</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Dewan Komisaris</strong></td>
+            <td>Dr. Ir. H. Sudirman, M.Si</td>
+            <td>Pengawasan tata kelola & arah kebijakan strategis</td>
+          </tr>
+          <tr>
+            <td><strong>Direktur Utama (CEO)</strong></td>
+            <td><strong>MUH ARSYAD RAMSI</strong></td>
+            <td>Pemimpin eksekutif, arsitektur teknologi & ekspansi bisnis</td>
+          </tr>
+          <tr>
+            <td><strong>Direktur Operasional & Media</strong></td>
+            <td><strong>MUH. RAHWAN</strong></td>
+            <td>Pengarah divisi media pers, operasional publikasi & humas</td>
+          </tr>
+          <tr>
+            <td><strong>Lead Software & Cloud Architect</strong></td>
+            <td>M. Arsyad Ramsi</td>
+            <td>Desain sistem informasi, arsitektur server VPS & keamanan data</td>
+          </tr>
+          <tr>
+            <td><strong>Head of Vocational Academy</strong></td>
+            <td>Tim Kurikulum Vokasi</td>
+            <td>Pengembangan silabus pembelajaran Flutter, Web & UI/UX</td>
+          </tr>
+          <tr>
+            <td><strong>Manajer Keuangan & Pajak</strong></td>
+            <td>Tim Finance Korporat</td>
+            <td>Akuntabilitas pencatatan, perpajakan & penagihan resmi</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="page-footer">
+        <div>Corporate Profile &bull; PT Skillance Digital Indonesia (skillance.cloud)</div>
+        <div>Halaman 3 dari 5</div>
+      </div>
+    </div>
+
+    <!-- HALAMAN 4: TIGA PILAR EKOSISTEM BISNIS UTAMA -->
+    <div class="paper">
+      <div class="kop">
+        <div style="font-size: 32pt; font-family: 'Poppins', sans-serif; font-weight: 900; color: #fe9800; line-height: 1;">&lt;/&gt;</div>
+        <div class="kop-text">
+          <h2>PT SKILLANCE DIGITAL INDONESIA</h2>
+          <h3>BADAN HUKUM PERSEROAN TERBATAS &bull; TEKNOLOGI INFORMASI, EDUKASI & MEDIA</h3>
+          <p>SK Kemenkumham RI: AHU-A138609.AH.01.30.Tahun 2026 &bull; NPWP Badan: 100000011940526 &bull; NIB OSS Terdaftar</p>
+          <p>Alamat Kantor: Desa Pabiring Dusun Taruseng, Kec. Poleang Barat, Kab. Bombana, Sulawesi Tenggara 93772</p>
+          <p>Website: https://skillance.cloud &bull; Surel: admin@skillance.cloud &bull; Hotline: 0822-9170-0778</p>
+        </div>
+      </div>
+
+      <div class="section-title">
+        <span>VI. EKOSISTEM BISNIS PERSEROAN: TIGA PILAR UTAMA</span>
+        <span class="badge-num">BAB 06</span>
+      </div>
+
+      <p>
+        PT Skillance Digital Indonesia merancang portofolio usahanya dalam sinergi terpadu yang saling menguatkan:
+      </p>
+
+      <!-- PILAR 1 -->
+      <div class="pillar-card pillar-media">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+          <h4 style="font-size: 10.5pt; margin: 0; color: #fe9800; font-weight: 800;">
+            <i class="fa-solid fa-newspaper me-1"></i> PILAR 1: PENERBITAN MEDIA SIBER & KOMUNIKASI PUBLIK
+          </h4>
+          <span style="font-size: 7.5pt; background: rgba(254,152,0,0.15); color: #fe9800; font-weight: 700; padding: 2px 7px; border-radius: 4px;">
+            UNIT: CERITA RAKYAT OFFICIAL (XYRONNEWS.COM)
+          </span>
+        </div>
+        <p style="font-size: 8.5pt; margin-bottom: 4px; line-height: 1.45;">
+          Mengoperasikan media siber terpercaya yang menyajikan jurnalisme berimbang dan menjadi jembatan publikasi program Corporate Social Responsibility (CSR), Program Pemberdayaan Masyarakat (PPM) industri pertambangan, siaran pers korporasi, serta penyusunan Laporan Pertanggungjawaban (LPJ) kliping media bersertifikat.
+        </p>
+        <div style="font-size: 8pt; color: #64748b;">
+          <strong>Kapabilitas:</strong> In-depth CSR reporting, diseminasi multi-kanal, kampanye anti-hoaks, kemitraan media partner resmi.
+        </div>
+      </div>
+
+      <!-- PILAR 2 -->
+      <div class="pillar-card pillar-edu">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+          <h4 style="font-size: 10.5pt; margin: 0; color: #0d2e5c; font-weight: 800;">
+            <i class="fa-solid fa-graduation-cap me-1"></i> PILAR 2: EDUKASI TEKNOLOGI VOKASI & EDUTECH
+          </h4>
+          <span style="font-size: 7.5pt; background: rgba(13,46,92,0.1); color: #0d2e5c; font-weight: 700; padding: 2px 7px; border-radius: 4px;">
+            UNIT: SKILLANCE ACADEMY (SKILLANCE.CLOUD)
+          </span>
+        </div>
+        <p style="font-size: 8.5pt; margin-bottom: 4px; line-height: 1.45;">
+          Platform akademi daring interaktif berbasis PWA yang menyajikan kurikulum pemrograman praktis industri (Fullstack Web, Flutter Mobile, UI/UX Design, Cloud Server Architecture), simulator ujian CBT, bank soal interaktif, dan sertifikasi keahlian digital untuk mempersiapkan generasi muda daerah bersaing di panggung nasional.
+        </p>
+        <div style="font-size: 8pt; color: #64748b;">
+          <strong>Kapabilitas:</strong> Interactive code playground, tryout system otomatis, modul vokasi terstruktur, program beasiswa CSR.
+        </div>
+      </div>
+
+      <!-- PILAR 3 -->
+      <div class="pillar-card pillar-tech">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+          <h4 style="font-size: 10.5pt; margin: 0; color: #10b981; font-weight: 800;">
+            <i class="fa-solid fa-code me-1"></i> PILAR 3: REKAYASA PERANGKAT LUNAK & SOLUSI CLOUD
+          </h4>
+          <span style="font-size: 7.5pt; background: rgba(16,185,129,0.1); color: #10b981; font-weight: 700; padding: 2px 7px; border-radius: 4px;">
+            UNIT: SKILLANCE DIGITAL STUDIO
+          </span>
+        </div>
+        <p style="font-size: 8.5pt; margin-bottom: 4px; line-height: 1.45;">
+          Layanan pengembangan software kustom, sistem informasi manajemen (SIM), aplikasi Point of Sale (POS) retail, integrasi QRIS payment gateway, dan manajemen arsitektur VPS Cloud berkinerja tinggi yang disesuaikan dengan kebutuhan otomatisasi operasional dunia usaha dan instansi publik.
+        </p>
+        <div style="font-size: 8pt; color: #64748b;">
+          <strong>Kapabilitas:</strong> Custom web & mobile apps, RESTful API architecture, payment gateway integration, secure Linux deployment.
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <div>Corporate Profile &bull; PT Skillance Digital Indonesia (skillance.cloud)</div>
+        <div>Halaman 4 dari 5</div>
+      </div>
+    </div>
+
+    <!-- HALAMAN 5: PORTOFOLIO, KOMITMEN & LEMBAR PENGESAHAN -->
+    <div class="paper">
+      <div class="kop">
+        <div style="font-size: 32pt; font-family: 'Poppins', sans-serif; font-weight: 900; color: #fe9800; line-height: 1;">&lt;/&gt;</div>
+        <div class="kop-text">
+          <h2>PT SKILLANCE DIGITAL INDONESIA</h2>
+          <h3>BADAN HUKUM PERSEROAN TERBATAS &bull; TEKNOLOGI INFORMASI, EDUKASI & MEDIA</h3>
+          <p>SK Kemenkumham RI: AHU-A138609.AH.01.30.Tahun 2026 &bull; NPWP Badan: 100000011940526 &bull; NIB OSS Terdaftar</p>
+          <p>Alamat Kantor: Desa Pabiring Dusun Taruseng, Kec. Poleang Barat, Kab. Bombana, Sulawesi Tenggara 93772</p>
+          <p>Website: https://skillance.cloud &bull; Surel: admin@skillance.cloud &bull; Hotline: 0822-9170-0778</p>
+        </div>
+      </div>
+
+      <div class="section-title">
+        <span>VII. PORTOFOLIO & REKAM JEJAK IMPLEMENTASI</span>
+        <span class="badge-num">BAB 07</span>
+      </div>
+
+      <table class="custom-table">
+        <thead>
+          <tr>
+            <th style="width: 25%;">Proyek / Produk</th>
+            <th style="width: 45%;">Ruang Lingkup & Implementasi</th>
+            <th style="width: 30%;">Mitra / Pengguna Sasaran</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Cerita Rakyat Official</strong></td>
+            <td>Penerbitan media siber, peliputan CSR industri pertambangan, manajemen advertorial korporasi & LPJ.</td>
+            <td>Mitra Korporasi & Publik Sultra</td>
+          </tr>
+          <tr>
+            <td><strong>Skillance Academy Platform</strong></td>
+            <td>Sistem pembelajaran vokasi digital mandiri terintegrasi PWA, interactive coding, dan ujian CBT tryout.</td>
+            <td>Pelajar, Mahasiswa & Profesional</td>
+          </tr>
+          <tr>
+            <td><strong>Kemitraan Media CSR</strong></td>
+            <td>Paket publikasi diseminasi program PPM korporasi terintegrasi (PT Putra Mekongga Sejahtera).</td>
+            <td>Korporasi Pertambangan Sultra</td>
+          </tr>
+          <tr>
+            <td><strong>Enterprise Cloud Hosting</strong></td>
+            <td>Infrastruktur Linux VPS mandiri dengan Nginx reverse proxy, proteksi SSL, dan uptime monitoring 99.8%.</td>
+            <td>Ekosistem Skillance Digital</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="section-title">
+        <span>VIII. PENGESAHAN DOKUMEN & KONTAK KORPORAT</span>
+        <span class="badge-num">BAB 08</span>
+      </div>
+
+      <p>
+        Dokumen <em>Corporate Profile</em> ini disahkan sebagai representasi resmi identitas, kapabilitas, dan legalitas <strong>PT SKILLANCE DIGITAL INDONESIA</strong> untuk keperluan kemitraan usaha, pengajuan kerja sama strategis, maupun pemenuhan administrasi kelembagaan.
+      </p>
+
+      <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 6px; padding: 10px 14px; font-size: 8.5pt; margin-top: 6px;">
+        <div style="font-weight: 700; color: #0d2e5c; margin-bottom: 2px;">KANTOR PUSAT & SALURAN KOMUNIKASI:</div>
+        <div>&bull; <strong>Alamat Kantor:</strong> Desa Pabiring Dusun Taruseng, Kec. Poleang Barat, Kab. Bombana, Sultra 93772</div>
+        <div>&bull; <strong>Telepon / WhatsApp Resmi:</strong> 0822-9170-0778 &bull; <strong>Surel Korporat:</strong> admin@skillance.cloud</div>
+        <div>&bull; <strong>Website Korporat:</strong> https://skillance.cloud &bull; <strong>Portal Media:</strong> http://xyronnews.com</div>
+      </div>
+
+      <div class="signature-grid">
+        <div class="sig-col">
+          <div class="sig-role">
+            Mengesahkan Atas Nama Direksi,<br>
+            <strong>DIREKTUR UTAMA (CEO)</strong><br>
+            PT Skillance Digital Indonesia
+          </div>
+          <div class="sig-name">MUH ARSYAD RAMSI</div>
+          <div class="sig-sub">Penanggung Jawab Korporasi & Teknologi</div>
+        </div>
+
+        <div class="sig-col">
+          <div class="sig-role">
+            Mengesahkan Atas Nama Direksi,<br>
+            <strong>DIREKTUR OPERASIONAL & MEDIA</strong><br>
+            PT Skillance Digital Indonesia
+          </div>
+          <div class="sig-name">MUH. RAHWAN</div>
+          <div class="sig-sub">Penanggung Jawab Operasional & Relasi Publik</div>
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <div>Corporate Profile &bull; PT Skillance Digital Indonesia (skillance.cloud)</div>
+        <div>Halaman 5 dari 5</div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    let isEditing = false;
+    function toggleEditMode() {
+      isEditing = !isEditing;
+      const papers = document.querySelectorAll('.paper');
+      const editBtn = document.getElementById('editBtn');
+      
+      papers.forEach(p => {
+        p.contentEditable = isEditing ? "true" : "false";
+      });
+
+      if (isEditing) {
+        editBtn.style.background = "#e11d48";
+        editBtn.innerHTML = '<i class="fa-solid fa-lock"></i> Kunci Mode Edit';
+      } else {
+        editBtn.style.background = "#10b981";
+        editBtn.innerHTML = '<i class="fa-solid fa-pen-to-square"></i> Mode Edit Teks';
+      }
+    }
+  </script>
+</body>
+</html>
