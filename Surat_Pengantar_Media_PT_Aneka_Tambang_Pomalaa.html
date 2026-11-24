@@ -11,16 +11,16 @@
     /* Print Rules - Jaminan 1 Lembar A4 Pas */
     @page {
       size: A4 portrait;
-      margin: 10mm 14mm 10mm 14mm;
+      margin: 8mm 14mm 8mm 14mm;
     }
     @media print {
       html, body {
-        width: 210mm !important;
-        height: 297mm !important;
+        width: 100% !important;
+        height: auto !important;
         margin: 0 !important;
         padding: 0 !important;
         background: #ffffff !important;
-        overflow: hidden !important;
+        overflow: visible !important;
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
       }
@@ -35,8 +35,6 @@
         width: 100% !important;
         min-height: auto !important;
         height: auto !important;
-        max-height: 277mm !important;
-        overflow: hidden !important;
         page-break-inside: avoid !important;
         page-break-after: avoid !important;
         page-break-before: avoid !important;
@@ -189,29 +187,29 @@
       max-width: 210mm;
       min-height: 297mm;
       margin: 0 auto 24px auto;
-      padding: 10mm 15mm 10mm 15mm;
+      padding: 8mm 14mm 8mm 14mm;
       box-shadow: 0 4px 18px rgba(0,0,0,0.12);
       position: relative;
     }
 
     /* Kop Surat Resmi PT Skillance */
     .kop-surat {
-      border-bottom: 2.5px double #0d2e5c;
-      padding-bottom: 6px;
-      margin-bottom: 8px;
+      border-bottom: 2px double #0d2e5c;
+      padding-bottom: 3px;
+      margin-bottom: 5px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 12px;
     }
     .kop-logo {
-      width: 68px;
-      height: 68px;
+      width: 48px;
+      height: 48px;
       object-fit: contain;
       flex-shrink: 0;
     }
     .kop-spacer {
-      width: 68px;
+      width: 48px;
       flex-shrink: 0;
     }
     .kop-text {
@@ -221,7 +219,7 @@
     .kop-title-main {
       margin: 0 0 1px 0 !important;
       padding: 0 !important;
-      font-size: 14pt !important;
+      font-size: 13pt !important;
       font-weight: 800 !important;
       color: #0d2e5c !important;
       text-transform: uppercase !important;
@@ -234,7 +232,7 @@
     .kop-sub {
       margin: 0 0 2px 0 !important;
       padding: 0 !important;
-      font-size: 8pt !important;
+      font-size: 7.8pt !important;
       font-weight: 700 !important;
       color: #d97706 !important;
       text-transform: uppercase !important;
@@ -247,10 +245,10 @@
     .kop-text p, .kop-text p.meta {
       margin: 1px 0 !important;
       padding: 0 !important;
-      font-size: 7.4pt !important;
+      font-size: 7.2pt !important;
       font-family: Arial, Helvetica, sans-serif !important;
       color: #374151 !important;
-      line-height: 1.3 !important;
+      line-height: 1.25 !important;
       text-align: center !important;
       text-indent: 0 !important;
       letter-spacing: normal !important;
@@ -260,13 +258,13 @@
     /* Letter Meta Grid */
     .meta-table {
       width: 100%;
-      margin-bottom: 7px;
-      font-size: 11pt;
-      line-height: 1.35;
+      margin-bottom: 3px;
+      font-size: 10.5pt;
+      line-height: 1.24;
     }
     .meta-table td {
       vertical-align: top;
-      padding: 1px 0;
+      padding: 0.2px 0;
     }
     .meta-table td.col-label {
       width: 85px;
@@ -278,38 +276,38 @@
 
     /* Recipient Box */
     .recipient-box {
-      margin-bottom: 7px;
-      font-size: 11pt;
-      line-height: 1.35;
+      margin-bottom: 3px;
+      font-size: 10.5pt;
+      line-height: 1.24;
     }
 
     /* Paragraphs */
     p {
       text-align: justify;
       margin-top: 0;
-      margin-bottom: 6px;
-      text-indent: 28px;
-      font-size: 11.5pt;
-      line-height: 1.4;
+      margin-bottom: 3.5px;
+      text-indent: 24px;
+      font-size: 11pt;
+      line-height: 1.3;
     }
     p.no-indent {
       text-indent: 0;
     }
     ol.scope-list {
-      margin-top: 2px;
-      margin-bottom: 6px;
-      padding-left: 22px;
-      font-size: 11pt;
-      line-height: 1.36;
+      margin-top: 1px;
+      margin-bottom: 3.5px;
+      padding-left: 20px;
+      font-size: 10.5pt;
+      line-height: 1.26;
     }
     ol.scope-list li {
-      margin-bottom: 2px;
+      margin-bottom: 1px;
       text-align: justify;
     }
 
     /* Signature Area */
     .signature-wrapper {
-      margin-top: 8px;
+      margin-top: 3px;
       display: flex;
       justify-content: flex-end;
       page-break-inside: avoid;
@@ -319,42 +317,42 @@
       text-align: center;
     }
     .ttd-space {
-      height: 40px;
-      min-height: 40px;
+      height: 28px;
+      min-height: 28px;
       position: relative;
     }
     .ttd-name {
       font-weight: bold;
       text-decoration: underline;
       margin-bottom: 1px;
-      font-size: 11.5pt;
+      font-size: 10.8pt;
     }
     .ttd-role {
-      font-size: 10pt;
+      font-size: 9pt;
       margin: 0;
       color: #374151;
     }
 
     /* Tanda Terima / Ekspedisi Slip */
     .receipt-slip-container {
-      margin-top: 6px;
+      margin-top: 3px;
       border-top: 1.5px dashed #94a3b8;
-      padding-top: 4px;
+      padding-top: 2px;
       font-family: 'Times New Roman', Times, serif;
-      font-size: 8.2pt;
+      font-size: 7.5pt;
       page-break-inside: avoid;
     }
     .receipt-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 4px;
+      margin-bottom: 2px;
     }
-    .receipt-title {
+    receipt-title {
       font-weight: bold;
       color: #0d2e5c;
       text-transform: uppercase;
-      font-size: 8.5pt;
+      font-size: 8pt;
       letter-spacing: 0.5px;
     }
     .receipt-table {
@@ -363,9 +361,9 @@
       margin-bottom: 2px;
     }
     .receipt-table td {
-      padding: 2.5px 5px;
+      padding: 1.5px 4px;
       border: 1px solid #cbd5e1;
-      font-size: 8pt;
+      font-size: 7.2pt;
     }
     .receipt-table td.header-col {
       background: #f8fafc;
@@ -549,7 +547,7 @@
           <td class="header-col">Jabatan / Bagian</td>
           <td contenteditable="true">Sekretariat GM / External Relations / CSR / Humas / Security</td>
           <td class="header-col">Paraf & Cap Stempel</td>
-          <td style="height: 28px; vertical-align: middle; text-align: center; color: #94a3b8; font-size: 7.2pt;">
+          <td style="height: 18px; vertical-align: middle; text-align: center; color: #94a3b8; font-size: 7.2pt;">
             ( Paraf & Cap Stempel Penerima )
           </td>
         </tr>
